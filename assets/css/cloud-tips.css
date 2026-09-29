@@ -204,6 +204,37 @@
 .about-nav a:hover{color:var(--text);background:var(--fill-hover);}
 .about-nav a.active{color:var(--blue-text);background:var(--blue-pale);font-weight:600;}
 
+/* ---------- Browse by topic: segmented control (built by cloud-tips.js) ---------- */
+.topic-tabs{
+  position:relative;display:flex;gap:2px;width:max-content;max-width:100%;margin:0 0 var(--s-5);padding:4px;
+  border-radius:var(--r-pill);background:var(--surface-2);border:1px solid var(--line);
+  overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;
+  scroll-margin-top:calc(var(--header-h) + var(--header-top) + 24px);
+}
+.topic-tabs::-webkit-scrollbar{display:none;}
+.topic-thumb{
+  position:absolute;z-index:0;top:4px;bottom:4px;left:0;width:0;border-radius:var(--r-pill);
+  background:var(--surface-raised);box-shadow:var(--sh-1),0 0 0 1px var(--line);
+  transition:transform var(--dur-3) var(--ease-out),width var(--dur-3) var(--ease-out);
+}
+.topic-tab{
+  position:relative;z-index:1;flex-shrink:0;min-height:44px;padding:0 18px;border-radius:var(--r-pill);
+  font-size:var(--fs-sm);font-weight:600;color:var(--text-2);white-space:nowrap;
+  -webkit-tap-highlight-color:transparent;
+  transition:color var(--dur-2) var(--ease-out),transform var(--dur-1) var(--ease-out);
+}
+.topic-tab:hover{color:var(--text);}
+.topic-tab:active{transform:scale(.96);}
+.topic-tab[aria-selected="true"]{color:var(--text);}
+.topic-tab:focus-visible{box-shadow:inset 0 0 0 2px var(--blue);border-radius:var(--r-pill);}
+@media (pointer:coarse){ .topic-tab{min-height:48px;} }
+.about-layout.is-tabbed{grid-template-columns:minmax(0,1fr);}
+.about-layout.is-tabbed .about-nav{display:none;}
+.about-layout.is-tabbed .ab{
+  padding:var(--s-7);border:1px solid var(--line);border-radius:var(--r-xl);background:var(--surface);box-shadow:var(--sh-1);
+}
+.about-layout.is-tabbed .ab > *{max-width:48rem;}
+
 /* ---------- Responsive ---------- */
 @media (max-width:1023.98px){
   .tips-hero-grid{grid-template-columns:minmax(0,1fr);}
@@ -232,6 +263,8 @@
   .tip-grid.list-view .tip-card p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
   .tip-grid.list-view .tip-cover{margin:16px 0 16px 16px;}
   .ab{padding:var(--s-6) 0;}
+  .about-layout.is-tabbed .ab{padding:var(--s-5) 20px;}
+  .topic-tabs{width:auto;margin-inline:calc(-1 * var(--gutter));border-radius:0;border-inline:0;padding-inline:var(--gutter);}
   .ab-head h2{font-size:var(--fs-xl);}
   .about-prose p{font-size:var(--fs-base);}
 }

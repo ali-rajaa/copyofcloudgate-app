@@ -185,3 +185,94 @@
       grid.classList.toggle('list-view', btn.dataset.view === 'list');
     });
   })();
+
+/* Browse by topic: a segmented control instead of six stacked essays.
+   Progressive enhancement: without JavaScript every topic is shown in full
+   with the side list of links. With it, one topic at a time; the thumb slides
+   to the chosen tab, the panel cross-fades in, arrow keys move between tabs,
+   and #hub-... links (including ones shared from elsewhere) open that topic. */
+(function(){
+  const layout = document.querySelector('.about-layout');
+  const nav = layout && layout.querySelector('.about-nav');
+  if(!nav) return;
+  const links = [...nav.querySelectorAll('a[href^="#hub-"]')];
+  const panels = links.map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+  if(panels.length !== links.length || !panels.length) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+
+  const bar = document.createElement('div');
+  bar.className = 'topic-tabs';
+  bar.setAttribute('role', 'tablist');
+  bar.setAttribute('aria-label', 'Topics');
+  const thumb = document.createElement('span');
+  thumb.className = 'topic-thumb';
+  thumb.setAttribute('aria-hidden', 'true');
+  bar.appendChild(thumb);
+  const tabs = links.map((a, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'topic-tab';
+    b.id = 'tab-' + panels[i].id;
+    b.textContent = a.textContent;
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-controls', panels[i].id);
+    panels[i].setAttribute('role', 'tabpanel');
+    panels[i].setAttribute('aria-labelledby', b.id);
+    bar.appendChild(b);
+    return b;
+  });
+  layout.parentNode.insertBefore(bar, layout);
+  layout.classList.add('is-tabbed');
+
+  let current = -1;
+  function placeThumb(){
+    const t = tabs[current];
+    thumb.style.width = t.offsetWidth + 'px';
+    thumb.style.transform = 'translateX(' + t.offsetLeft + 'px)';
+  }
+  function select(i, opts){
+    opts = opts || {};
+    if(i === current) return;
+    current = i;
+    tabs.forEach((t, k) => {
+      const on = k === i;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      panels[k].hidden = !on;
+    });
+    placeThumb();
+    // keep the chosen tab in view inside the scrolling bar without scrolling the page
+    const t = tabs[i];
+    if(t.offsetLeft < bar.scrollLeft || t.offsetLeft + t.offsetWidth > bar.scrollLeft + bar.clientWidth){
+      bar.scrollTo({ left: t.offsetLeft - 24, behavior: reduce.matches ? 'auto' : 'smooth' });
+    }
+    if(opts.focus) t.focus();
+    if(opts.animate && !reduce.matches && panels[i].animate){
+      panels[i].animate([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }],
+        { duration: 320, easing: 'cubic-bezier(.22,1,.36,1)' });
+    }
+    if(opts.hash) history.replaceState(null, '', location.pathname + location.search + '#' + panels[i].id);
+  }
+  bar.addEventListener('click', e => {
+    const t = e.target.closest('.topic-tab');
+    if(t) select(tabs.indexOf(t), { animate: true, hash: true });
+  });
+  bar.addEventListener('keydown', e => {
+    const k = { ArrowRight: 1, ArrowLeft: -1, Home: 'first', End: 'last' }[e.key];
+    if(k === undefined) return;
+    e.preventDefault();
+    const n = k === 'first' ? 0 : k === 'last' ? tabs.length - 1 : (current + k + tabs.length) % tabs.length;
+    select(n, { focus: true, animate: true, hash: true });
+  });
+  function fromHash(scroll){
+    const i = panels.findIndex(p => '#' + p.id === location.hash);
+    if(i < 0) return false;
+    select(i, { animate: current !== -1 });
+    if(scroll) bar.scrollIntoView({ block: 'start', behavior: reduce.matches ? 'auto' : 'smooth' });
+    return true;
+  }
+  if(!fromHash(false)) select(0);
+  window.addEventListener('hashchange', () => fromHash(true));
+  window.addEventListener('resize', placeThumb);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(placeThumb);
+})();

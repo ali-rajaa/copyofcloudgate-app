@@ -67,44 +67,61 @@
     });
   }
 
-  /* ---------- FAQ accordion ----------
-     Each question toggles on its own: opening one never collapses another,
-     so the row you tapped never moves out from under your finger. Height is
-     animated with the Web Animations API from the answer's current on-screen
-     height, so tapping again mid-flight reverses from where it is (no jump).
-     Critically damped feel: fast start, no overshoot; closing is quicker than
-     opening. Reduced motion gets a short cross-fade instead. */
-  var OPEN_MS = 380, CLOSE_MS = 240, EASE = 'cubic-bezier(.22,1,.36,1)';
+  /* ---------- FAQ accordion: a spring, not a timed curve ----------
+     Apple's rule for anything the user can reverse: a critically damped
+     spring (damping 1.0, response ~0.36s) that always starts from the
+     current on-screen height AND current velocity. Tapping again mid-flight
+     just moves the target; the motion turns around smoothly with no stop,
+     jump or restart. Each question toggles on its own, so the row you tapped
+     never moves out from under you. Reduced motion: an instant change with a
+     short cross-fade. */
+  var OPEN_RESPONSE = 0.36, CLOSE_RESPONSE = 0.28;   // seconds, Apple's "response"; exits are quicker
+  function runSpring(st) {
+    var last = performance.now();
+    function frame(now) {
+      var dt = Math.min(0.032, (now - last) / 1000); last = now;
+      var w = 2 * Math.PI / (st.open ? OPEN_RESPONSE : CLOSE_RESPONSE);   // critically damped: zeta = 1
+      var acc = -w * w * (st.x - st.target) - 2 * w * st.v;
+      st.v += acc * dt; st.x += st.v * dt;
+      var full = st.inner.offsetHeight || 1;
+      var prog = Math.max(0, Math.min(1, st.x / full));
+      st.ans.style.height = Math.max(0, st.x) + 'px';
+      st.inner.style.opacity = Math.min(1, prog * 1.6).toFixed(3);
+      st.inner.style.transform = 'translateY(' + ((1 - prog) * -8).toFixed(2) + 'px)';
+      if (Math.abs(st.x - st.target) < 0.5 && Math.abs(st.v) < 8) {
+        st.raf = 0;
+        st.ans.style.height = st.inner.style.opacity = st.inner.style.transform = '';
+        st.ans.classList.remove('is-moving');
+        if (!st.open) st.ans.classList.remove('is-open');
+        return;
+      }
+      st.raf = requestAnimationFrame(frame);
+    }
+    st.raf = requestAnimationFrame(frame);
+  }
   function setFaq(btn, open) {
     var ans = doc.getElementById(btn.getAttribute('aria-controls'));
     if (!ans) return;
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     var inner = ans.firstElementChild;
-    var from = ans.classList.contains('is-open') || ans.classList.contains('is-moving')
-      ? ans.getBoundingClientRect().height : 0;   // live value, not the target
-    if (ans._anim) { ans._anim.cancel(); ans._anim = null; }
-    if (inner && inner._anim) { inner._anim.cancel(); inner._anim = null; }
-    ans.classList.add('is-moving');
-    ans.classList.toggle('is-open', open);
-    var to = open ? inner.getBoundingClientRect().height : 0;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    var st = ans._spring;
+    var visible = ans.classList.contains('is-open') || ans.classList.contains('is-moving');
     if (reduceMotion.matches) {
+      if (st && st.raf) cancelAnimationFrame(st.raf);
+      ans._spring = null;
+      ans.style.height = inner.style.opacity = inner.style.transform = '';
       ans.classList.remove('is-moving');
+      ans.classList.toggle('is-open', open);
       if (open && inner.animate) inner.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 160, easing: 'ease-out' });
       return;
     }
-    var dur = open ? OPEN_MS : CLOSE_MS;
-    ans._anim = ans.animate([{ height: from + 'px' }, { height: to + 'px' }], { duration: dur, easing: EASE });
-    if (inner.animate) {
-      inner._anim = inner.animate(
-        open ? [{ opacity: 0, transform: 'translateY(-6px)' }, { opacity: 1, transform: 'none' }]
-             : [{ opacity: 1 }, { opacity: 0 }],
-        { duration: open ? dur : dur * 0.6, easing: EASE, fill: 'both' });
-    }
-    ans._anim.onfinish = function () {
-      ans._anim = null;
-      if (inner._anim) { inner._anim.cancel(); inner._anim = null; }
-      ans.classList.remove('is-moving');   // settles at height:auto when open, display:none when closed
-    };
+    if (!st) st = ans._spring = { ans: ans, inner: inner, x: visible ? ans.getBoundingClientRect().height : 0, v: 0, raf: 0 };
+    st.open = open;
+    ans.style.height = Math.max(0, st.x) + 'px'; // pin the current height first: no one-frame flash
+    if (!visible) { inner.style.opacity = '0'; }
+    ans.classList.add('is-open', 'is-moving');   // display:block so the content can be measured
+    st.target = open ? inner.offsetHeight : 0;
+    if (!st.raf) runSpring(st);                  // already running: only the target changes
   }
   doc.querySelectorAll('.faq-list').forEach(function (list) {
     list.addEventListener('click', function (e) {

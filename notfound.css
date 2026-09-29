@@ -1,0 +1,77 @@
+/* CloudGate notfound.css - VERSION 4 - 404 page, split cloud */
+  .nf-hero{padding:150px 0 90px;position:relative;overflow:hidden;background:linear-gradient(180deg,#F5F8FF 0%,#FFFFFF 100%);}
+  .nf-hero .container{position:relative;z-index:1;}
+  /* Two-column hero. Same pattern as Cloud Tips and Features: fluid sizing
+     because the art column tightens just above the 1040px breakpoint. */
+  .nf-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(28px,3.4vw,56px);align-items:center;}
+  .nf-inner{max-width:640px;min-width:0;}
+  .nf-art{min-width:0;}
+
+  .nf-code{
+    font-family:'Space Grotesk',sans-serif;font-weight:700;
+    font-size:clamp(64px,9vw,108px);line-height:1;letter-spacing:-.04em;
+    color:var(--blue);margin-bottom:18px;
+  }
+  .nf-hero h1{font-size:clamp(27px,3.4vw,38px);line-height:1.15;letter-spacing:-.02em;font-weight:700;color:var(--ink);}
+  .nf-hero p.lead{margin-top:14px;font-size:16.5px;line-height:1.65;color:var(--slate);max-width:560px;}
+  .nf-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+
+  /* A cloud split in two, with files spilling out of the break. The halves
+     drift apart on entry, which is the whole idea: the thing you asked for
+     came apart. Sizing is fluid because the art column tightens near 1040px. */
+  .broke{
+    position:relative;min-width:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .broke::before{
+    content:'';position:absolute;left:50%;top:48%;
+    width:clamp(230px,22vw,310px);aspect-ratio:1;transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(59,99,245,.13) 0%, rgba(59,99,245,0) 68%);
+    pointer-events:none;
+  }
+  .broke-svg{
+    position:relative;width:100%;max-width:clamp(280px,27vw,360px);height:auto;display:block;
+    filter:drop-shadow(0 22px 40px rgba(20,22,43,.10));
+  }
+
+  .half-l,.half-r,.spill > g{
+    opacity:0;
+    transition:transform .85s var(--ease), opacity .6s var(--ease);
+  }
+  .half-l{transform:translate(14px,0) rotate(3deg);}
+  .half-r{transform:translate(-14px,0) rotate(-3deg);}
+  .spill > g{transform:translate(0,-16px);}
+
+  /* .reveal adds .in on scroll, same as every other section */
+  .nf-art.in .half-l{opacity:1;transform:translate(-13px,4px) rotate(-4deg);}
+  .nf-art.in .half-r{opacity:1;transform:translate(13px,-3px) rotate(3.5deg);}
+  .nf-art.in .spill > g{opacity:1;transform:translate(0,0);}
+  .nf-art.in .spill .s1{transition-delay:.26s;}
+  .nf-art.in .spill .s2{transition-delay:.36s;}
+  .nf-art.in .spill .s3{transition-delay:.46s;}
+
+  @media(prefers-reduced-motion:reduce){
+    .half-l,.half-r,.spill > g{opacity:1;transition:none;}
+    .half-l{transform:translate(-13px,4px) rotate(-4deg);}
+    .half-r{transform:translate(13px,-3px) rotate(3.5deg);}
+    .spill > g{transform:none;}
+  }
+
+  @media(max-width:1040px){
+    .nf-grid{grid-template-columns:minmax(0,1fr);gap:0;}
+    .nf-inner{max-width:660px;}
+    .nf-art{display:none;}
+  }
+  @media(max-width:820px){
+    .nf-hero{padding:126px 0 60px;}
+    .nf-links{padding:0 0 70px;}
+  }
+  @media(max-width:520px){
+    .nf-hero{padding:112px 0 50px;}
+    .nf-actions{gap:10px;}
+    .nf-actions .btn{width:100%;justify-content:center;}
+    .nf-field{padding:5px 5px 5px 14px;border-radius:14px;}
+    .nf-field input{font-size:14.5px;}
+    .nf-nav a{padding:13px 14px;gap:12px;}
+    .nf-ico{width:37px;height:37px;border-radius:11px;}
+  }

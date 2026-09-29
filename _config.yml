@@ -1,0 +1,17 @@
+title: CloudGate Storage
+description: 100GB free cloud storage for Android, iPhone and web.
+url: https://cloudgate-app.com
+
+# Pages are plain .html files; Jekyll only assembles layout and includes.
+plugins: []
+
+exclude:
+  - README.md
+  - legal-info-required.md
+
+# Do not process these as posts
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

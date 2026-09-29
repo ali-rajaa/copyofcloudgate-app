@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+{% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% endif %}
+<meta name="robots" content="{% if page.robots %}{{ page.robots }}{% else %}index, follow{% endif %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+{% if page.extra_css %}<link rel="stylesheet" href="{{ page.extra_css }}">{% endif %}
+
+<!-- Icons and browser chrome -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/cg-app-logo.png">
+<meta name="theme-color" content="#3B63F5">
+
+<!-- Open Graph: controls how a link renders in Slack, WhatsApp, iMessage, LinkedIn, Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CloudGate Storage">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+{% if page.canonical %}<meta property="og:url" content="{{ page.canonical }}">{% endif %}
+<meta property="og:image" content="https://cloudgate-app.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CloudGate Storage: 100GB free cloud storage for Android, iPhone and the web">
+
+<!-- X / Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description }}">
+<meta name="twitter:image" content="https://cloudgate-app.com/og-image.png">
+
+<!-- Structured data. Deliberately no aggregateRating: the 4.4 stars and 100K+
+     users on the homepage are unverified, and a false rating claim gets rich
+     results removed rather than penalised quietly. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cloudgate-app.com/#organization",
+      "name": "CloudGate Technologies Pty Limited",
+      "alternateName": "CloudGate Storage",
+      "url": "https://cloudgate-app.com",
+      "logo": "https://cloudgate-app.com/cg-app-logo.png",
+      "sameAs": [
+        "https://www.facebook.com/cloudgatetechnologies",
+        "https://www.instagram.com/cloudgatetechnologies/",
+        "https://www.linkedin.com/company/cloud-gate-technologies/home/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cloudgate-app.com/#website",
+      "url": "https://cloudgate-app.com",
+      "name": "CloudGate Storage",
+      "publisher": { "@id": "https://cloudgate-app.com/#organization" },
+      "inLanguage": "en-AU"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://cloudgate-app.com/#app",
+      "name": "CloudGate Storage",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Android, iOS, Web",
+      "publisher": { "@id": "https://cloudgate-app.com/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AUD",
+        "description": "100GB free cloud storage, no card required"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+{% include header.html %}
+{{ content }}
+{% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,131 @@
+/* ---------- Homepage additions ----------
+   VERSION 2 - plan strip restyled (30 Aug 2026). site.css untouched at v21. */
+  @keyframes riseIn{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:none;}}
+  .hero-grid .rise{opacity:0;animation:riseIn .8s var(--ease) forwards;}
+  .hero-grid .rise:nth-child(1){animation-delay:.05s;}
+  .r1{animation-delay:.05s;} .r2{animation-delay:.16s;} .r3{animation-delay:.27s;}
+  .r4{animation-delay:.38s;} .r5{animation-delay:.49s;}
+
+  /* sheen sweep on primary buttons */
+  .btn-primary, .web-btn{position:relative;overflow:hidden;}
+  .btn-primary::after, .web-btn::after{
+    content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);
+    transform:skewX(-18deg);transition:left .65s var(--ease);
+  }
+  .btn-primary:hover::after, .web-btn:hover::after{left:130%;}
+
+  /* stat counters */
+  .stat .num{
+    display:flex;align-items:baseline;justify-content:center;gap:3px;
+    font-size:31px;letter-spacing:-.028em;line-height:1.05;
+    font-variant-numeric:lining-nums proportional-nums;
+    font-feature-settings:"ss01";
+  }
+  .stat .num .v{font-variant-numeric:inherit;}
+  .stat .num .u{
+    font-family:'Inter',sans-serif;font-size:15px;font-weight:600;
+    color:var(--slate-light);letter-spacing:.01em;
+    display:inline-flex;align-items:center;
+  }
+  .stat .num .star{width:17px;height:17px;color:var(--gold);position:relative;top:1px;}
+  .stat .lbl{font-size:13px;font-weight:500;color:var(--slate);letter-spacing:.005em;margin-top:6px;}
+  .stat{position:relative;transition:background .3s var(--ease);}
+  .stat:hover{background:#FBFCFF;}
+  .stat::after{
+    content:'';position:absolute;left:50%;bottom:0;width:0;height:2px;background:var(--blue);
+    transform:translateX(-50%);transition:width .4s var(--ease);
+  }
+  .stat:hover::after{width:52%;}
+
+  /* feature icon polish */
+
+
+  /* why cards: icon ring pulse on hover */
+  .why-card .why-icon{position:relative;}
+  .why-card .why-icon::before{
+    content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid currentColor;
+    color:var(--blue);opacity:0;transform:scale(.86);
+    transition:opacity .45s var(--ease), transform .45s var(--ease);
+  }
+  .why-card:hover .why-icon::before{opacity:.22;transform:scale(1);}
+
+  /* steps: connecting progress */
+  .step .step-num{transition:transform .4s var(--ease), box-shadow .4s var(--ease);}
+  .step:hover .step-num{transform:scale(1.09);box-shadow:0 8px 20px rgba(59,99,245,.32);}
+
+  /* trust strip */
+  /* supporting detail: tinted and flat, so it does not compete with the raised stats card */
+  .trust-strip{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 30px;
+    padding:18px 24px;border-radius:14px;
+    background:rgba(59,99,245,.055);
+    border:1px solid rgba(59,99,245,.13);
+    box-shadow:none;
+  }
+  .trust-strip span{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:#3C4157;}
+  .trust-strip svg{width:17px;height:17px;color:var(--blue);flex-shrink:0;}
+
+  /* plan strip
+     Left aligned product cards with a capacity bar. Bar widths are linear
+     against the 1TB top tier (100GB = 10%), so the four cards read as a
+     staircase. Widths come from --w set inline on each card. */
+  .plan-strip{display:grid;grid-template-columns:repeat(4, minmax(0,1fr));gap:16px;}
+  .plan-pill{
+    position:relative;isolation:isolate;
+    display:flex;flex-direction:column;
+    background:#fff;border:1px solid var(--line);border-radius:19px;
+    padding:22px 22px 20px;text-align:left;
+    transition:transform .32s var(--ease), box-shadow .32s var(--ease), border-color .32s var(--ease);
+  }
+  .plan-pill:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:transparent;}
+  .plan-pill.free{
+    background:linear-gradient(150deg,var(--blue),var(--blue-dark) 130%);
+    border-color:transparent;box-shadow:0 10px 26px rgba(59,99,245,.22);
+  }
+  .plan-pill.free:hover{box-shadow:0 18px 40px rgba(59,99,245,.30);}
+
+  .plan-pill .t{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--slate-light);}
+  .plan-pill .s{
+    font-family:'Space Grotesk',sans-serif;font-size:35px;font-weight:700;
+    color:var(--ink);letter-spacing:-.022em;line-height:1;margin:11px 0 0;
+  }
+  .plan-pill .s .u{font-size:17px;font-weight:600;color:var(--slate);margin-left:2px;letter-spacing:0;}
+  .plan-pill .d{font-size:13px;color:var(--slate);line-height:1.5;margin-top:auto;}
+
+  .plan-pill .bar{height:5px;border-radius:99px;background:var(--blue-pale);margin:15px 0 13px;overflow:hidden;}
+  .plan-pill .bar i{display:block;height:100%;width:0;border-radius:99px;background:var(--blue);}
+  .plan-pill.in .bar i{width:var(--w);}
+  .plan-pill:nth-child(1) .bar i{transition:width .85s var(--ease) .10s;}
+  .plan-pill:nth-child(2) .bar i{transition:width .85s var(--ease) .19s;}
+  .plan-pill:nth-child(3) .bar i{transition:width .85s var(--ease) .28s;}
+  .plan-pill:nth-child(4) .bar i{transition:width .85s var(--ease) .37s;}
+
+  .plan-pill.free .t{color:rgba(255,255,255,.78);}
+  .plan-pill.free .s{color:#fff;}
+  .plan-pill.free .s .u{color:rgba(255,255,255,.72);}
+  .plan-pill.free .d{color:rgba(255,255,255,.88);}
+  .plan-pill.free .bar{background:rgba(255,255,255,.24);}
+  .plan-pill.free .bar i{background:#fff;}
+
+  @media(max-width:900px){ .plan-strip{grid-template-columns:repeat(2, minmax(0,1fr));} }
+  @media(max-width:520px){
+    .plan-strip{grid-template-columns:minmax(0,1fr);gap:12px;}
+    .plan-pill{padding:19px 20px 18px;border-radius:17px;}
+    .plan-pill .s{font-size:31px;margin-top:9px;}
+    .plan-pill .bar{margin:13px 0 11px;}
+  }
+  @media(max-width:600px){
+    /* 2 x 2 grid instead of four centred rows: same info, half the height */
+    .trust-strip{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;
+      padding:17px 15px;border-radius:14px;
+    }
+    .trust-strip span{font-size:13.5px;font-weight:600;color:#3C4157;gap:8px;align-items:flex-start;line-height:1.4;}
+    .trust-strip svg{width:16px;height:16px;margin-top:1px;stroke-width:2.6;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero-grid .rise{opacity:1;animation:none;}
+    .btn-primary::after,.web-btn::after{display:none;}
+    .plan-pill .bar i{width:var(--w);transition:none;}
+  }

@@ -68,16 +68,48 @@
   }
 
   /* ---------- FAQ accordion ----------
-     Buttons carry aria-expanded; one answer open at a time per list. */
+     Each question toggles on its own: opening one never collapses another,
+     so the row you tapped never moves out from under your finger. Height is
+     animated with the Web Animations API from the answer's current on-screen
+     height, so tapping again mid-flight reverses from where it is (no jump).
+     Critically damped feel: fast start, no overshoot; closing is quicker than
+     opening. Reduced motion gets a short cross-fade instead. */
+  var OPEN_MS = 380, CLOSE_MS = 240, EASE = 'cubic-bezier(.22,1,.36,1)';
+  function setFaq(btn, open) {
+    var ans = doc.getElementById(btn.getAttribute('aria-controls'));
+    if (!ans) return;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    var inner = ans.firstElementChild;
+    var from = ans.classList.contains('is-open') || ans.classList.contains('is-moving')
+      ? ans.getBoundingClientRect().height : 0;   // live value, not the target
+    if (ans._anim) { ans._anim.cancel(); ans._anim = null; }
+    if (inner && inner._anim) { inner._anim.cancel(); inner._anim = null; }
+    ans.classList.add('is-moving');
+    ans.classList.toggle('is-open', open);
+    var to = open ? inner.getBoundingClientRect().height : 0;
+    if (reduceMotion.matches) {
+      ans.classList.remove('is-moving');
+      if (open && inner.animate) inner.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 160, easing: 'ease-out' });
+      return;
+    }
+    var dur = open ? OPEN_MS : CLOSE_MS;
+    ans._anim = ans.animate([{ height: from + 'px' }, { height: to + 'px' }], { duration: dur, easing: EASE });
+    if (inner.animate) {
+      inner._anim = inner.animate(
+        open ? [{ opacity: 0, transform: 'translateY(-6px)' }, { opacity: 1, transform: 'none' }]
+             : [{ opacity: 1 }, { opacity: 0 }],
+        { duration: open ? dur : dur * 0.6, easing: EASE, fill: 'both' });
+    }
+    ans._anim.onfinish = function () {
+      ans._anim = null;
+      if (inner._anim) { inner._anim.cancel(); inner._anim = null; }
+      ans.classList.remove('is-moving');   // settles at height:auto when open, display:none when closed
+    };
+  }
   doc.querySelectorAll('.faq-list').forEach(function (list) {
     list.addEventListener('click', function (e) {
       var btn = e.target.closest('.faq-q');
-      if (!btn) return;
-      var open = btn.getAttribute('aria-expanded') === 'true';
-      list.querySelectorAll('.faq-q[aria-expanded="true"]').forEach(function (b) {
-        b.setAttribute('aria-expanded', 'false');
-      });
-      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      if (btn) setFaq(btn, btn.getAttribute('aria-expanded') !== 'true');
     });
   });
 

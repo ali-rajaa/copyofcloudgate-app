@@ -1,4 +1,9 @@
 {%- assign cg_here = page.url | replace: '.html', '' -%}
+{%- comment -%}
+  Buttons marked data-cta go to the web app by default. site.js swaps them to
+  the right store on iPhone/iPad and Android, where the app is the better
+  first step. Without JavaScript they simply open the web app.
+{%- endcomment -%}
 <header class="site-header" id="site-header">
   <div class="container nav-inner">
     <a href="/" class="brand" aria-label="CloudGate Storage home">
@@ -6,12 +11,13 @@
       <span class="brand-name">CloudGate Storage<sup class="rmark">&reg;</sup></span>
     </a>
     <nav class="nav-links" aria-label="Main">
-      <a href="/features"{% if cg_here == '/features' %} aria-current="page"{% endif %}><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Features</a>
-      <a href="/cloud-tips"{% if cg_here == '/cloud-tips' %} aria-current="page"{% elsif page.parent_url == '/cloud-tips' %} aria-current="true"{% endif %}><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-6 6c0 2.3 1.3 3.6 2.3 4.6.7.7 1.2 1.3 1.2 2.4h5c0-1.1.5-1.7 1.2-2.4C16.7 12.6 18 11.3 18 9a6 6 0 00-6-6z"/></svg>Cloud Tips</a>
-      <a href="{{ site.data.links.web_app }}" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Web App</a>
+      <a href="/features"{% if cg_here == '/features' %} aria-current="page"{% endif %}>Features</a>
+      <a href="/features#plans">Pricing</a>
+      <a href="/cloud-tips"{% if cg_here == '/cloud-tips' %} aria-current="page"{% elsif page.parent_url == '/cloud-tips' %} aria-current="true"{% endif %}>Cloud Tips</a>
     </nav>
     <div class="nav-end">
-      <a href="{{ site.data.links.web_app }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm header-cta">Get Started for Free<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="{{ site.data.links.web_app }}" target="_blank" rel="noopener" class="nav-signin">Sign in</a>
+      <a href="{{ site.data.links.web_app }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm header-cta" data-cta data-ios="{{ site.data.links.app_store }}" data-android="{{ site.data.links.play_store }}" data-app-label="Get app"><span class="cta-label"><span class="cta-full">Get started free</span><span class="cta-short">Start free</span></span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -21,18 +27,17 @@
         <svg class="mnav-ico ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/></svg>
         <span class="mnav-label">Features</span>
       </a>
+      <a href="/features#plans" class="mnav-row">
+        <svg class="mnav-ico ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V5a2 2 0 012-2h7l9 9-9 9z"/><circle cx="8" cy="8" r="1.4"/></svg>
+        <span class="mnav-label">Pricing</span>
+      </a>
       <a href="/cloud-tips" class="mnav-row"{% if cg_here == '/cloud-tips' %} aria-current="page"{% endif %}>
         <svg class="mnav-ico ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.3.3.5.7.5 1.1h6c0-.4.2-.8.5-1.1A6 6 0 0012 3z"/></svg>
         <span class="mnav-label">Cloud Tips</span>
       </a>
-      <a href="{{ site.data.links.web_app }}" target="_blank" rel="noopener" class="mnav-row">
-        <svg class="mnav-ico ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 20h8M12 17v3"/></svg>
-        <span class="mnav-label">Web App</span>
-        <svg class="mnav-ext ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      </a>
       <div class="mnav-foot">
-        <a href="{{ site.data.links.web_app }}" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-block">Get Started for Free<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <p class="mnav-note">100GB free, no card required</p>
+        <a href="{{ site.data.links.web_app }}" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-block" data-cta data-ios="{{ site.data.links.app_store }}" data-android="{{ site.data.links.play_store }}" data-app-label="Get the app"><span class="cta-label">Get started free</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p class="mnav-note">100GB free, no card required. <a href="{{ site.data.links.web_app }}" target="_blank" rel="noopener">Sign in</a></p>
       </div>
     </nav>
   </div>

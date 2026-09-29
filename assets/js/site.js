@@ -20,6 +20,23 @@
     }).observe(sentinel);
   }
 
+  /* ---------- Primary button: the right first step for the device ----------
+     On iPhone/iPad and Android the app is the better start, so buttons marked
+     data-cta point at the matching store with a shorter label. Everywhere
+     else (and without JavaScript) they keep opening the web app. */
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+  if (isIOS || isAndroid) {
+    doc.querySelectorAll('[data-cta]').forEach(function (a) {
+      var url = isIOS ? a.getAttribute('data-ios') : a.getAttribute('data-android');
+      if (!url) return;
+      a.href = url;
+      var label = a.querySelector('.cta-label');
+      if (label && a.getAttribute('data-app-label')) label.textContent = a.getAttribute('data-app-label');
+    });
+  }
+
   /* ---------- Mobile menu ---------- */
   var toggle = doc.querySelector('.menu-toggle');
   var menu = doc.getElementById('mobile-menu');

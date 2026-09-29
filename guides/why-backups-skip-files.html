@@ -1,33 +1,40 @@
 ---
-layout: default
 title: "Why Your Backup Is Quietly Skipping Files | CloudGate"
 description: "Backup says complete but photos are missing? The real reasons a backup skips files, how to check if photos are backed up, and how to fix each cause."
-canonical: "https://cloudgate-app.com/guides/why-backups-skip-files"
-extra_css: "/assets/css/guide.css"
+crumb: "Why backups skip files"
+headline: "Why your backup may be quietly skipping files"
+last_modified_at: 2026-09-29
+faq:
+  - q: "Why does my backup say complete but photos are missing?"
+    a: "Usually limited photo access. The app can only see the images you individually selected, so it uploads those and correctly reports finishing. Switching the permission to full access lets the rest of your library upload."
+  - q: "How do I check if my photos are actually backed up?"
+    a: "Open your account in a browser on a computer and look for your oldest photos, a screenshot, and a picture someone sent you. Checking from the phone proves nothing, because the phone has its own copy whether or not anything uploaded."
+  - q: "Why did my backup stop working after months of being fine?"
+    a: "Usually battery optimisation reapplying itself to an app you have not opened recently, or a system update resetting permissions. The giveaway is a clean cut-off date with everything before it backed up and nothing after. A backup stopped silently is far more common than a backup not working with a visible error, which is why the date of the last upload is a better signal than any status label."
+  - q: "Why are photos people sent me not backed up?"
+    a: "Messaging media lives in its own folder rather than your camera roll, and most backups cover only the camera folder by default. Add messaging media to your folder selection and they will be included from then on."
+  - q: "My backup has not run in weeks but shows no error. Why?"
+    a: "It is probably waiting for Wi-Fi, or the account is full. Neither produces a loud failure. Check the last backup date rather than the status word, since waiting and finished can look similar at a glance. If it instead looks like a backup stuck partway, showing progress that never advances, connect to Wi-Fi, plug the phone in and leave the screen off for a while before assuming a fault."
+  - q: "Can I recover photos that were never backed up?"
+    a: "If the phone still has them, yes, by fixing the cause and letting them upload. If the phone is gone or has been reset, a file that was never copied anywhere cannot be retrieved by any service. That is why verification matters before wiping anything."
+  - q: "Does a sync service count as a backup?"
+    a: "Not really. Sync keeps devices matching, so a deletion travels to all of them. A backup keeps a copy unaffected by what happens to the original. The practical test is whether deleting a photo on your phone removes it from your other devices."
+  - q: "Why does my new phone show none of my photos?"
+    a: "Almost always a second account created during setup, because sign-up screens appear mid-flow and look like sign-in screens. Compare the email address against your old phone before assuming anything is lost."
 ---
-<main id="top">
+<main id="main">
 
   <section class="art-hero">
-    <div class="hero-clouds" aria-hidden="true">
-      <svg class="hcloud1" viewBox="0 0 110 90"><defs><linearGradient id="cgr1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCE7FE"/><stop offset="1" stop-color="#B4CDFC"/></linearGradient></defs><path d="M22 78 C10 78 4 70 4 61 C4 52 11 45 20 45 C22 32 33 22 46 22 C58 22 68 30 71 41 C74 39 78 38 82 38 C94 38 103 47 103 59 C103 70 94 78 83 78 Z" fill="url(#cgr1)"/></svg>
-      <svg class="hcloud2" viewBox="0 0 110 90"><defs><linearGradient id="cgr2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6EEFF"/><stop offset="1" stop-color="#C7D8FC"/></linearGradient></defs><path d="M18 76 C8 76 2 69 2 60 C2 51 9 44 18 44 C21 30 33 20 47 20 C62 20 74 31 76 45 C79 43 82 42 86 42 C97 42 105 51 105 61 C105 70 98 76 88 76 Z" fill="url(#cgr2)"/></svg>
-      <svg class="hcloud3" viewBox="0 0 110 90"><defs><linearGradient id="cgr3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCE7FE"/><stop offset="1" stop-color="#B4CDFC"/></linearGradient></defs><path d="M24 74 C14 74 7 67 7 58 C7 50 13 43 21 42 C24 31 34 23 46 23 C56 23 65 29 69 38 C72 36 75 35 79 35 C90 35 98 44 98 55 C98 66 90 74 80 74 Z" fill="url(#cgr3)"/></svg>
-      <svg class="hcloud4" viewBox="0 0 110 90"><defs><linearGradient id="cgr4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6EEFF"/><stop offset="1" stop-color="#C7D8FC"/></linearGradient></defs><path d="M20 77 C9 77 3 69 3 60 C3 51 10 44 19 44 C22 31 34 21 48 21 C61 21 72 30 75 42 C78 40 81 39 85 39 C96 39 104 48 104 59 C104 70 96 77 86 77 Z" fill="url(#cgr4)"/></svg>
-      <svg class="hcloud5" viewBox="0 0 110 90"><defs><linearGradient id="cgr5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCE7FE"/><stop offset="1" stop-color="#B4CDFC"/></linearGradient></defs><path d="M23 76 C12 76 5 68 5 59 C5 51 12 44 20 43 C23 31 34 22 47 22 C58 22 67 28 71 37 C74 35 77 34 81 34 C92 34 100 43 100 54 C100 66 92 76 81 76 Z" fill="url(#cgr5)"/></svg>
-    </div>
+    {% include hero-clouds.html %}
     <div class="container">
       <div class="art-head reveal">
-        <nav class="crumb" aria-label="Breadcrumb">
-          <a href="https://cloudgate-app.com">Home</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg>
-          <a href="/cloud-tips">Cloud Tips</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg>
-          <span>Why backups skip files</span>
-        </nav>
+        {% include crumb.html %}
         <span class="tip-cat">Getting Started</span>
         <h1>Why your backup may be quietly skipping files</h1>
         <p class="art-standfirst">Backup says complete but photos are missing? There are a handful of reasons a backup reports success while covering a fraction of your library. Here is each one, how to check if photos are backed up, and how to fix it.</p>
         <div class="art-meta">
           <span>13 min read</span><span class="dot"></span>
-          <span>Updated September 2026</span><span class="dot"></span>
+          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span><span class="dot"></span>
           <span>Android and iPhone</span><span class="dot"></span>
           <span>Troubleshooting</span>
         </div>
@@ -35,7 +42,7 @@ extra_css: "/assets/css/guide.css"
     </div>
   </section>
 
-  <section style="padding-top:14px;">
+  <section class="sec-body">
     <div class="container">
       <div class="art-layout">
         <div class="art-main">
@@ -48,7 +55,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="check">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>First: how to check if photos are backed up</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>First: how to check if photos are backed up</h2></div>
           <p class="lede">Before diagnosing anything, establish whether you actually have a problem. This takes two minutes and is worth doing even if you think everything is fine.</p>
           <p>The test is not the status label in the app. A status label is the app reporting on what it believes it was asked to do, which is exactly the thing in question. The test is opening your library from somewhere that is not the phone.</p>
           <ul class="steps-list">
@@ -59,21 +66,21 @@ extra_css: "/assets/css/guide.css"
             <li><strong>Compare the rough count</strong> against what your phone's gallery reports.</li>
           </ul>
           <p>If all five are present, your coverage is probably genuine. If any category is missing entirely, that tells you which of the causes below applies, because each one fails in a characteristic way.</p>
-          <div class="note warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p>Checking from the phone proves nothing. The phone has its own copy of everything regardless of whether a single file was ever uploaded, so the photo will open perfectly either way.</p></div>
+          <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p>Checking from the phone proves nothing. The phone has its own copy of everything regardless of whether a single file was ever uploaded, so the photo will open perfectly either way.</p></div>
         </div>
 
         <div class="gb" id="access">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 9h14v9a2 2 0 01-2 2H7a2 2 0 01-2-2V9zM8 9V6a4 4 0 018 0v3"/></svg></span><h2>Cause 1: limited photo access</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 9h14v9a2 2 0 01-2 2H7a2 2 0 01-2-2V9zM8 9V6a4 4 0 018 0v3"/></svg></span><h2>Cause 1: limited photo access</h2></div>
           <p class="lede">The single most common reason a backup says complete but photos are missing, and the hardest to spot, because the app is behaving exactly as instructed.</p>
           <p>When an app asks for your photos, modern phones offer a choice between granting access to everything and granting access to selected items. Selected access is a genuinely good privacy feature and completely wrong for a backup.</p>
           <p>If you tapped the selected option, perhaps months ago, perhaps without reading it, the app can only see the specific images you picked at that moment. It backs those up, finds nothing else to do, and reports complete. It is not lying. It has uploaded one hundred percent of what it is permitted to see.</p>
           <p><strong>How it fails:</strong> a very small number of photos backed up, often an oddly random selection, with a status of complete.</p>
           <p><strong>The fix:</strong> open your phone's settings, find the app, and change photo permission from selected or limited to full access. The rest of your library will begin uploading once it can be seen.</p>
-          <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg><p>This resets more often than people expect. A major system update can revert app permissions, so it is worth rechecking after any large update rather than assuming a setting from last year is still in place.</p></div>
+          <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg><p>This resets more often than people expect. A major system update can revert app permissions, so it is worth rechecking after any large update rather than assuming a setting from last year is still in place.</p></div>
         </div>
 
         <div class="gb" id="folders">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span><h2>Cause 2: folders that were never selected</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span><h2>Cause 2: folders that were never selected</h2></div>
           <p>Most backup tools default to the camera folder and nothing else. That covers what you photographed yourself and misses a large share of the images actually on your phone.</p>
           <p>The folders that sit outside the camera roll:</p>
           <ul class="steps-list">
@@ -89,7 +96,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="battery">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="8" width="17" height="9" rx="2"/><path d="M21 11v3"/></svg></span><h2>Cause 3: battery optimisation and power saving</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="8" width="17" height="9" rx="2"/><path d="M21 11v3"/></svg></span><h2>Cause 3: battery optimisation and power saving</h2></div>
           <p class="lede">This is the cause that makes a working backup stop months later, which is why people are certain they set it up correctly. They did. Something switched it off afterwards.</p>
           <p>Phones aggressively restrict background activity to preserve battery. An app you have not opened in a few weeks gets treated as dormant and has its background permissions quietly narrowed. For a backup app, background activity is the entire job.</p>
           <p>Low power mode has the same effect deliberately, suspending background transfers until it is switched off. Some manufacturers layer a second power manager on top of the standard one, so an app can be exempted in one place and still restricted by the other.</p>
@@ -99,7 +106,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="network">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12.5a7 7 0 0114 0"/><path d="M8.5 16a3.5 3.5 0 017 0"/><circle cx="12" cy="19" r="1.2"/></svg></span><h2>Cause 4: waiting for Wi-Fi that never comes</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12.5a7 7 0 0114 0"/><path d="M8.5 16a3.5 3.5 0 017 0"/><circle cx="12" cy="19" r="1.2"/></svg></span><h2>Cause 4: waiting for Wi-Fi that never comes</h2></div>
           <p>Wi-Fi only uploading is the default and it is the right setting for most people. It becomes a problem for anyone who is rarely on a network.</p>
           <p>If you mostly use mobile data, or you have been travelling, a Wi-Fi only backup will sit patiently doing nothing for as long as that lasts. The app looks enabled the entire time. Nothing is broken, it is waiting.</p>
           <p>A partial version of this catches people out too: allowing photos over mobile data while restricting video to Wi-Fi. That is a sensible setting, and it means your video is queued rather than backed up until you next connect.</p>
@@ -108,7 +115,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="full">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 18V9M10 18V5M16 18v-6M22 18H2"/></svg></span><h2>Cause 5: the account is full</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 18V9M10 18V5M16 18v-6M22 18H2"/></svg></span><h2>Cause 5: the account is full</h2></div>
           <p>When storage runs out, uploads stop. Everything already stored stays exactly where it is and nothing is deleted, but new files stop arriving.</p>
           <p>Notifications about this are easy to miss, and they arrive at the moment it happens rather than being repeated. Months later the app may simply show a stalled backup without making the reason obvious.</p>
           <p><strong>How it fails:</strong> a clean cut-off date with nothing after it, similar to the battery cause, but with a full or near-full storage figure in your account.</p>
@@ -123,7 +130,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="sync">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 12a8 8 0 0113.6-5.7L20 8M20 12a8 8 0 01-13.6 5.7L4 16"/><path d="M20 4v4h-4M4 20v-4h4"/></svg></span><h2>Cause 6: assuming a sync is a backup</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 12a8 8 0 0113.6-5.7L20 8M20 12a8 8 0 01-13.6 5.7L4 16"/><path d="M20 4v4h-4M4 20v-4h4"/></svg></span><h2>Cause 6: assuming a sync is a backup</h2></div>
           <p class="lede">This one is not a failure at all. It is a service working correctly while doing something different from what the person assumed.</p>
           <p>Sync keeps the same set of files on several devices, so a deletion travels to every device just as faithfully as an addition. Backup keeps a copy that is unaffected by what happens to the original. People frequently have the first and believe they have the second.</p>
           <p>There is a related trap worth knowing about. On some platforms, turning on photo syncing changes what a device backup contains, on the reasoning that the photos are already covered by the sync service and storing them twice would be wasteful. That is logical and it surprises people badly, because they then have one copy where they assumed two, and a deletion removes it everywhere.</p>
@@ -132,7 +139,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="odd">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h2>Less common causes worth knowing</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h2>Less common causes worth knowing</h2></div>
           <p>If none of the six above explain it, these turn up occasionally:</p>
           <ul class="steps-list">
             <li><strong>Very large files stalling.</strong> Multi-gigabyte videos can sit in a queue for a long time, particularly on a slow upload connection, and may look skipped when they are simply still going.</li>
@@ -146,7 +153,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="habit">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h2>The habit that catches all of this</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h2>The habit that catches all of this</h2></div>
           <p>Every cause on this page produces the same symptom, which is a backup that looks fine and is not. One habit catches all of them.</p>
           <p><strong>Once a month, open your account in a browser and look for something recent.</strong> From a computer, not the phone. It takes fifteen seconds and it is the only check that tests the whole chain rather than the app's opinion of itself.</p>
           <p>Two moments are worth an extra look:</p>
@@ -155,50 +162,17 @@ extra_css: "/assets/css/guide.css"
             <li><strong>Before wiping or trading in a phone</strong>, when the cost of a gap is permanent.</li>
           </ul>
           <p>A backup nobody has verified is an assumption. The distinction only becomes visible on the day it matters, and by then it is too late to do anything about it.</p>
-          <div class="note good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p>If you do nothing else after reading this, open your library in a browser now and scroll to the oldest photo in it. That one action tells you more than every status screen on your phone.</p></div>
+          <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p>If you do nothing else after reading this, open your library in a browser now and scroll to the oldest photo in it. That one action tells you more than every status screen on your phone.</p></div>
         </div>
 
         <div class="gb" id="faq">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 115 .8c0 1.6-2.5 2-2.5 3.4M12 17h.01"/></svg></span><h2>Frequently asked questions</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 115 .8c0 1.6-2.5 2-2.5 3.4M12 17h.01"/></svg></span><h2>Frequently asked questions</h2></div>
           <p>The questions that come up most often when a backup is not covering everything.</p>
-          <div class="faq-list" style="margin-top:18px;">
-            <div class="faq-item">
-              <div class="faq-q">Why does my backup say complete but photos are missing?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">Usually limited photo access. The app can only see the images you individually selected, so it uploads those and correctly reports finishing. Switching the permission to full access lets the rest of your library upload.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">How do I check if my photos are actually backed up?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">Open your account in a browser on a computer and look for your oldest photos, a screenshot, and a picture someone sent you. Checking from the phone proves nothing, because the phone has its own copy whether or not anything uploaded.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">Why did my backup stop working after months of being fine?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">Usually battery optimisation reapplying itself to an app you have not opened recently, or a system update resetting permissions. The giveaway is a clean cut-off date with everything before it backed up and nothing after. A backup stopped silently is far more common than a backup not working with a visible error, which is why the date of the last upload is a better signal than any status label.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">Why are photos people sent me not backed up?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">Messaging media lives in its own folder rather than your camera roll, and most backups cover only the camera folder by default. Add messaging media to your folder selection and they will be included from then on.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">My backup has not run in weeks but shows no error. Why?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">It is probably waiting for Wi-Fi, or the account is full. Neither produces a loud failure. Check the last backup date rather than the status word, since waiting and finished can look similar at a glance. If it instead looks like a backup stuck partway, showing progress that never advances, connect to Wi-Fi, plug the phone in and leave the screen off for a while before assuming a fault.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">Can I recover photos that were never backed up?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">If the phone still has them, yes, by fixing the cause and letting them upload. If the phone is gone or has been reset, a file that was never copied anywhere cannot be retrieved by any service. That is why verification matters before wiping anything.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">Does a sync service count as a backup?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">Not really. Sync keeps devices matching, so a deletion travels to all of them. A backup keeps a copy unaffected by what happens to the original. The practical test is whether deleting a photo on your phone removes it from your other devices.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">Why does my new phone show none of my photos?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">Almost always a second account created during setup, because sign-up screens appear mid-flow and look like sign-in screens. Compare the email address against your old phone before assuming anything is lost.</div>
-            </div>
-          </div>
+          {% include faq.html %}
         </div>
 
         <div class="gb" id="checklist">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>The whole thing as a checklist</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>The whole thing as a checklist</h2></div>
           <ul class="steps-list">
             <li>Open your account in a browser and check your oldest photos</li>
             <li>Look specifically for messaging media and screenshots</li>
@@ -215,8 +189,8 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         </div>
-        <aside class="toc">
-          <h4>On this page</h4>
+        <aside class="toc" aria-labelledby="toc-title">
+          <h2 class="toc-title" id="toc-title">On this page</h2>
           <ul>
             <li><a href="#check">How to check</a></li>
             <li><a href="#access">1. Limited access</a></li>
@@ -235,7 +209,7 @@ extra_css: "/assets/css/guide.css"
     </div>
   </section>
 
-  <section style="background:#F9FAFF;">
+  <section class="sec-tint sec-related">
     <div class="container">
       <div class="section-head reveal">
         <div class="eyebrow">Keep Reading</div>
@@ -247,74 +221,34 @@ extra_css: "/assets/css/guide.css"
           <span class="tip-cat">Next up</span>
           <h3>How to back up your phone to free cloud storage</h3>
           <p>The full walkthrough across Android, iPhone and the web in one place.</p>
-          <span class="tip-link">Read the guide<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/how-to-backup-photos" class="next-card">
           <span class="tip-cat">Next up</span>
           <h3>How to backup photos: where to store them and why</h3>
           <p>Folder coverage, originals versus compressed copies, and where photos should live.</p>
-          <span class="tip-link">Read the guide<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/switch-to-new-phone" class="next-card">
           <span class="tip-cat">Next up</span>
           <h3>Move everything to a new phone in one sitting</h3>
           <p>Verify before you wipe. The order of operations that stops files disappearing.</p>
-          <span class="tip-link">Read the guide<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
       </div>
     </div>
   </section>
 
-  <section style="padding-top:20px;">
+  <section class="sec-cta">
     <div class="container">
       <div class="cta-band reveal" id="get-app">
         <div>
           <h2>Start with 100GB, free.</h2>
           <p>A backup you can check from any browser. Set it up in minutes on Android, iPhone or the web, with 250GB, 500GB and 1TB plans if you outgrow it.</p>
         </div>
-        <div class="cta-actions">
-          <a href="https://play.google.com/store/apps/details?id=com.cloudgate.cloudstorage&hl=en_AU" class="gplay-btn" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1L13 12.5v-.1L3.7 2.2l-.1.1z" fill="#4285F4"/><path d="M16.1 15.6l-3.1-3.1v-.1l3.1-3.1 3.5 2c1 .6 1 1.5 0 2.1l-3.5 2.2z" fill="#FBBC05"/><path d="M16.1 15.6L13 12.4 3.6 21.8c.4.4 1 .4 1.7.1l10.8-6.3z" fill="#34A853"/><path d="M16.1 9.2L5.3 3c-.7-.4-1.3-.3-1.7.1L13 12.4l3.1-3.2z" fill="#EA4335"/></svg>
-            <span class="txt"><small>Get it on</small><strong>Google Play</strong></span>
-          </a>
-          <a href="https://apps.apple.com/us/app/cloudgate-cloud-storage-app/id6504859413" class="appstore-btn" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M17.05 12.34c-.03-2.5 2.04-3.7 2.13-3.76-1.17-1.71-2.98-1.94-3.62-1.97-1.54-.16-3.02.9-3.8.9-.79 0-1.99-.88-3.28-.86-1.68.03-3.24.98-4.1 2.48-1.76 3.05-.45 7.56 1.25 10.03.83 1.2 1.83 2.56 3.13 2.51 1.26-.05 1.73-.81 3.25-.81s1.94.81 3.28.79c1.36-.02 2.22-1.22 3.04-2.44.96-1.4 1.35-2.76 1.37-2.83z"/><path d="M14.6 4.6c.69-.84 1.16-2 1.03-3.16-1 .04-2.2.67-2.92 1.5-.64.74-1.2 1.92-1.05 3.05 1.11.09 2.25-.56 2.94-1.39z"/></svg>
-            <span class="txt"><small>Download on the</small><strong>App Store</strong></span>
-          </a>
-          <a href="https://my.cloudgate-app.com" class="web-btn" target="_blank" rel="noopener"><strong>Open Web App</strong></a>
-        </div>
+        {% include store-badges.html class="badges--cta" %}
       </div>
     </div>
   </section>
 
 </main>
-
-<script>
-  // Highlight the current section in the table of contents
-  (function(){
-    const links = [...document.querySelectorAll('.toc a')];
-    if(!links.length) return;
-    const map = new Map();
-    links.forEach(l => {
-      const el = document.getElementById(l.getAttribute('href').slice(1));
-      if(el) map.set(el, l);
-    });
-    if(!map.size) return;
-    const spy = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(e.isIntersecting){
-          links.forEach(l => l.classList.remove('active'));
-          const active = map.get(e.target);
-          if(active){
-            active.classList.add('active');
-            const box = active.closest('.toc');
-            if(box && active.offsetTop > box.clientHeight - 60){
-              box.scrollTop = active.offsetTop - box.clientHeight / 2;
-            }
-          }
-        }
-      });
-    }, {rootMargin:'-110px 0px -72% 0px', threshold:0});
-    map.forEach((l, el) => spy.observe(el));
-  })();
-</script>

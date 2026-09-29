@@ -1,0 +1,17 @@
+# Every outbound product link in one place. Change a URL here and every
+# header, footer, hero and CTA badge picks it up on the next build.
+play_store: https://play.google.com/store/apps/details?id=com.cloudgate.cloudstorage&hl=en_AU
+app_store: https://apps.apple.com/us/app/cloudgate-cloud-storage-app/id6504859413
+web_app: https://my.cloudgate-app.com
+support_email: support@cloudgate-app.com
+
+social:
+  - name: LinkedIn
+    key: li
+    url: https://www.linkedin.com/company/cloud-gate-technologies/home/
+  - name: Facebook
+    key: fb
+    url: https://www.facebook.com/cloudgatetechnologies
+  - name: Instagram
+    key: ig
+    url: https://www.instagram.com/cloudgatetechnologies/

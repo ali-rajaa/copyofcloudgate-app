@@ -1,0 +1,55 @@
+{%- comment -%}
+  Everything in <head> that search engines and link previews read. Nothing
+  here is hand-written per page: the canonical comes from the page's own URL,
+  so a renamed or new page can never ship with a stale or missing canonical.
+{%- endcomment -%}
+{%- assign cg_path = page.url | replace: '/index.html', '/' | replace: '.html', '' -%}
+{%- if cg_path == '/' -%}{%- assign cg_canonical = site.url | append: '/' -%}{%- else -%}{%- assign cg_canonical = site.url | append: cg_path -%}{%- endif -%}
+{%- assign cg_noindex = false -%}{%- if site.staging or page.robots contains 'noindex' -%}{%- assign cg_noindex = true -%}{%- endif -%}
+{%- assign cg_image = page.og_image | default: '/og-image.png' | prepend: site.url -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<meta name="robots" content="{% if site.staging %}noindex, nofollow{% elsif page.robots %}{{ page.robots }}{% else %}index, follow, max-image-preview:large{% endif %}">
+{%- unless page.robots contains 'noindex' %}
+<link rel="canonical" href="{{ cg_canonical }}">
+{%- endunless %}
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preload" href="/assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css?v=40">
+{%- if page.extra_css %}
+<link rel="stylesheet" href="{{ page.extra_css }}?v=40">
+{%- endif %}
+<script src="/assets/js/site.js?v=40" defer></script>
+{%- if page.extra_js %}
+<script src="{{ page.extra_js }}?v=40" defer></script>
+{%- endif %}
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F5F7FE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0D14" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="{% if page.type == 'article' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="{{ site.locale }}">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:url" content="{{ cg_canonical }}">
+<meta property="og:image" content="{{ cg_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CloudGate Storage: 100GB free cloud storage for Android, iPhone and the web">
+{%- if page.type == 'article' and page.last_modified_at %}
+<meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">
+<meta property="article:section" content="{{ page.parent_title }}">
+{%- endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description }}">
+<meta name="twitter:image" content="{{ cg_image }}">
+{%- unless page.robots contains 'noindex' %}
+{% include schema.html canonical=cg_canonical image=cg_image %}
+{%- endunless %}

@@ -1,0 +1,22 @@
+{%- comment -%}
+  Renders page.faq as an accessible accordion. The FAQPage schema in
+  schema.html reads the same list, so the two can never drift apart.
+  Each question is a real <button> inside a heading, with aria-expanded and
+  aria-controls; without JavaScript every answer is simply shown.
+{%- endcomment -%}
+{%- assign cg_hl = include.level | default: 3 -%}
+<div class="faq-list">
+  {%- for item in page.faq %}
+  <div class="faq-item">
+    <h{{ cg_hl }} class="faq-h">
+      <button class="faq-q" type="button" id="faq-q{{ forloop.index }}" aria-expanded="false" aria-controls="faq-a{{ forloop.index }}">
+        <span class="faq-text">{% if item.tag %}<span class="myth-tag">{{ item.tag }}</span>{% endif %}{{ item.q }}</span>
+        <span class="faq-ico" aria-hidden="true"></span>
+      </button>
+    </h{{ cg_hl }}>
+    <div class="faq-a" id="faq-a{{ forloop.index }}">
+      <div class="faq-a-inner"><p>{{ item.a }}</p></div>
+    </div>
+  </div>
+  {%- endfor %}
+</div>

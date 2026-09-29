@@ -1,32 +1,37 @@
 ---
-layout: default
 title: "Cloud Storage for iPhone - Photo Backup | CloudGate"
 description: "Set up free cloud storage on iPhone. All Photos versus Limited Access, Background App Refresh, Low Power Mode and how to free up iPhone storage safely."
-canonical: "https://cloudgate-app.com/guides/cloud-storage-iphone"
-extra_css: "/assets/css/guide.css"
+crumb: "Cloud storage for iPhone"
+headline: "Free cloud storage for iPhone: photo backup that works"
+last_modified_at: 2026-08-30
+faq:
+  - q: "Do I still need iCloud if I use this?"
+    a: "They do different jobs, so most people keep both. iCloud syncs your library across Apple devices. A separate cloud storage app gives you a second copy on an account that is not tied to your Apple ID, so a sync problem or an account issue does not affect it."
+  - q: "Is 100GB free cloud storage for iPhone really free?"
+    a: "Yes. 100GB is included with no card required and no trial that expires. Paid plans at 250GB, 500GB and 1TB exist for people who need more room, and nothing already backed up stops working if you stay on the free plan."
+  - q: "Will backing up delete photos from my iPhone?"
+    a: "No. Backing up copies files. Your camera roll is unchanged. Deleting local copies to free up iPhone storage is a separate step you choose to take after confirming the backup."
+  - q: "Why does my iPhone backup keep stopping?"
+    a: "Two usual causes. Background App Refresh switched off, which limits uploading to when the app is open, and Low Power Mode, which suspends background activity completely. Check both before assuming anything is broken."
+  - q: "Can I open my files on a Windows computer?"
+    a: "Yes. The account opens in any browser on any operating system, which is often the simplest way to get iPhone photos onto a Windows machine."
+  - q: "What is HEIC and should I change it?"
+    a: "HEIC is the format modern iPhones use for photos. It gives smaller files at the same quality, and it is less widely supported than JPEG. If you often open photos on older software, Settings, then Camera, then Formats, then Most Compatible will use JPEG for new photos instead."
+  - q: "What happens if I reach the 100GB limit?"
+    a: "Uploads pause until you free space or move to a larger plan. Files already backed up are not deleted for reaching the limit. Storage allowances are defined limits rather than open-ended, and video is what fills them fastest."
 ---
-<main id="top">
+<main id="main">
 
   <section class="art-hero">
-    <div class="hero-clouds" aria-hidden="true">
-      <svg class="hcloud1" viewBox="0 0 110 90"><defs><linearGradient id="cgr1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCE7FE"/><stop offset="1" stop-color="#B4CDFC"/></linearGradient></defs><path d="M22 78 C10 78 4 70 4 61 C4 52 11 45 20 45 C22 32 33 22 46 22 C58 22 68 30 71 41 C74 39 78 38 82 38 C94 38 103 47 103 59 C103 70 94 78 83 78 Z" fill="url(#cgr1)"/></svg>
-      <svg class="hcloud2" viewBox="0 0 110 90"><defs><linearGradient id="cgr2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6EEFF"/><stop offset="1" stop-color="#C7D8FC"/></linearGradient></defs><path d="M18 76 C8 76 2 69 2 60 C2 51 9 44 18 44 C21 30 33 20 47 20 C62 20 74 31 76 45 C79 43 82 42 86 42 C97 42 105 51 105 61 C105 70 98 76 88 76 Z" fill="url(#cgr2)"/></svg>
-      <svg class="hcloud3" viewBox="0 0 110 90"><defs><linearGradient id="cgr3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCE7FE"/><stop offset="1" stop-color="#B4CDFC"/></linearGradient></defs><path d="M24 74 C14 74 7 67 7 58 C7 50 13 43 21 42 C24 31 34 23 46 23 C56 23 65 29 69 38 C72 36 75 35 79 35 C90 35 98 44 98 55 C98 66 90 74 79 74 Z" fill="url(#cgr3)"/></svg>
-      <svg class="hcloud4" viewBox="0 0 110 90"><defs><linearGradient id="cgr4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6EEFF"/><stop offset="1" stop-color="#C7D8FC"/></linearGradient></defs><path d="M22 78 C10 78 4 70 4 61 C4 52 11 45 20 45 C22 32 33 22 46 22 C58 22 68 30 71 41 C74 39 78 38 82 38 C94 38 103 47 103 59 C103 70 94 78 83 78 Z" fill="url(#cgr4)"/></svg>
-      <svg class="hcloud5" viewBox="0 0 110 90"><defs><linearGradient id="cgr5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6EEFF"/><stop offset="1" stop-color="#C7D8FC"/></linearGradient></defs><path d="M24 74 C14 74 7 67 7 58 C7 50 13 43 21 42 C24 31 34 23 46 23 C56 23 65 29 69 38 C72 36 75 35 79 35 C90 35 98 44 98 55 C98 66 90 74 79 74 Z" fill="url(#cgr5)"/></svg>
-    </div>
+    {% include hero-clouds.html %}
     <div class="container">
       <div class="art-head reveal">
-        <nav class="crumb" aria-label="Breadcrumb">
-          <a href="https://cloudgate-app.com">Home</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg>
-          <a href="/cloud-tips">Cloud Tips</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg>
-          <span>Cloud storage for iPhone</span>
-        </nav>
+        {% include crumb.html %}
         <span class="tip-cat">iPhone</span>
         <h1>Free cloud storage for iPhone: photo backup that works</h1>
         <p class="art-standfirst">iOS handles photo permissions differently, and that difference is why most iPhone backups are incomplete. Covers All Photos versus Selected Photos, background app refresh, Low Power Mode, and freeing up iPhone storage safely.</p>
         <div class="art-meta">
-          <span>Updated August 2026</span><span class="dot"></span>
+          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span><span class="dot"></span>
           <span>iPhone and iPad</span><span class="dot"></span>
           <span>Beginner friendly</span>
         </div>
@@ -34,7 +39,7 @@ extra_css: "/assets/css/guide.css"
     </div>
   </section>
 
-  <section style="padding-top:14px;">
+  <section class="sec-body">
     <div class="container">
       <div class="art-layout">
         <article class="art-main">
@@ -51,16 +56,16 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="what">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 16.5C4.79 16.5 3 14.71 3 12.5C3 10.42 4.6 8.72 6.63 8.53C7.27 6.44 9.22 5 11.5 5C14.27 5 16.55 7.09 16.85 9.78C18.65 10.09 20 11.63 20 13.5C20 15.71 18.21 17.5 16 17.5H7Z"/></svg></span><h2>What cloud storage for iPhone actually does</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 16.5C4.79 16.5 3 14.71 3 12.5C3 10.42 4.6 8.72 6.63 8.53C7.27 6.44 9.22 5 11.5 5C14.27 5 16.55 7.09 16.85 9.78C18.65 10.09 20 11.63 20 13.5C20 15.71 18.21 17.5 16 17.5H7Z"/></svg></span><h2>What cloud storage for iPhone actually does</h2></div>
           <p class="lede">A cloud storage app for iPhone keeps a second copy of your files on a server. The originals stay in your Photos library, untouched.</p>
           <p>Worth saying plainly, because a lot of people avoid setting up online storage for iPhone in the first place on the assumption that their photos will be taken off the device and exist only somewhere on the internet. They will not. Backing up copies a file. Your camera roll is identical afterwards. What changes is that a second copy now lives somewhere your phone cannot destroy.</p>
           <p>If the phone is lost, stolen, dropped in the sea or simply stops turning on, the photos are still in your account. You sign in on a replacement, or in a browser on any computer, and they are there. That is the entire value proposition, and it only holds if the backup genuinely covers everything, which is where the next section comes in.</p>
           <p>It is also worth being clear about how this sits alongside iCloud. They are not the same job, and they are not in competition. More on that below.</p>
-          <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><p><strong>Backing up copies, it does not move.</strong> Freeing up iPhone storage is a separate action you take later, once you have confirmed the copies exist.</p></div>
+          <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><p><strong>Backing up copies, it does not move.</strong> Freeing up iPhone storage is a separate action you take later, once you have confirmed the copies exist.</p></div>
         </div>
 
         <div class="gb" id="icloud">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 16.5C4.79 16.5 3 14.71 3 12.5C3 10.42 4.6 8.72 6.63 8.53C7.27 6.44 9.22 5 11.5 5C14.27 5 16.55 7.09 16.85 9.78C18.65 10.09 20 11.63 20 13.5C20 15.71 18.21 17.5 16 17.5H7Z"/><path d="M12 21v-6M9.5 18.5L12 21l2.5-2.5"/></svg></span><h2>How this fits alongside iCloud</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 16.5C4.79 16.5 3 14.71 3 12.5C3 10.42 4.6 8.72 6.63 8.53C7.27 6.44 9.22 5 11.5 5C14.27 5 16.55 7.09 16.85 9.78C18.65 10.09 20 11.63 20 13.5C20 15.71 18.21 17.5 16 17.5H7Z"/><path d="M12 21v-6M9.5 18.5L12 21l2.5-2.5"/></svg></span><h2>How this fits alongside iCloud</h2></div>
           <p class="lede">This is the question everyone with an iPhone asks first, and the answer is that they do different things.</p>
           <p>iCloud Photos is a sync service. Its job is to make the same library appear on every Apple device you own. When it works, which is most of the time, it works well. The thing to understand is that sync propagates changes in both directions. Delete a photo on your iPhone and it disappears from iCloud and from your iPad too, because that is what syncing means. That is correct behaviour, and it is also why sync alone is not a backup. A mistake travels just as reliably as an intentional change.</p>
           <p>The second issue is the free allowance. Apple gives every account 5GB, which is enough for settings and messages and not remotely enough for a photo library. Most people either pay for more or spend years dismissing a storage full notification.</p>
@@ -69,7 +74,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="before">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg></span><h2>Before you start</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg></span><h2>Before you start</h2></div>
           <ol class="steps-list">
             <li><strong>Wi-Fi.</strong> A first upload of a full library can be tens of gigabytes. Mobile data is an expensive way to discover that.</li>
             <li><strong>Power.</strong> iOS throttles background work as the battery drops, and Low Power Mode stops it outright. Plug in for the first run.</li>
@@ -80,29 +85,29 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="step-1">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 5v14M5 12h14"/></svg></span><h2>Step 1: Create your free account</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 5v14M5 12h14"/></svg></span><h2>Step 1: Create your free account</h2></div>
           <p>Install the app from the App Store and sign up. The full 100GB cloud storage iPhone allowance is live immediately. No card at signup, and no trial period that quietly ends.</p>
           <p>You can also sign up in a browser at <a href="https://my.cloudgate-app.com" target="_blank" rel="noopener">my.cloudgate-app.com</a> first and add the app afterwards if you would rather look around on a larger screen. It is the same account.</p>
         </div>
 
         <div class="gb" id="step-2">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span><h2>Step 2: Choose All Photos, not Selected Photos</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span><h2>Step 2: Choose All Photos, not Selected Photos</h2></div>
           <p class="lede">This is the step that decides whether your iPhone photo backup is complete or nearly empty, and it is genuinely easy to get wrong.</p>
           <p>When an app first asks for your photos, iOS offers three options: Limited Access where you pick specific items, Full Access, and Deny. Limited Access is an excellent privacy feature and it is the wrong choice for a backup app. If you select it, the app can only ever see the photos you individually chose. Everything else is invisible to it, permanently, until you change the setting.</p>
           <p>What makes this so hard to spot is that nothing looks broken. There is no error. The backup runs, finishes quickly, and reports success. It has faithfully backed up the eleven photos it was allowed to see.</p>
           <p>Choose Full Access. If you have already tapped through and cannot remember what you picked, check it: Settings, then Privacy and Security, then Photos, find the app, and confirm it reads Full Access rather than Limited Access.</p>
-          <div class="note warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p><strong>The tell:</strong> a backup that completes in under a minute and shows a file count nowhere near your library size. That is Limited Access, essentially every time.</p></div>
+          <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p><strong>The tell:</strong> a backup that completes in under a minute and shows a file count nowhere near your library size. That is Limited Access, essentially every time.</p></div>
         </div>
 
         <div class="gb" id="step-3">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 12a8 8 0 11-2.3-5.6"/><path d="M20 4v4h-4"/></svg></span><h2>Step 3: Allow Background App Refresh</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 12a8 8 0 11-2.3-5.6"/><path d="M20 4v4h-4"/></svg></span><h2>Step 3: Allow Background App Refresh</h2></div>
           <p>iOS is strict about what apps may do when you are not looking at them, and for good reason. For a backup app it means uploads stop the moment you leave the app unless background activity is permitted.</p>
           <p>Open Settings, then General, then Background App Refresh, and make sure it is enabled both globally and for the app specifically. If the global switch is off, the per-app switch does nothing.</p>
           <p>Without this the app can still upload, but only while it is open and on screen. People end up sitting and watching a progress bar, then concluding the app is slow. It is not slow, it is only allowed to run while you are watching.</p>
         </div>
 
         <div class="gb" id="step-4">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="8" width="17" height="9" rx="2"/><path d="M22 11v3"/></svg></span><h2>Step 4: Watch out for Low Power Mode</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="8" width="17" height="9" rx="2"/><path d="M22 11v3"/></svg></span><h2>Step 4: Watch out for Low Power Mode</h2></div>
           <p class="lede">Low Power Mode suspends background app refresh entirely. This is the reason a working iPhone backup appears to stop for no reason.</p>
           <p>It matters because Low Power Mode is often on without being a decision. iOS offers to enable it at 20 percent battery, people tap yes, and it stays on until the phone is charged past 80 percent. If your phone spends most of the day in the low battery range, background uploads are being suspended most of the day.</p>
           <p>You do not need to stop using it. Just know that a backlog will clear when you next charge, and that if uploads have not moved in days, checking whether Low Power Mode has been on is a faster diagnosis than reinstalling anything.</p>
@@ -110,13 +115,13 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="step-5">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12.5a10 10 0 0114 0M8.5 16a5.5 5.5 0 017 0M12 19.5h.01"/></svg></span><h2>Step 5: Wi-Fi only, or mobile data too</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12.5a10 10 0 0114 0M8.5 16a5.5 5.5 0 017 0M12 19.5h.01"/></svg></span><h2>Step 5: Wi-Fi only, or mobile data too</h2></div>
           <p>Wi-Fi only is the sensible default and usually the one already selected. It keeps a large video backup iPhone job from consuming your monthly data in an afternoon.</p>
           <p>The cost is timing. Away for two weeks without joining a network and nothing uploads until you get home, which is precisely when you are taking the photos you would most regret losing. Either join hotel or cafe Wi-Fi occasionally to let the queue clear, or allow mobile data for photos while leaving video on Wi-Fi. Photos are small. Video is where data disappears.</p>
         </div>
 
         <div class="gb" id="step-6">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>Step 6: Confirm the first backup finished</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>Step 6: Confirm the first backup finished</h2></div>
           <p class="lede">An unverified backup is a guess. People find out the guess was wrong at the exact moment they need it to have been right.</p>
           <p>Leave the first run to finish on Wi-Fi and power. A large library can take hours or run overnight, which is normal, because home connections upload far more slowly than they download.</p>
           <p>Then check three things:</p>
@@ -129,7 +134,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="photos">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.4"/><path d="M8 6l1.5-2h5L16 6"/></svg></span><h2>Photo cloud storage iPhone: formats and originals</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.4"/><path d="M8 6l1.5-2h5L16 6"/></svg></span><h2>Photo cloud storage iPhone: formats and originals</h2></div>
           <p>Two iPhone-specific things are worth knowing once photo backup is running.</p>
           <p>The first is HEIC. Modern iPhones save photos in HEIC rather than JPEG, which produces smaller files at the same quality. It is a good format and it is less universally supported than JPEG, so if you plan to open these files on older software, Settings, then Camera, then Formats, then Most Compatible will switch new photos to JPEG. Files get larger. Everything opens everywhere.</p>
           <p>The second is Live Photos. Each one is a still image plus a short video clip, so it costs noticeably more room than a normal photo. If you want to store iPhone photos online and your library is mostly Live Photos, that partly explains the size.</p>
@@ -137,7 +142,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="videos">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 11l6-3v8l-6-3z"/></svg></span><h2>Video backup iPhone and where the space goes</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 11l6-3v8l-6-3z"/></svg></span><h2>Video backup iPhone and where the space goes</h2></div>
           <p class="lede">Video is what fills storage, and iPhones shoot very good video by default, which is exactly the problem.</p>
           <p>A minute of 1080p costs roughly 60MB to 100MB. A minute of 4K can reach 350MB or more. Ten minutes of 4K therefore uses about the same room as a thousand photographs. If your library looks small but your storage keeps vanishing, this is why.</p>
           <p>Three practical moves:</p>
@@ -149,7 +154,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="free-up">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><h2>How to free up iPhone storage safely</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><h2>How to free up iPhone storage safely</h2></div>
           <p class="lede">This is where photos get lost, and it is completely avoidable. Verify first, delete second, and never while a backup is still running.</p>
           <p>Once the backup is confirmed, the copies on the phone are duplicates. Removing them frees space without losing anything, because your account still has them. The danger is order of operations.</p>
           <ol class="steps-list">
@@ -161,11 +166,11 @@ extra_css: "/assets/css/guide.css"
           </ol>
           <p>Start with video. Ten large clips free more room than a thousand photos.</p>
           <p>One iPhone-specific warning. If iCloud Photos is switched on and you delete from the phone, the deletion syncs to iCloud and to your other Apple devices. Your separate backup is unaffected, which is the point of having one, but do not expect the file to still be in iCloud afterwards.</p>
-          <div class="note warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p><strong>Never delete while uploads are pending.</strong> If the original goes before the upload completes, there is nothing left to upload.</p></div>
+          <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p><strong>Never delete while uploads are pending.</strong> If the original goes before the upload completes, there is nothing left to upload.</p></div>
         </div>
 
         <div class="gb" id="lost">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M12 7v4M12 14h.01"/></svg></span><h2>If the phone is lost, stolen or broken</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M12 7v4M12 14h.01"/></svg></span><h2>If the phone is lost, stolen or broken</h2></div>
           <p class="lede">This is the scenario the whole setup exists for, so it is worth knowing what the day actually looks like rather than finding out under pressure.</p>
           <p>Your photos are not on the missing phone in any sense that matters. They are in an account, reachable from any browser on any device. You can borrow a laptop, sign in, and confirm within a minute that six years of photographs still exist. People consistently underestimate how much that changes the experience of losing a phone.</p>
           <p>The practical order on the day:</p>
@@ -180,7 +185,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="storage-full">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg></span><h2>When the iPhone says storage is full</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg></span><h2>When the iPhone says storage is full</h2></div>
           <p>The notification usually arrives at the worst possible moment, normally while trying to take a photo of something that will not wait. It is worth knowing what to do about it in advance.</p>
           <p>First, understand which storage is full. iPhone storage means the space on the device. iCloud storage means the 5GB Apple gives you, or whatever you pay for. They produce similar looking warnings and need different responses, and people frequently buy more of one while running out of the other.</p>
           <p>If it is the device, Settings, then General, then iPhone Storage will show what is using the space, sorted largest first. Photos will almost always be at the top, and within Photos, video will be most of it.</p>
@@ -189,42 +194,42 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="move">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 16V4M8 8l4-4 4 4"/><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg></span><h2>How to move photos from iPhone to cloud manually</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 16V4M8 8l4-4 4 4"/><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg></span><h2>How to move photos from iPhone to cloud manually</h2></div>
           <p>Automatic backup covers your library. Sometimes you want one specific thing moved immediately, or a file that is not a photo at all.</p>
           <p>The iOS share sheet handles it. Select the items in Photos or Files, tap share, and choose the app. The app also has its own upload control for picking files directly, which is easier for large selections.</p>
           <p>The same works in reverse from a computer. Open the web app in any browser, drag files in, and they are available on the phone. That is usually the simplest way to get something from a laptop onto an iPhone without cables.</p>
         </div>
 
         <div class="gb" id="files">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M14 3v5h5"/><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/></svg></span><h2>File storage app iPhone: what else belongs in there</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M14 3v5h5"/><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/></svg></span><h2>File storage app iPhone: what else belongs in there</h2></div>
           <p class="lede">Most people set this up for photos and then never put anything else in it, which is a shame, because the awkward files are the ones worth protecting.</p>
           <p>Photos are emotionally valuable and, in fairness, they are usually duplicated somewhere. The documents that only exist in one place are the ones that cause real problems when a phone dies. A few worth adding deliberately:</p>
           <div class="xlist">
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Anything in the Files app that is stored locally.</strong> On My iPhone means exactly that. If it is not in iCloud Drive or another service, it exists once, on a device you can drop.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Screenshots you are actually keeping.</strong> Boarding passes, order confirmations, parking bay numbers, the photo of where you left the car. These are in your camera roll so they are already covered, which is worth knowing rather than assuming.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>PDFs and email attachments you saved.</strong> Tenancy agreements, warranties, medical letters, insurance documents. Individually small, collectively the things you will hunt for at the worst time.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Voice memos.</strong> Interviews, lecture recordings, song ideas. Almost nobody backs these up and they are genuinely irreplaceable.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Anything in the Files app that is stored locally.</strong> On My iPhone means exactly that. If it is not in iCloud Drive or another service, it exists once, on a device you can drop.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Screenshots you are actually keeping.</strong> Boarding passes, order confirmations, parking bay numbers, the photo of where you left the car. These are in your camera roll so they are already covered, which is worth knowing rather than assuming.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>PDFs and email attachments you saved.</strong> Tenancy agreements, warranties, medical letters, insurance documents. Individually small, collectively the things you will hunt for at the worst time.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Voice memos.</strong> Interviews, lecture recordings, song ideas. Almost nobody backs these up and they are genuinely irreplaceable.</p></div>
           </div>
           <p>Documents cost almost nothing against your allowance. A scanned page is a few hundred kilobytes and a long PDF two or three megabytes, so you could add every document on your phone and barely move the needle on 100GB. Photos and video are what fill an account. Paper is free by comparison.</p>
           <p>Using online storage for iPhone this way also makes the files reachable from a computer, which turns out to matter more often than the backup itself. Being able to open a document on a laptop without emailing it to yourself is a small thing you end up using weekly.</p>
         </div>
 
         <div class="gb" id="best">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3l2.6 5.6 6.1.8-4.4 4.2 1.1 6L12 16.8 6.6 19.6l1.1-6L3.3 9.4l6.1-.8z"/></svg></span><h2>What to look for in a cloud storage app for iPhone</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3l2.6 5.6 6.1.8-4.4 4.2 1.1 6L12 16.8 6.6 19.6l1.1-6L3.3 9.4l6.1-.8z"/></svg></span><h2>What to look for in a cloud storage app for iPhone</h2></div>
           <p class="lede">Every option will move a file from a phone to a server. The differences worth paying attention to are around the edges.</p>
           <p>If you are comparing, these are the questions that actually change your experience later:</p>
           <div class="xlist">
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Originals or compressed copies?</strong> Compression is invisible on a phone screen and obvious the first time you print or crop. You cannot recover detail that was discarded at upload.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Does it work outside the Apple ecosystem?</strong> The value of a second copy comes partly from it not depending on the same account and the same company as the first one. An app that runs on Android and in a browser keeps its usefulness if you ever switch.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Is the free tier permanent or a trial?</strong> A generous allowance for thirty days is a paid product with a delay. Check which one you are getting before you upload a library into it.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Is there a real web app?</strong> This is what lets you verify a backup honestly, from a device that is not the phone, and what makes the files useful on a computer.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>What happens at the limit?</strong> Uploads pausing is reasonable. Files being removed because you stopped paying is not.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Originals or compressed copies?</strong> Compression is invisible on a phone screen and obvious the first time you print or crop. You cannot recover detail that was discarded at upload.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Does it work outside the Apple ecosystem?</strong> The value of a second copy comes partly from it not depending on the same account and the same company as the first one. An app that runs on Android and in a browser keeps its usefulness if you ever switch.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Is the free tier permanent or a trial?</strong> A generous allowance for thirty days is a paid product with a delay. Check which one you are getting before you upload a library into it.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Is there a real web app?</strong> This is what lets you verify a backup honestly, from a device that is not the phone, and what makes the files useful on a computer.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>What happens at the limit?</strong> Uploads pausing is reasonable. Files being removed because you stopped paying is not.</p></div>
           </div>
           <p>Treat vague descriptions of capacity with suspicion. Storage costs money to provide, so an allowance that avoids naming a number usually has one written somewhere less visible. Defined limits stated plainly are the honest version.</p>
         </div>
 
         <div class="gb" id="devices">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="4" width="13" height="10" rx="2"/><rect x="15" y="9" width="7" height="11" rx="2"/></svg></span><h2>iPad, Mac and getting at files from a browser</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="4" width="13" height="10" rx="2"/><rect x="15" y="9" width="7" height="11" rx="2"/></svg></span><h2>iPad, Mac and getting at files from a browser</h2></div>
           <p>One account covers every device you sign into. An iPad, a Mac, a work laptop and an Android phone in the same household all reach the same files, and each device can back up its own content into the same allowance.</p>
           <p>That last part is worth planning around. Two phones backing up into one account share the 100GB rather than each receiving their own, so a family with several heavy camera users is exactly the case where a larger plan starts to make sense.</p>
           <p>On a Mac or a PC there is nothing to install. Open the web app in a browser, sign in, and your files are there to download, upload or organise. This is the fastest way to move a batch of photos from an iPhone onto a computer, and it avoids the cable, the import dialog and the format conversion entirely.</p>
@@ -232,7 +237,7 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="keep">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 12a8 8 0 11-2.3-5.6"/><path d="M20 4v4h-4"/></svg></span><h2>Keeping it running month after month</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 12a8 8 0 11-2.3-5.6"/><path d="M20 4v4h-4"/></svg></span><h2>Keeping it running month after month</h2></div>
           <p class="lede">The usual failure is not a backup that breaks loudly. It is one that stopped seven weeks ago while the app carried on looking perfectly normal.</p>
           <p>Major iOS updates occasionally reset permission prompts, and a phone that spends its afternoons under 20 percent battery spends its afternoons in Low Power Mode with background uploads suspended. Neither situation announces itself.</p>
           <p>Two habits cover it:</p>
@@ -241,11 +246,11 @@ extra_css: "/assets/css/guide.css"
             <li><strong>Once a month, open your account in a browser and look for something recent.</strong> From a computer, not the phone. This is the only check that proves the copy in your account is real and readable.</li>
           </ol>
           <p>Also worth doing after setting up a new device, after a restore from backup, and any time you change Apple ID on the phone. Those are the moments when iOS quietly reverts to the defaults this guide changed.</p>
-          <div class="note good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><p><strong>One monthly glance in a browser is the entire maintenance requirement.</strong> A backup you check occasionally is worth far more than one you assume is fine.</p></div>
+          <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><p><strong>One monthly glance in a browser is the entire maintenance requirement.</strong> A backup you check occasionally is worth far more than one you assume is fine.</p></div>
         </div>
 
         <div class="gb" id="plans">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span><h2>How much storage you need</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span><h2>How much storage you need</h2></div>
           <p>A phone photo generally lands between 2MB and 5MB, which puts one gigabyte at roughly 250 to 400 photos and 100GB somewhere between 25,000 and 40,000 images. Documents barely count. Video is the variable, for the reasons above.</p>
           <p>So: mostly photos with occasional clips, and 100GB free cloud storage iOS accounts will hold years of material. Regular long 4K video, and it fills faster, so plan on archiving rather than keeping everything live.</p>
           <div class="plan-grid">
@@ -258,61 +263,32 @@ extra_css: "/assets/css/guide.css"
         </div>
 
         <div class="gb" id="problems">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 015 .9c0 1.7-2.5 2.2-2.5 3.6M12 17h.01"/></svg></span><h2>Common iPhone problems and how to fix them</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 015 .9c0 1.7-2.5 2.2-2.5 3.6M12 17h.01"/></svg></span><h2>Common iPhone problems and how to fix them</h2></div>
           <div class="xlist">
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Only a few photos backed up.</strong> Limited Access. Settings, Privacy and Security, Photos, and switch the app to Full Access.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Uploads only move while the app is open.</strong> Background App Refresh is off, either globally or for this app. Both switches need to be on.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Backup stopped for several days for no reason.</strong> Low Power Mode. It suspends background refresh entirely. Charge past 80 percent and it turns itself off.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Photos are there but they will not open on an old computer.</strong> HEIC format. Either convert on export or switch the camera to Most Compatible for new photos.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Deleted a lot and storage did not change.</strong> Recently Deleted holds items for 30 days. Empty it.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Nothing has uploaded while travelling.</strong> Wi-Fi only with no network joined. Connect to Wi-Fi or temporarily allow mobile data.</p></div>
-            <div class="xrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>The first backup seems endless.</strong> Usually the connection, not the app. Upload speeds are typically a fraction of download speeds. Give it a night before assuming a fault.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Only a few photos backed up.</strong> Limited Access. Settings, Privacy and Security, Photos, and switch the app to Full Access.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Uploads only move while the app is open.</strong> Background App Refresh is off, either globally or for this app. Both switches need to be on.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Backup stopped for several days for no reason.</strong> Low Power Mode. It suspends background refresh entirely. Charge past 80 percent and it turns itself off.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Photos are there but they will not open on an old computer.</strong> HEIC format. Either convert on export or switch the camera to Most Compatible for new photos.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Deleted a lot and storage did not change.</strong> Recently Deleted holds items for 30 days. Empty it.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Nothing has uploaded while travelling.</strong> Wi-Fi only with no network joined. Connect to Wi-Fi or temporarily allow mobile data.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>The first backup seems endless.</strong> Usually the connection, not the app. Upload speeds are typically a fraction of download speeds. Give it a night before assuming a fault.</p></div>
           </div>
         </div>
 
         <div class="gb" id="newphone">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 8h11a3 3 0 013 3v6"/><path d="M15 5l3 3-3 3"/><path d="M20 16v3a2 2 0 01-2 2H6"/></svg></span><h2>Moving to a new iPhone, or from iPhone to Android</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 8h11a3 3 0 013 3v6"/><path d="M15 5l3 3-3 3"/><path d="M20 16v3a2 2 0 01-2 2H6"/></svg></span><h2>Moving to a new iPhone, or from iPhone to Android</h2></div>
           <p>Install the app on the new device, sign in, and the files are there. The two phones never need to meet, and neither needs to be near the other.</p>
           <p>Before you hand the old one on, open it, confirm the backup is up to date, and let anything queued finish. The gap between your last upload and wiping the device is the only window where something can go missing.</p>
           <p>Moving from iPhone to Android is the case where a platform-independent account earns its keep. Apple's own tools move you between Apple devices very well and are much less help going the other way. An account that opens on both is simply a sign-in on the new phone. The same is true in reverse and for anyone running an iPhone alongside an Android tablet or a Windows laptop.</p>
         </div>
 
         <div class="gb" id="faq">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 015 .9c0 1.7-2.5 2.2-2.5 3.6M12 17h.01"/></svg></span><h2>Frequently asked questions</h2></div>
-          <div class="faq-list" style="margin-top:18px;">
-            <div class="faq-item">
-              <div class="faq-q">Do I still need iCloud if I use this?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">They do different jobs, so most people keep both. iCloud syncs your library across Apple devices. A separate cloud storage app gives you a second copy on an account that is not tied to your Apple ID, so a sync problem or an account issue does not affect it.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">Is 100GB free cloud storage for iPhone really free?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">Yes. 100GB is included with no card required and no trial that expires. Paid plans at 250GB, 500GB and 1TB exist for people who need more room, and nothing already backed up stops working if you stay on the free plan.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">Will backing up delete photos from my iPhone?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">No. Backing up copies files. Your camera roll is unchanged. Deleting local copies to free up iPhone storage is a separate step you choose to take after confirming the backup.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">Why does my iPhone backup keep stopping?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">Two usual causes. Background App Refresh switched off, which limits uploading to when the app is open, and Low Power Mode, which suspends background activity completely. Check both before assuming anything is broken.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">Can I open my files on a Windows computer?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">Yes. The account opens in any browser on any operating system, which is often the simplest way to get iPhone photos onto a Windows machine.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">What is HEIC and should I change it?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">HEIC is the format modern iPhones use for photos. It gives smaller files at the same quality, and it is less widely supported than JPEG. If you often open photos on older software, Settings, then Camera, then Formats, then Most Compatible will use JPEG for new photos instead.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">What happens if I reach the 100GB limit?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-              <div class="faq-a">Uploads pause until you free space or move to a larger plan. Files already backed up are not deleted for reaching the limit. Storage allowances are defined limits rather than open-ended, and video is what fills them fastest.</div>
-            </div>
-          </div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 015 .9c0 1.7-2.5 2.2-2.5 3.6M12 17h.01"/></svg></span><h2>Frequently asked questions</h2></div>
+          {% include faq.html %}
         </div>
 
         <div class="gb" id="checklist">
-          <div class="gb-head"><span class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 11l2 2 4-4"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg></span><h2>The iPhone checklist</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 11l2 2 4-4"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg></span><h2>The iPhone checklist</h2></div>
           <ol class="steps-list">
             <li>Create the free account and install the app from the App Store</li>
             <li>Set photo access to <strong>Full Access</strong>, not Limited Access</li>
@@ -321,12 +297,12 @@ extra_css: "/assets/css/guide.css"
             <li>Let the first run finish on Wi-Fi, overnight if needed</li>
             <li>Open a photo from your account in a browser before deleting anything locally</li>
           </ol>
-          <div class="note good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Step two is the one that matters.</strong> Nearly every incomplete iPhone backup traces back to Limited Access, and nothing else on this list can compensate for it.</p></div>
+          <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Step two is the one that matters.</strong> Nearly every incomplete iPhone backup traces back to Limited Access, and nothing else on this list can compensate for it.</p></div>
         </div>
 
         </article>
-        <aside class="toc">
-          <h3>On this page</h3>
+        <aside class="toc" aria-labelledby="toc-title">
+          <h2 class="toc-title" id="toc-title">On this page</h2>
           <ul>
               <li><a href="#what">What it actually does</a></li>
               <li><a href="#icloud">How it fits with iCloud</a></li>
@@ -358,7 +334,7 @@ extra_css: "/assets/css/guide.css"
     </div>
   </section>
 
-  <section style="padding-top:6px;">
+  <section class="sec-related">
     <div class="container">
       <div class="section-head reveal">
         <div class="eyebrow">Keep Going</div>
@@ -369,159 +345,34 @@ extra_css: "/assets/css/guide.css"
           <span class="tip-cat">Next up</span>
           <h3>Cloud storage for Android: the complete setup guide</h3>
           <p>The Android equivalent, including battery optimisation and Samsung Device Care.</p>
-          <span class="tip-link">Read the guide<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/free-cloud-storage-100gb" class="next-card">
           <span class="tip-cat">Next up</span>
           <h3>What 100GB free cloud storage actually gets you</h3>
           <p>How many photos and videos 100GB really holds, and how fast 4K eats into it.</p>
-          <span class="tip-link">Read the guide<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/backup-setup" class="next-card">
           <span class="tip-cat">Next up</span>
           <h3>How to back up your phone to free cloud storage</h3>
           <p>The full walkthrough across Android, iPhone and the web in one place.</p>
-          <span class="tip-link">Read the guide<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
       </div>
     </div>
   </section>
 
-  <section style="padding-top:10px;">
+  <section class="sec-cta">
     <div class="container">
       <div class="cta-band reveal" id="get-app">
         <div>
           <h2>Start with 100GB, free.</h2>
           <p>Every feature on this page is included from the moment you sign up. Set it running in minutes on Android, iPhone or the web, with 250GB, 500GB and 1TB plans waiting if you ever outgrow it.</p>
         </div>
-        <div class="cta-actions">
-          <a href="https://play.google.com/store/apps/details?id=com.cloudgate.cloudstorage&hl=en_AU" class="gplay-btn" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1L13 12.5v-.1L3.7 2.2l-.1.1z" fill="#4285F4"/><path d="M16.1 15.6l-3.1-3.1v-.1l3.1-3.1 3.5 2c1 .6 1 1.5 0 2.1l-3.5 2.2z" fill="#FBBC05"/><path d="M16.1 15.6L13 12.4 3.6 21.8c.4.4 1 .4 1.7.1l10.8-6.3z" fill="#34A853"/><path d="M16.1 9.2L5.3 3c-.7-.4-1.3-.3-1.7.1L13 12.4l3.1-3.2z" fill="#EA4335"/></svg>
-            <span class="txt"><small>Get it on</small><strong>Google Play</strong></span>
-          </a>
-          <a href="https://apps.apple.com/us/app/cloudgate-cloud-storage-app/id6504859413" class="appstore-btn" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M17.05 12.34c-.03-2.5 2.04-3.7 2.13-3.76-1.17-1.71-2.98-1.94-3.62-1.97-1.54-.16-3.02.9-3.8.9-.79 0-1.99-.88-3.28-.86-1.68.03-3.24.98-4.1 2.48-1.76 3.05-.45 7.56 1.25 10.03.83 1.2 1.83 2.56 3.13 2.51 1.26-.05 1.73-.81 3.25-.81s1.94.81 3.28.79c1.36-.02 2.22-1.22 3.04-2.44.96-1.4 1.35-2.76 1.37-2.83z"/></svg>
-            <span class="txt"><small>Download on the</small><strong>App Store</strong></span>
-          </a>
-          <a href="https://my.cloudgate-app.com" class="web-btn" target="_blank" rel="noopener"><span class="txt"><strong>Open Web App</strong></span></a>
-        </div>
+        {% include store-badges.html class="badges--cta" %}
       </div>
     </div>
   </section>
 
 </main>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Do I still need iCloud if I use this?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "They do different jobs, so most people keep both. iCloud syncs your library across Apple devices. A separate cloud storage app gives you a second copy on an account that is not tied to your Apple ID, so a sync problem or an account issue does not affect it."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is 100GB free cloud storage for iPhone really free?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. 100GB is included with no card required and no trial that expires. Paid plans at 250GB, 500GB and 1TB exist for people who need more room, and nothing already backed up stops working if you stay on the free plan."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Will backing up delete photos from my iPhone?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Backing up copies files. Your camera roll is unchanged. Deleting local copies to free up iPhone storage is a separate step you choose to take after confirming the backup."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why does my iPhone backup keep stopping?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Two usual causes. Background App Refresh switched off, which limits uploading to when the app is open, and Low Power Mode, which suspends background activity completely. Check both before assuming anything is broken."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I open my files on a Windows computer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. The account opens in any browser on any operating system, which is often the simplest way to get iPhone photos onto a Windows machine."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is HEIC and should I change it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "HEIC is the format modern iPhones use for photos. It gives smaller files at the same quality, and it is less widely supported than JPEG. If you often open photos on older software, Settings, then Camera, then Formats, then Most Compatible will use JPEG for new photos instead."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What happens if I reach the 100GB limit?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Uploads pause until you free space or move to a larger plan. Files already backed up are not deleted for reaching the limit. Storage allowances are defined limits rather than open-ended, and video is what fills them fastest."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://cloudgate-app.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Cloud Tips",
-          "item": "https://cloudgate-app.com/cloud-tips"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Cloud storage for iPhone",
-          "item": "https://cloudgate-app.com/guides/cloud-storage-iphone"
-        }
-      ]
-    }
-  ]
-}
-</script>
-
-<script>
-  (function(){
-    const links = [...document.querySelectorAll('.toc a')];
-    if(!links.length) return;
-    const map = new Map();
-    links.forEach(l => { const el = document.getElementById(l.getAttribute('href').slice(1)); if(el) map.set(el, l); });
-    if(!map.size) return;
-    const spy = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(e.isIntersecting){
-          links.forEach(l => l.classList.remove('active'));
-          const active = map.get(e.target);
-          if(active){
-            active.classList.add('active');
-            const box = active.closest('.toc');
-            if(box && active.offsetTop > box.clientHeight - 60){ box.scrollTop = active.offsetTop - box.clientHeight / 2; }
-          }
-        }
-      });
-    }, {rootMargin:'-110px 0px -72% 0px', threshold:0});
-    map.forEach((l, el) => spy.observe(el));
-  })();
-</script>

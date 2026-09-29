@@ -1,0 +1,9 @@
+<nav class="crumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    {%- if page.parent_url %}
+    <li><a href="{{ page.parent_url }}">{{ page.parent_title }}</a></li>
+    {%- endif %}
+    <li><span aria-current="page">{{ page.crumb | default: page.title }}</span></li>
+  </ol>
+</nav>

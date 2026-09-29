@@ -2,18 +2,16 @@
 layout: default
 title: "Privacy Policy - How We Handle Your Data | CloudGate"
 description: "How CloudGate Technologies collects, uses, stores and protects your personal information and the files you back up to CloudGate cloud storage."
-canonical: "https://cloudgate-app.com/privacy-policy"
+crumb: "Privacy Policy"
+last_modified_at: 2026-09-28
 extra_css: "/assets/css/legal.css"
 ---
-<main id="top">
+<main id="main">
 
   <section class="legal-hero">
     <div class="container">
-      <nav class="crumb" aria-label="Breadcrumb">
-        <a href="https://cloudgate-app.com">Home</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg>
-        <span>Privacy Policy</span>
-      </nav>
-      <span class="tip-cat" style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-dark);background:var(--blue-pale);padding:4px 10px;border-radius:999px;">Legal</span>
+      {% include crumb.html %}
+      <span class="tip-cat">Legal</span>
       <h1>Privacy Policy</h1>
       <p class="stand">This policy explains what information CloudGate collects, how we use and store it, who we share it with, and the rights you have over your personal information and the files you upload.</p>
       <div class="legal-meta">
@@ -23,7 +21,7 @@ extra_css: "/assets/css/legal.css"
     </div>
   </section>
 
-  <section style="padding-top:26px;">
+  <section class="sec-body">
     <div class="container">
       <div class="legal-layout">
         <aside class="legal-nav">
@@ -86,7 +84,7 @@ extra_css: "/assets/css/legal.css"
 <h3>Legal bases (GDPR)</h3>
 <p>Where the GDPR applies, we rely on: performance of a contract (providing the Service), legitimate interests (security, abuse prevention and service improvement), legal obligation (record keeping and lawful requests), and consent (where separately requested, such as optional marketing).</p>
           </div>
-          <div class="lsec" id="att">             
+          <div class="lsec" id="att">
             <h2>App Tracking Transparency on Apple devices</h2>
 <p>CloudGate uses Apple's App Tracking Transparency (ATT) framework where required. With your permission, we and our advertising, analytics, and attribution partners may use device identifiers and app activity to measure ad performance, attribute installs and conversions, and improve advertising.</p>
 <p>If you choose <strong>Ask App Not to Track</strong>, CloudGate will respect your choice and will not perform tracking that requires ATT permission. You can change this permission at any time in your Apple device settings.</p>
@@ -183,74 +181,16 @@ extra_css: "/assets/css/legal.css"
     </div>
   </section>
 
-  <section style="padding-top:10px;">
+  <section class="sec-cta">
     <div class="container">
 <div class="cta-band reveal" id="get-app">
         <div>
           <h2>Start with 100GB, free.</h2>
-          <p>Every feature on this page is included from the moment you sign up. Set it running in minutes on Android, iPhone or the web, with 250GB, 500GB and 1TB plans waiting if you ever outgrow it.</p>
+          <p>Every feature is included from the moment you sign up. Set it running in minutes on Android, iPhone or the web, with 250GB, 500GB and 1TB plans waiting if you ever outgrow it.</p>
         </div>
-        <div class="cta-actions">
-          <a href="https://play.google.com/store/apps/details?id=com.cloudgate.cloudstorage&hl=en_AU" class="gplay-btn" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1L13 12.5v-.1L3.7 2.2l-.1.1z" fill="#4285F4"/><path d="M16.1 15.6l-3.1-3.1v-.1l3.1-3.1 3.5 2c1 .6 1 1.5 0 2.1l-3.5 2.2z" fill="#FBBC05"/><path d="M16.1 15.6L13 12.4 3.6 21.8c.4.4 1 .4 1.7.1l10.8-6.3z" fill="#34A853"/><path d="M16.1 9.2L5.3 3c-.7-.4-1.3-.3-1.7.1L13 12.4l3.1-3.2z" fill="#EA4335"/></svg>
-            <span class="txt"><small>Get it on</small><strong>Google Play</strong></span>
-          </a>
-          <a href="https://apps.apple.com/us/app/cloudgate-cloud-storage-app/id6504859413" class="appstore-btn" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M17.05 12.34c-.03-2.5 2.04-3.7 2.13-3.76-1.17-1.71-2.98-1.94-3.62-1.97-1.54-.16-3.02.9-3.8.9-.79 0-1.99-.88-3.28-.86-1.68.03-3.24.98-4.1 2.48-1.76 3.05-.45 7.56 1.25 10.03.83 1.2 1.83 2.56 3.13 2.51 1.26-.05 1.73-.81 3.25-.81s1.94.81 3.28.79c1.36-.02 2.22-1.22 3.04-2.44.96-1.4 1.35-2.76 1.37-2.83z"/></svg>
-            <span class="txt"><small>Download on the</small><strong>App Store</strong></span>
-          </a>
-          <a href="https://my.cloudgate-app.com" class="web-btn" target="_blank" rel="noopener"><span class="txt"><strong>Open Web App</strong></span></a>
-        </div>
+        {% include store-badges.html class="badges--cta" %}
       </div>
     </div>
   </section>
 
 </main>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://cloudgate-app.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Cloud Tips",
-          "item": "https://cloudgate-app.com/cloud-tips"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Privacy Policy",
-          "item": "https://cloudgate-app.com/privacy-policy"
-        }
-      ]
-    }
-  ]
-}
-</script>
-
-<script>
-  (function(){
-    const links=[...document.querySelectorAll('.legal-nav a')];
-    if(!links.length) return;
-    const map=new Map();
-    links.forEach(l=>{const el=document.getElementById(l.getAttribute('href').slice(1)); if(el) map.set(el,l);});
-    if(!map.size) return;
-    const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
-      links.forEach(l=>l.classList.remove('active'));
-      const a=map.get(e.target);
-      if(a){a.classList.add('active');
-        const box=a.closest('.legal-nav');
-        if(box && a.offsetTop > box.clientHeight-60) box.scrollTop=a.offsetTop-box.clientHeight/2;}
-    }});},{rootMargin:'-110px 0px -72% 0px',threshold:0});
-    map.forEach((l,el)=>spy.observe(el));
-  })();
-</script>

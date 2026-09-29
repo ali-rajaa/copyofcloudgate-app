@@ -2,40 +2,72 @@
 
 Static site built with Jekyll, hosted on GitHub Pages.
 
-## How the shared header and footer work
+## How the site is put together
 
-- `_includes/header.html` and `_includes/footer.html` hold the header and footer **once**.
-- `_layouts/default.html` is the page shell that pulls them in.
-- Each page in the root is just front matter plus its own content.
-
-Edit the footer once and every page updates on the next push.
+- `_layouts/default.html` is the page shell: head, skip link, header, page content, footer.
+- `_includes/head.html` writes every `<head>` tag. The canonical URL, `og:url`,
+  `og:type` and the article dates are generated from the page itself, so they
+  never need typing by hand.
+- `_includes/schema.html` builds one JSON-LD graph per page: Organization and
+  WebSite everywhere, Article on every guide, BreadcrumbList on every page
+  but home, FAQPage from the page's `faq` list, and an ItemList of guides on
+  Cloud Tips.
+- `_includes/faq.html`, `crumb.html`, `store-badges.html` and
+  `hero-clouds.html` are the shared components. The FAQ and breadcrumb read
+  the same front matter the schema reads, so what people see and what search
+  engines read cannot drift apart.
+- `_data/links.yml` holds every store, web app, support and social link once.
+- `sitemap.xml` and `robots.txt` are generated at build time.
+- `assets/js/site.js` holds all shared behaviour (menu, FAQ, reveal, contents
+  highlighting, review rail, 404 search). `assets/js/cloud-tips.js` is the hub
+  search and filter.
 
 Files and folders beginning with `_` are build inputs. They are never published as URLs.
 
+## Design system
+
+All colours, type sizes, spacing, radii, shadows and motion durations are
+tokens at the top of `assets/css/site.css`, with a dark theme that follows the
+visitor's system setting. Page stylesheets only lay out their own sections and
+use the tokens; there are no inline styles. Buttons use `.btn` plus
+`btn-primary` / `btn-secondary` / `btn-ghost` / `btn-dark` and `btn-sm` /
+`btn-lg`. Store buttons always come from `_includes/store-badges.html`.
+
+Breakpoints: 479.98px, 767.98px, 1023.98px (menu button below this), 1279.98px.
+
 ## Editing
 
-**To change the header or footer:** edit `_includes/header.html` or `_includes/footer.html`.
+**Header or footer:** `_includes/header.html` or `_includes/footer.html`.
+**A link to a store, the web app or a social profile:** `_data/links.yml`.
+**Shared styling or a token:** `assets/css/site.css`.
+**One page's styling:** its file in `assets/css/`, for example `assets/css/features.css`.
 
-**To change shared styling:** edit `assets/css/site.css`.
-
-**To change one page's styling:** edit that page's file in `assets/css/`, for example `assets/css/features.css`.
-
-**To add a page:** create `new-page.html` in the root with front matter:
+**To add a guide:** create `guides/new-guide.html`. Layout, stylesheet,
+Article schema and the Cloud Tips breadcrumb come from `_config.yml`.
 
 ```
 ---
-layout: default
-title: "Page title | CloudGate"
+title: "Guide title | CloudGate"
 description: "Meta description for search results."
-canonical: "https://cloudgate-app.com/new-page"
-extra_css: "/assets/css/new-page.css"
+crumb: "Short breadcrumb name"
+headline: "The H1 text"
+last_modified_at: 2026-10-01
+faq:
+  - q: "A question people ask?"
+    a: "The answer, as plain text."
 ---
-<main id="top">
-  ...page content...
+<main id="main">
+  ...guide content, with {% include crumb.html %} in the hero
+  and {% include faq.html %} where the FAQ should appear...
 </main>
 ```
 
-`extra_css` is optional. Leave it out if the page needs no extra styling.
+**To add a page:** same pattern in the root, with `layout: default` and an
+optional `extra_css`. Do not add a `canonical`; it is generated.
+
+**When you change a page's content,** update its `last_modified_at`. That one
+date drives the "Updated" label on guides, the schema `dateModified` and the
+sitemap `lastmod`.
 
 ## Staging copy (this repository)
 
@@ -70,7 +102,7 @@ No local install is required. Jekyll runs on GitHub's servers.
 
 Order matters. The certificate only covers domains that resolve correctly at the moment it is issued. Setting up www first and the apex later is what causes an apex domain to show "not secure".
 
-## Outstanding
+## Checks before publishing
 
-- The App Store button in `_includes/footer.html` still points to `#`. Replace with the real App Store URL when available.
-- The legal pages contain highlighted placeholders that must be completed before publishing. See `legal-info-required.md`.
+Legal placeholders from `legal-info-required.md` have been completed on both
+legal pages. The App Store link is live in `_data/links.yml`.

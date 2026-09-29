@@ -24,6 +24,13 @@ Monthly and yearly billing are both available.
 - [Cloud storage for Android](https://cloudgate-app.com/guides/cloud-storage-android): permissions, folder selection, battery optimisation, Samsung Device Care
 - [Free cloud storage for iPhone](https://cloudgate-app.com/guides/cloud-storage-iphone): All Photos vs Limited Access, background refresh, Low Power Mode
 - [What 100GB free cloud storage actually gets you](https://cloudgate-app.com/guides/free-cloud-storage-100gb): capacity in photos, video and documents
+- [Cloud storage for videos and large video files](https://cloudgate-app.com/guides/cloud-storage-for-videos): real 1080p and 4K file sizes, where to store large videos, backing up without using mobile data
+- [Cross platform cloud storage across your devices](https://cloudgate-app.com/guides/cross-platform-cloud-storage): one account on Android, iPhone and the web, and switching phone platforms
+- [How to backup photos](https://cloudgate-app.com/guides/how-to-backup-photos): where to store photos online, originals versus compressed copies, photos other people sent you
+- [Phone storage full? How to free up space safely](https://cloudgate-app.com/guides/phone-storage-full): back up, verify, then delete; finding what is using the space
+- [Move everything to a new phone in one sitting](https://cloudgate-app.com/guides/switch-to-new-phone): order of operations and what to check before a factory reset
+- [Web cloud storage](https://cloudgate-app.com/guides/web-cloud-storage): uploading and opening files in a browser with nothing to install
+- [Why your backup is quietly skipping files](https://cloudgate-app.com/guides/why-backups-skip-files): the real reasons backups miss files and how to check each one
 
 ## Legal
 - [Privacy Policy](https://cloudgate-app.com/privacy-policy)

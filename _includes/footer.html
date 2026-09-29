@@ -1,136 +1,50 @@
-<footer>
+<footer class="site-footer">
   <div class="container">
     <div class="foot-grid">
-      <div>
-        <div class="foot-brand">
-          <span class="mark-box"><img src="/cg-app-logo.png" alt="CloudGate logo" class="mark" width="700" height="700" loading="lazy" decoding="async"></span>
+      <div class="foot-about">
+        <a href="/" class="foot-brand" aria-label="CloudGate Storage home">
+          <img src="/assets/img/cg-mark-64.webp" alt="" class="brand-mark" width="30" height="30" loading="lazy" decoding="async">
           <span class="brand-name">CloudGate Storage<sup class="rmark">&reg;</sup></span>
-        </div>
-        <p class="desc">One gate for all your files.<br>Back up. Access. Share. Secure.<br><br>Free cloud storage and automatic backup for Android, iPhone and the web, with 250GB, 500GB and 1TB plans when you need more room.</p>
-        <div class="foot-social" style="margin-top:20px;">
-          <a href="https://www.linkedin.com/company/cloud-gate-technologies/home/" class="li" target="_blank" rel="noopener" aria-label="CloudGate on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.65h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.65c0-1.35-.03-3.08-1.9-3.08-1.9 0-2.2 1.47-2.2 2.98V21h-4z"/></svg></a>
-          <a href="https://www.facebook.com/cloudgatetechnologies" class="fb" target="_blank" rel="noopener" aria-label="CloudGate on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg></a>
-          <a href="https://www.instagram.com/cloudgatetechnologies/" class="ig" target="_blank" rel="noopener" aria-label="CloudGate on Instagram"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M7.6 2.2h8.8a5.4 5.4 0 015.4 5.4v8.8a5.4 5.4 0 01-5.4 5.4H7.6a5.4 5.4 0 01-5.4-5.4V7.6a5.4 5.4 0 015.4-5.4zM12 7.1a4.9 4.9 0 100 9.8 4.9 4.9 0 000-9.8zM12 8.9a3.1 3.1 0 110 6.2 3.1 3.1 0 010-6.2zM17.3 5.4a1.3 1.3 0 100 2.6 1.3 1.3 0 000-2.6z"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <h3>Product</h3>
-        <ul>
-          <li><a href="/features">Features</a></li>
-          <li><a href="/cloud-tips">Cloud Tips</a></li>
-          <li><a href="https://my.cloudgate-app.com" target="_blank" rel="noopener">Web App</a></li>
-          <li><a href="/features#plans">Plans &amp; Pricing</a></li>
+        </a>
+        <p class="foot-desc">One gate for all your files. Back up, access, share and secure them.</p>
+        <p class="foot-desc">Free cloud storage and automatic backup for Android, iPhone and the web, with 250GB, 500GB and 1TB plans when you need more room.</p>
+        <ul class="foot-social">
+          {%- for s in site.data.links.social %}
+          <li><a href="{{ s.url }}" class="soc soc--{{ s.key }}" target="_blank" rel="noopener" aria-label="CloudGate on {{ s.name }}">
+            {%- case s.key -%}
+            {%- when 'li' -%}<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.65h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.65c0-1.35-.03-3.08-1.9-3.08-1.9 0-2.2 1.47-2.2 2.98V21h-4z"/></svg>
+            {%- when 'fb' -%}<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg>
+            {%- when 'ig' -%}<svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" aria-hidden="true"><path d="M7.6 2.2h8.8a5.4 5.4 0 015.4 5.4v8.8a5.4 5.4 0 01-5.4 5.4H7.6a5.4 5.4 0 01-5.4-5.4V7.6a5.4 5.4 0 015.4-5.4zM12 7.1a4.9 4.9 0 100 9.8 4.9 4.9 0 000-9.8zM12 8.9a3.1 3.1 0 110 6.2 3.1 3.1 0 010-6.2zM17.3 5.4a1.3 1.3 0 100 2.6 1.3 1.3 0 000-2.6z"/></svg>
+            {%- endcase -%}
+          </a></li>
+          {%- endfor %}
         </ul>
       </div>
-      <div>
-        <h3>Support &amp; Legal</h3>
+      <nav class="foot-col" aria-labelledby="foot-product">
+        <h2 id="foot-product">Product</h2>
         <ul>
-          <li><a href="mailto:support@cloudgate-app.com">Contact Support</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/features#plans">Plans &amp; Pricing</a></li>
+          <li><a href="/cloud-tips">Cloud Tips</a></li>
+          <li><a href="{{ site.data.links.web_app }}" target="_blank" rel="noopener">Web App</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-labelledby="foot-support">
+        <h2 id="foot-support">Support &amp; Legal</h2>
+        <ul>
+          <li><a href="mailto:{{ site.data.links.support_email }}">Contact Support</a></li>
           <li><a href="/privacy-policy">Privacy Policy</a></li>
           <li><a href="/terms-of-service">Terms of Service</a></li>
         </ul>
-      </div>
-      <div>
-        <h3>Get the App</h3>
-        <div class="foot-app-col">
-          <a href="https://play.google.com/store/apps/details?id=com.cloudgate.cloudstorage&hl=en_AU" class="gplay-btn foot-app-btn" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24"><path d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1L13 12.5v-.1L3.7 2.2l-.1.1z" fill="#4285F4"/><path d="M16.1 15.6l-3.1-3.1v-.1l3.1-3.1 3.5 2c1 .6 1 1.5 0 2.1l-3.5 2.2z" fill="#FBBC05"/><path d="M16.1 15.6L13 12.4 3.6 21.8c.4.4 1 .4 1.7.1l10.8-6.3z" fill="#34A853"/><path d="M16.1 9.2L5.3 3c-.7-.4-1.3-.3-1.7.1L13 12.4l3.1-3.2z" fill="#EA4335"/></svg>
-            <span class="txt"><small>GET IT ON</small><strong>Google Play</strong></span>
-          </a>
-          <a href="https://apps.apple.com/us/app/cloudgate-cloud-storage-app/id6504859413" class="appstore-btn foot-app-btn" target="_blank" rel="noopener">
-            <svg width="15" height="15" viewBox="0 0 24 24"><path d="M17.05 12.34c-.03-2.5 2.04-3.7 2.13-3.76-1.17-1.71-2.98-1.94-3.62-1.97-1.54-.16-3.02.9-3.8.9-.79 0-1.99-.88-3.28-.86-1.68.03-3.24.98-4.1 2.48-1.76 3.05-.45 7.56 1.25 10.03.83 1.2 1.83 2.56 3.13 2.51 1.26-.05 1.73-.81 3.25-.81s1.94.81 3.28.79c1.36-.02 2.22-1.22 3.04-2.44.96-1.4 1.35-2.76 1.37-2.83z"/></svg>
-            <span class="txt"><small>Download on the</small><strong>App Store</strong></span>
-          </a>
-        </div>
+      </nav>
+      <div class="foot-col foot-apps">
+        <h2>Get the App</h2>
+        {% include store-badges.html web=false class="badges--stack" %}
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; 2026 CloudGate Technologies<sup class="rmark">&reg;</sup>. All rights reserved.</span>
-      <span>100GB free cloud storage for Android, iPhone and web.</span>
+      <p>&copy; {{ site.time | date: '%Y' }} CloudGate Technologies<sup class="rmark">&reg;</sup>. All rights reserved.</p>
+      <p>100GB free cloud storage for Android, iPhone and web.</p>
     </div>
   </div>
 </footer>
-
-<script>
-  // Header scroll state
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 12);
-  }, {passive:true});
-
-  // Mobile menu toggle
-  // shadow under the sticky section nav only once it is actually stuck
-  (function(){
-    const jw = document.getElementById('jump-wrap');
-    if(!jw) return;
-    const probe = document.createElement('div');
-    probe.style.cssText = 'position:absolute;height:1px;width:1px;';
-    jw.parentNode.insertBefore(probe, jw);
-    new IntersectionObserver(function(e){
-      jw.classList.toggle('stuck', !e[0].isIntersecting);
-    }, {threshold:0, rootMargin:'-76px 0px 0px 0px'}).observe(probe);
-  })();
-
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const navBackdrop = document.getElementById('nav-backdrop');
-  if(menuToggle && mobileMenu){
-    // Mark the row for the page we are on. Done here rather than in Liquid so
-    // there is still exactly one header include with no per-page variants.
-    const here = location.pathname.replace(/\/+$/,'') || '/';
-    mobileMenu.querySelectorAll('.mnav-row').forEach(a => {
-      const href = a.getAttribute('href') || '';
-      if(href.startsWith('/') && href.replace(/\/+$/,'') === here){
-        a.classList.add('is-current');
-        a.setAttribute('aria-current','page');
-      }
-    });
-
-    const setMenu = (open) => {
-      header.classList.toggle('menu-open', open);
-      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      // height comes from the content, so an extra nav item can never clip it
-      mobileMenu.style.maxHeight = open ? (mobileMenu.scrollHeight + 40) + 'px' : '';
-      document.body.style.overflow = open ? 'hidden' : '';
-    };
-    const closeMenu = () => setMenu(false);
-
-    menuToggle.addEventListener('click', () => setMenu(!header.classList.contains('menu-open')));
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-    if(navBackdrop) navBackdrop.addEventListener('click', closeMenu);
-    document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMenu(); });
-    // the menu only exists below 1040px; leaving it "open" past that would
-    // otherwise strand the scroll lock
-    window.addEventListener('resize', () => {
-      if(window.innerWidth > 1040 && header.classList.contains('menu-open')) closeMenu();
-    });
-  }
-
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if(e.isIntersecting){
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  }, {threshold:0, rootMargin:'0px 0px -8% 0px'});
-  revealEls.forEach(el => io.observe(el));
-
-  // Stagger feature cards / why cards / steps
-  document.querySelectorAll('.feat-grid, .why-grid, .steps-row').forEach(group => {
-    [...group.children].forEach((child, i) => {
-      child.style.transitionDelay = (i * 90) + 'ms';
-    });
-  });
-
-  // FAQ accordion
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.querySelector('.faq-q').addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(o => o.classList.remove('open'));
-      if(!isOpen) item.classList.add('open');
-    });
-  });
-</script>

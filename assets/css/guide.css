@@ -20,7 +20,6 @@
 /* Sections read as one editorial column: no box around each section, a
    hairline between them, and a number that matches the contents list. Boxes
    are kept for things that are genuinely asides (notes, figures, checklist). */
-.art-main{counter-reset:gb;}
 .gb{
   padding:var(--s-7) 0;border-top:1px solid var(--line);
   scroll-margin-top:calc(var(--header-h) + var(--header-top) + 16px);
@@ -30,12 +29,7 @@
 /* the opening block has no heading: it is the article's introduction */
 .gb:not(:has(.gb-head)){padding-top:0;border-top:0;}
 .gb:not(:has(.gb-head)) p:not(.lede){font-size:var(--fs-md);}
-.gb:has(.gb-head){counter-increment:gb;}
-.gb-head{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:14px;margin-bottom:var(--s-4);}
-.gb-head::before{
-  content:counter(gb,decimal-leading-zero);grid-column:1 / -1;margin-bottom:var(--s-2);
-  font-family:var(--font-num);font-size:var(--fs-sm);font-weight:700;letter-spacing:.04em;color:var(--blue-text);
-}
+.gb-head{display:flex;align-items:center;gap:14px;margin-bottom:var(--s-4);}
 .gb-ico{
   width:40px;height:40px;border-radius:12px;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;background:var(--blue-pale);
@@ -80,10 +74,7 @@
   scrollbar-width:thin;
 }
 .toc-title{font-family:var(--font-num);font-size:var(--fs-xs);font-weight:700;letter-spacing:var(--tr-caps);text-transform:uppercase;color:var(--text-3);margin:0 0 var(--s-2) 10px;}
-.toc ul{display:flex;flex-direction:column;gap:2px;counter-reset:toc;}
-.toc li{counter-increment:toc;}
-.toc a::before{content:counter(toc,decimal-leading-zero);min-width:1.9em;flex-shrink:0;font-family:var(--font-num);font-size:var(--fs-xs);font-weight:700;color:var(--text-3);}
-.toc a.active::before{color:var(--blue-text);}
+.toc ul{display:flex;flex-direction:column;gap:2px;}
 .toc a{
   display:flex;align-items:baseline;gap:6px;min-height:36px;padding:6px 10px;border-radius:var(--r-sm);
   font-size:var(--fs-sm);line-height:1.4;font-weight:500;color:var(--text-2);
@@ -122,10 +113,8 @@
   .toc-mobile summary small{font-weight:500;color:var(--text-3);font-size:var(--fs-sm);margin-left:auto;}
   .toc-mobile summary::after{content:'';width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform var(--dur-2) var(--ease-out);}
   .toc-mobile[open] summary::after{transform:rotate(-135deg) translateY(-2px);}
-  .toc-mobile ul{padding:0 var(--s-2) var(--s-3);display:flex;flex-direction:column;counter-reset:toc;}
-  .toc-mobile li{counter-increment:toc;}
+  .toc-mobile ul{padding:0 var(--s-2) var(--s-3);display:flex;flex-direction:column;}
   .toc-mobile a{display:flex;align-items:baseline;gap:6px;min-height:48px;padding:10px var(--s-3);border-radius:var(--r-sm);font-size:var(--fs-sm);color:var(--text-2);}
-  .toc-mobile a::before{content:counter(toc,decimal-leading-zero);min-width:1.9em;font-family:var(--font-num);font-size:var(--fs-xs);font-weight:700;color:var(--text-3);}
   .toc-mobile a:active{background:var(--fill-press);}
   .art-layout{grid-template-columns:minmax(0,1fr);}
   .toc{display:none;}

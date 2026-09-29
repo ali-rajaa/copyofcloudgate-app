@@ -2,7 +2,7 @@
   Renders page.faq as an accessible accordion. The FAQPage schema in
   schema.html reads the same list, so the two can never drift apart.
   Each question is a real <button> inside a heading, with aria-expanded and
-  aria-controls; without JavaScript every answer is simply shown.
+  aria-controls; without JavaScript every answer is shown.
 {%- endcomment -%}
 {%- assign cg_hl = include.level | default: 3 -%}
 <div class="faq-list">

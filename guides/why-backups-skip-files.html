@@ -48,15 +48,15 @@ faq:
         <div class="art-main">
 
         <div class="gb">
-          <p class="lede">The dangerous kind of backup failure does not announce itself. There is no error, no warning badge, no notification. The app says complete, the tick is green, and somewhere between a handful and most of your library was never uploaded. If you are here because only some of my photos backed up is the thing you searched for, that gap is the reason.</p>
+          <p class="lede">The dangerous kind of backup failure does not announce itself. There is no error, warning badge or notification. The app says complete, the tick is green, and somewhere between a handful and most of your library was never uploaded. If you searched for why only some of your photos backed up, that gap is the reason.</p>
           <p>People usually discover this at the worst possible moment: after a phone is lost, or partway through setting up a replacement, when they go looking for something specific and it is not there. By then the original is gone.</p>
-          <p>The good news is that the causes are few and repetitive. Almost every case of a backup not backing up all photos comes down to one of six things, and each takes a minute to check. This guide covers all six, plus the one verification step that would have caught any of them.</p>
+          <p>The causes are few and they repeat. Almost every case of a backup not backing up all photos comes down to one of six things, and each takes a minute to check. This guide covers all six, plus the one verification step that would have caught any of them.</p>
           <p>If you have found some photos not backed up while others are fine, the pattern of what is missing usually identifies the cause on its own. A backup skipping files rarely does so at random, and knowing which category is absent points straight at which setting is responsible.</p>
         </div>
 
         <div class="gb" id="check">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>First: how to check if photos are backed up</h2></div>
-          <p class="lede">Before diagnosing anything, establish whether you actually have a problem. This takes two minutes and is worth doing even if you think everything is fine.</p>
+          <p class="lede">Before diagnosing anything, establish whether you have a problem. This takes two minutes and is worth doing even if you think everything is fine.</p>
           <p>The test is not the status label in the app. A status label is the app reporting on what it believes it was asked to do, which is exactly the thing in question. The test is opening your library from somewhere that is not the phone.</p>
           <ul class="steps-list">
             <li><strong>Open your account in a browser</strong> on a computer, not the app on the phone.</li>
@@ -65,23 +65,23 @@ faq:
             <li><strong>Find a screenshot</strong> from a few months ago.</li>
             <li><strong>Compare the rough count</strong> against what your phone's gallery reports.</li>
           </ul>
-          <p>If all five are present, your coverage is probably genuine. If any category is missing entirely, that tells you which of the causes below applies, because each one fails in a characteristic way.</p>
+          <p>If all five are present, your coverage is probably genuine. If any category is missing, that tells you which of the causes below applies, because each one fails in a characteristic way.</p>
           <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p>Checking from the phone proves nothing. The phone has its own copy of everything regardless of whether a single file was ever uploaded, so the photo will open perfectly either way.</p></div>
         </div>
 
         <div class="gb" id="access">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 9h14v9a2 2 0 01-2 2H7a2 2 0 01-2-2V9zM8 9V6a4 4 0 018 0v3"/></svg></span><h2>Cause 1: limited photo access</h2></div>
           <p class="lede">The single most common reason a backup says complete but photos are missing, and the hardest to spot, because the app is behaving exactly as instructed.</p>
-          <p>When an app asks for your photos, modern phones offer a choice between granting access to everything and granting access to selected items. Selected access is a genuinely good privacy feature and completely wrong for a backup.</p>
+          <p>When an app asks for your photos, modern phones offer a choice between granting access to everything and granting access to selected items. Selected access is a good privacy feature and the wrong setting for a backup.</p>
           <p>If you tapped the selected option, perhaps months ago, perhaps without reading it, the app can only see the specific images you picked at that moment. It backs those up, finds nothing else to do, and reports complete. It is not lying. It has uploaded one hundred percent of what it is permitted to see.</p>
           <p><strong>How it fails:</strong> a very small number of photos backed up, often an oddly random selection, with a status of complete.</p>
           <p><strong>The fix:</strong> open your phone's settings, find the app, and change photo permission from selected or limited to full access. The rest of your library will begin uploading once it can be seen.</p>
-          <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg><p>This resets more often than people expect. A major system update can revert app permissions, so it is worth rechecking after any large update rather than assuming a setting from last year is still in place.</p></div>
+          <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg><p>This resets more often than people expect. A major system update can revert app permissions, so recheck it after any large update rather than assuming a setting from last year is still in place.</p></div>
         </div>
 
         <div class="gb" id="folders">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span><h2>Cause 2: folders that were never selected</h2></div>
-          <p>Most backup tools default to the camera folder and nothing else. That covers what you photographed yourself and misses a large share of the images actually on your phone.</p>
+          <p>Most backup tools default to the camera folder and nothing else. That covers what you photographed yourself and misses a large share of the images on your phone.</p>
           <p>The folders that sit outside the camera roll:</p>
           <ul class="steps-list">
             <li><strong>Messaging media.</strong> Every photo and video anyone sent you, in the messaging app's own folder.</li>
@@ -90,7 +90,7 @@ faq:
             <li><strong>Edited copies.</strong> Some gallery apps write edits to their own folder rather than overwriting the original.</li>
             <li><strong>Third party camera and social apps.</strong> Several write to directories of their own.</li>
           </ul>
-          <p><strong>How it fails:</strong> your own photos are all present, but pictures other people sent you are entirely absent. This is the version that causes the most distress, because messaging media is often where family photos taken on somebody else's phone live.</p>
+          <p><strong>How it fails:</strong> your own photos are all present, but pictures other people sent you are absent. This is the version that causes the most distress, because messaging media is often where family photos taken on somebody else's phone live.</p>
           <p><strong>The fix:</strong> open the backup settings and go through the folder list deliberately, enabling everything you care about rather than accepting the default.</p>
           <p>The <a href="/guides/how-to-backup-photos">photo backup guide</a> covers folder coverage in more detail.</p>
         </div>
@@ -98,7 +98,7 @@ faq:
         <div class="gb" id="battery">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="8" width="17" height="9" rx="2"/><path d="M21 11v3"/></svg></span><h2>Cause 3: battery optimisation and power saving</h2></div>
           <p class="lede">This is the cause that makes a working backup stop months later, which is why people are certain they set it up correctly. They did. Something switched it off afterwards.</p>
-          <p>Phones aggressively restrict background activity to preserve battery. An app you have not opened in a few weeks gets treated as dormant and has its background permissions quietly narrowed. For a backup app, background activity is the entire job.</p>
+          <p>Phones aggressively restrict background activity to preserve battery. An app you have not opened in a few weeks gets treated as dormant and has its background permissions narrowed. For a backup app, background activity is the entire job.</p>
           <p>Low power mode has the same effect deliberately, suspending background transfers until it is switched off. Some manufacturers layer a second power manager on top of the standard one, so an app can be exempted in one place and still restricted by the other.</p>
           <p><strong>How it fails:</strong> everything up to a certain date is backed up and nothing after it. The date is when the restriction kicked in.</p>
           <p><strong>The fix:</strong> set the app to unrestricted battery usage, allow background refresh, and on manufacturer skins check the separate device care or power manager as well. Then open the app to let it catch up.</p>
@@ -117,7 +117,7 @@ faq:
         <div class="gb" id="full">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 18V9M10 18V5M16 18v-6M22 18H2"/></svg></span><h2>Cause 5: the account is full</h2></div>
           <p>When storage runs out, uploads stop. Everything already stored stays exactly where it is and nothing is deleted, but new files stop arriving.</p>
-          <p>Notifications about this are easy to miss, and they arrive at the moment it happens rather than being repeated. Months later the app may simply show a stalled backup without making the reason obvious.</p>
+          <p>Notifications about this are easy to miss, and they arrive at the moment it happens rather than being repeated. Months later the app may show a stalled backup without making the reason obvious.</p>
           <p><strong>How it fails:</strong> a clean cut-off date with nothing after it, similar to the battery cause, but with a full or near-full storage figure in your account.</p>
           <p><strong>The fix:</strong> either clear space, usually by removing large videos you no longer need, or move to a larger plan. Uploads resume from where they stopped.</p>
           <div class="plan-grid">
@@ -126,28 +126,28 @@ faq:
             <div class="plan"><div class="nm">Pro</div><div class="sz">500GB</div><div class="ds">500GB cloud storage for heavy 4K video or a very large archive.</div></div>
             <div class="plan"><div class="nm">Family</div><div class="sz">1TB</div><div class="ds">1TB family cloud storage for a household backing up several phones.</div></div>
           </div>
-          <p>Monthly and yearly billing are both available, with details on the <a href="/features#plans">features page</a>. It is worth checking which of your material is actually consuming the space first, since video is usually the answer.</p>
+          <p>Monthly and yearly billing are both available, with details on the <a href="/features#plans">features page</a>. Check which of your material is consuming the space first, since video is usually the answer.</p>
         </div>
 
         <div class="gb" id="sync">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 12a8 8 0 0113.6-5.7L20 8M20 12a8 8 0 01-13.6 5.7L4 16"/><path d="M20 4v4h-4M4 20v-4h4"/></svg></span><h2>Cause 6: assuming a sync is a backup</h2></div>
           <p class="lede">This one is not a failure at all. It is a service working correctly while doing something different from what the person assumed.</p>
           <p>Sync keeps the same set of files on several devices, so a deletion travels to every device just as faithfully as an addition. Backup keeps a copy that is unaffected by what happens to the original. People frequently have the first and believe they have the second.</p>
-          <p>There is a related trap worth knowing about. On some platforms, turning on photo syncing changes what a device backup contains, on the reasoning that the photos are already covered by the sync service and storing them twice would be wasteful. That is logical and it surprises people badly, because they then have one copy where they assumed two, and a deletion removes it everywhere.</p>
+          <p>There is a related trap. On some platforms, turning on photo syncing changes what a device backup contains, on the reasoning that the photos are already covered by the sync service and storing them twice would be wasteful. That is logical and it surprises people badly, because they then have one copy where they assumed two, and a deletion removes it everywhere.</p>
           <p><strong>How it fails:</strong> nothing looks wrong until something is deleted, at which point it disappears from every device at once and there is no separate copy to fall back on.</p>
           <p><strong>The fix:</strong> know which one you have. If deleting a photo on your phone removes it from your other devices, that is a sync. Keep a genuine backup alongside it for anything you would be upset to lose.</p>
         </div>
 
         <div class="gb" id="odd">
-          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h2>Less common causes worth knowing</h2></div>
+          <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h2>Less common causes</h2></div>
           <p>If none of the six above explain it, these turn up occasionally:</p>
           <ul class="steps-list">
-            <li><strong>Very large files stalling.</strong> Multi-gigabyte videos can sit in a queue for a long time, particularly on a slow upload connection, and may look skipped when they are simply still going.</li>
+            <li><strong>Very large files stalling.</strong> Multi-gigabyte videos can sit in a queue for a long time, particularly on a slow upload connection, and may look skipped when they are still going.</li>
             <li><strong>Unsupported or unusual file formats.</strong> Some file types produced by third party camera apps are not handled by every service.</li>
             <li><strong>Odd characters in filenames.</strong> Certain symbols cause individual files to fail while everything around them succeeds.</li>
             <li><strong>An outdated app version.</strong> Worth updating before deeper troubleshooting, since some backup faults are fixed in later releases.</li>
             <li><strong>A second account.</strong> Signing in with a different email on a new device is easy to do accidentally, and looks exactly like missing files.</li>
-            <li><strong>The phone being completely full.</strong> Some apps need working room to process an upload queue, so a device with no free space at all can struggle.</li>
+            <li><strong>The phone being full.</strong> Some apps need working room to process an upload queue, so a device with no free space at all can struggle.</li>
           </ul>
           <p>The second account case is worth checking early, because it is common, instantly fixable, and produces the alarming version of this problem where a new phone appears to show none of your photos at all.</p>
         </div>
@@ -219,7 +219,7 @@ faq:
         <a href="/guides/backup-setup" class="next-card">
           <span class="tip-cat">Next up</span>
           <h3>How to back up your phone to free cloud storage</h3>
-          <p>The full walkthrough across Android, iPhone and the web in one place.</p>
+          <p>Step-by-step setup for Android, iPhone and the web.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/how-to-backup-photos" class="next-card">

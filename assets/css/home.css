@@ -83,7 +83,6 @@
 .feat-card.featured p{color:var(--on-blue-2);}
 
 /* ---------- Why cards ---------- */
-.why{background:var(--bg-tint);}
 .why-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-5);}
 .why-card{
   --accent:var(--blue);

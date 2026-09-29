@@ -267,6 +267,9 @@ section{padding-block:var(--sec-pad);}
 .btn-sm{--btn-h:40px;padding:0 var(--s-4);font-size:var(--fs-sm);border-radius:10px;}
 .btn-lg{--btn-h:52px;padding:0 var(--s-5);font-size:var(--fs-md);}
 .btn-block{width:100%;}
+/* long labels wrap on the narrowest phones instead of pushing the page sideways */
+.btn{max-width:100%;}
+@media (max-width:479.98px){ .btn{white-space:normal;text-align:center;} }
 @media (pointer:coarse){ .btn-sm{--btn-h:48px;} }
 
 /* ---------- Store badges: one component (_includes/store-badges.html) ---------- */
@@ -419,6 +422,58 @@ section{padding-block:var(--sec-pad);}
 
 /* ---------- Cards: shared hover language ---------- */
 .card-lift{transition:transform var(--dur-3) var(--ease-out),box-shadow var(--dur-3) var(--ease-out),border-color var(--dur-3) var(--ease-out);}
+
+/* ---------- Section layouts ----------
+   Not every section opens the same way. Variants:
+     .section-head--split  heading left, supporting copy right (aligned to its baseline)
+     .section-head--left   left-aligned heading block
+     .split-prose          heading pinned on the left while long copy scrolls on the right
+     .faq-split            the same for an FAQ list
+     .sec-ink              a dark statement band; it re-scopes the tokens, so every
+                           component inside adapts without its own dark rules */
+.section-head--left{text-align:left;margin-inline:0;max-width:46rem;}
+.section-head--split{
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  grid-template-areas:"k b" "t b";column-gap:var(--s-8);align-items:end;
+  text-align:left;max-width:none;margin:0 0 var(--s-7);
+}
+.section-head--split > .kicker{grid-area:k;}
+.section-head--split > h2{grid-area:t;}
+.section-head--split > p:not(.kicker){grid-area:b;margin:0;padding-bottom:6px;max-width:34rem;justify-self:end;}
+.section-head--split h2,.section-head--left h2,.split-prose > .section-head h2,.faq-split > .section-head h2{font-size:var(--fs-3xl);letter-spacing:var(--tr-display);line-height:1.08;}
+.section-head--left p:not(.kicker){max-width:40rem;}
+
+.split-prose,.faq-split{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);column-gap:var(--s-8);align-items:start;}
+.split-prose > .section-head,.faq-split > .section-head{
+  position:sticky;top:calc(var(--header-h) + var(--header-top) + 40px);
+  text-align:left;margin:0;max-width:none;
+}
+body:has(.jump-wrap) .split-prose > .section-head,body:has(.jump-wrap) .faq-split > .section-head{top:calc(var(--header-h) + var(--header-top) + 104px);}
+.faq-split > .section-head{grid-row:1 / span 2;}
+.faq-split > .faq-list{grid-column:2;max-width:none;margin:0;}
+.faq-split > .more-link{grid-column:2;justify-content:flex-start;}
+.split-prose .fb-copy > p:first-child{font-size:var(--fs-lg);line-height:1.6;color:var(--text);font-weight:500;letter-spacing:-.006em;}
+
+.sec-ink{
+  --bg:#0E1120;--bg-tint:#0E1120;--surface:#171B2A;--surface-2:#1D2233;--surface-raised:#1D2233;
+  --line:#2A3043;--line-strong:#3A4158;--text:#F2F4FA;--text-2:#B4B9CC;--text-3:#9AA0B5;
+  --blue-text:#9BB2FF;--blue-pale:rgba(59,99,245,.2);--blue-line:rgba(155,178,255,.28);
+  --fill-hover:rgba(255,255,255,.06);--fill-press:rgba(255,255,255,.1);
+  --green-text:#5BD3A4;--green-pale:rgba(14,159,110,.18);
+  --sh-1:0 1px 2px rgba(0,0,0,.4);--sh-2:0 2px 6px rgba(0,0,0,.35),0 16px 36px -12px rgba(0,0,0,.6);
+  color-scheme:dark;color:var(--text);
+  background:var(--bg) radial-gradient(70% 90% at 88% 0%,rgba(59,99,245,.30),transparent 68%);
+}
+@media (prefers-color-scheme:dark){ .sec-ink{--bg:#121735;} }
+
+@media (max-width:1023.98px){
+  .section-head--split{grid-template-columns:minmax(0,1fr);grid-template-areas:"k" "t" "b";row-gap:0;}
+  .section-head--split > p:not(.kicker){justify-self:start;margin-top:var(--s-3);padding:0;}
+  .split-prose,.faq-split{grid-template-columns:minmax(0,1fr);}
+  .split-prose > .section-head,.faq-split > .section-head{position:static;margin-bottom:var(--s-6);}
+  .faq-split > .section-head{grid-row:auto;}
+  .faq-split > .faq-list,.faq-split > .more-link{grid-column:1;}
+}
 
 /* ---------- Steps (home, features) ---------- */
 .steps-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-6);counter-reset:none;}

@@ -68,7 +68,6 @@
 
 /* related guides */
 .sec-related .section-head{text-align:left;max-width:none;margin:0 0 var(--s-5);}
-.sec-related .section-head .eyebrow{display:none;}
 .sec-related .section-head h2{font-size:var(--fs-xl);}
 .sec-related .section-head p{font-size:var(--fs-base);max-width:40rem;}
 .next-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-5);}

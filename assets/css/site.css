@@ -209,14 +209,13 @@ section{padding-block:var(--sec-pad);}
 .sec-related + .sec-cta{padding-top:0;}
 
 /* ---------- Shared text pieces ---------- */
-.eyebrow{
-  display:inline-flex;align-items:center;gap:var(--s-2);
-  font-size:var(--fs-xs);font-weight:700;letter-spacing:var(--tr-caps);text-transform:uppercase;
-  color:var(--blue-text);background:var(--blue-pale);
-  padding:var(--s-2) var(--s-4) var(--s-2) var(--s-3);border-radius:var(--r-pill);margin-bottom:var(--s-4);
-  border:1px solid var(--blue-line);
+/* section kicker: one quiet line of brand-blue text above a heading.
+   No pill, border, dot or shadow; the heading does the work. */
+.kicker,.section-head .kicker{
+  margin:0 0 var(--s-2);
+  font-size:var(--fs-base);font-weight:600;letter-spacing:-.005em;line-height:1.3;
+  color:var(--blue-text);
 }
-.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 3px var(--blue-line);}
 .section-head{text-align:center;max-width:44rem;margin:0 auto var(--s-7);}
 .section-head h2{font-size:var(--fs-2xl);}
 .section-head p{margin-top:var(--s-3);color:var(--text-2);font-size:var(--fs-md);line-height:var(--lh-body);}

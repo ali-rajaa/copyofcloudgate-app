@@ -5,6 +5,7 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+{% if page.type == 'article' %}<div class="read-progress" aria-hidden="true"></div>{% endif %}
 {% include header.html %}
 {{ content }}
 {% include footer.html %}

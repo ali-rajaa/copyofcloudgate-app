@@ -7,36 +7,60 @@
 .art-head{max-width:50rem;}
 .art-head h1{font-size:var(--fs-3xl);margin:var(--s-3) 0 var(--s-4);}
 .art-standfirst{font-size:var(--fs-lg);line-height:1.62;letter-spacing:-.006em;color:var(--text-2);max-width:var(--measure);}
-.art-meta{display:flex;align-items:center;flex-wrap:wrap;gap:var(--s-2) 10px;margin-top:var(--s-5);padding-top:var(--s-4);border-top:1px solid var(--line);}
-.art-meta span{font-size:var(--fs-sm);color:var(--text-3);font-weight:500;}
-.art-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--text-3);}
+.art-meta{display:flex;align-items:center;flex-wrap:wrap;gap:var(--s-2);margin-top:var(--s-5);}
+.art-meta span:not(.dot){
+  display:inline-flex;align-items:center;column-gap:.3em;min-height:32px;padding:0 var(--s-3);border-radius:var(--r-pill);
+  font-size:var(--fs-sm);font-weight:500;color:var(--text-2);background:var(--surface);border:1px solid var(--line);
+}
+.art-meta .dot{display:none;}
 
 .art-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,264px);gap:var(--s-7);align-items:start;}
 .art-main{min-width:0;}
 
-/* one block per section */
+/* Sections read as one editorial column: no box around each section, a
+   hairline between them, and a number that matches the contents list. Boxes
+   are kept for things that are genuinely asides (notes, figures, checklist). */
+.art-main{counter-reset:gb;}
 .gb{
-  padding:var(--s-6) 40px;margin-bottom:20px;border-radius:var(--r-xl);
-  background:var(--surface);border:1px solid var(--line);box-shadow:var(--sh-1);
+  padding:var(--s-7) 0;border-top:1px solid var(--line);
   scroll-margin-top:calc(var(--header-h) + var(--header-top) + 16px);
 }
-.gb-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+.gb > *{max-width:46rem;}
+.gb > .faq-list,.gb > .kv,.gb > .plan-grid{max-width:none;}
+/* the opening block has no heading: it is the article's introduction */
+.gb:not(:has(.gb-head)){padding-top:0;border-top:0;}
+.gb:not(:has(.gb-head)) p:not(.lede){font-size:var(--fs-md);}
+.gb:has(.gb-head){counter-increment:gb;}
+.gb-head{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:14px;margin-bottom:var(--s-4);}
+.gb-head::before{
+  content:counter(gb,decimal-leading-zero);grid-column:1 / -1;margin-bottom:var(--s-2);
+  font-family:var(--font-num);font-size:var(--fs-sm);font-weight:700;letter-spacing:.04em;color:var(--blue-text);
+}
 .gb-ico{
-  width:44px;height:44px;border-radius:14px;flex-shrink:0;
+  width:40px;height:40px;border-radius:12px;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;background:var(--blue-pale);
 }
-.gb-ico svg{width:22px;height:22px;color:var(--blue-text);}
-.gb-head h2{font-size:var(--fs-xl);line-height:1.25;}
+.gb-ico svg{width:20px;height:20px;color:var(--blue-text);}
+.gb-head h2{font-size:var(--fs-2xl);line-height:1.18;}
 .gb h3{font-size:var(--fs-lg);font-weight:650;margin:var(--s-6) 0 var(--s-2);}
 .gb p{font-size:var(--fs-md);line-height:var(--lh-prose);color:var(--text-2);margin-bottom:var(--s-4);}
 .gb p:last-child{margin-bottom:0;}
-.gb p.lede{color:var(--text);font-size:var(--fs-lg);line-height:1.62;}
+.gb p.lede{color:var(--text);font-size:var(--fs-lg);line-height:1.55;letter-spacing:-.008em;font-weight:500;}
+/* the article's opening paragraph carries a little more weight than section intros */
+.gb:not(:has(.gb-head)) p.lede{font-size:var(--fs-xl);line-height:1.45;}
 .gb .note p,.gb .xrow p{font-size:var(--fs-base);line-height:1.65;color:var(--text);margin:0;}
 .gb strong{color:var(--text);font-weight:600;}
 .gb p a:not(.fb-link),.gb li a{color:var(--blue-text);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
 .gb p a:not(.fb-link):hover,.gb li a:hover{text-decoration-thickness:2px;}
 .gb p a svg{display:inline;width:15px;height:15px;vertical-align:-2px;}
-.gb .faq-list{margin-top:var(--s-4);max-width:none;}
+.gb .faq-list{margin-top:var(--s-4);}
+
+/* the checklist is the takeaway: a tinted card rather than another section */
+.gb#checklist{
+  margin-top:var(--s-4);padding:var(--s-6) 40px;border:0;border-radius:var(--r-xl);
+  background:var(--blue-pale);box-shadow:inset 0 0 0 1px var(--blue-line);
+}
+.gb#checklist + *{border-top:0;}
 
 .plan-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-3);margin:var(--s-5) 0;}
 .plan{padding:18px 20px;border-radius:var(--r-lg);background:var(--surface-2);border:1px solid var(--line);}
@@ -56,9 +80,12 @@
   scrollbar-width:thin;
 }
 .toc-title{font-family:var(--font-num);font-size:var(--fs-xs);font-weight:700;letter-spacing:var(--tr-caps);text-transform:uppercase;color:var(--text-3);margin:0 0 var(--s-2) 10px;}
-.toc ul{display:flex;flex-direction:column;gap:2px;}
+.toc ul{display:flex;flex-direction:column;gap:2px;counter-reset:toc;}
+.toc li{counter-increment:toc;}
+.toc a::before{content:counter(toc,decimal-leading-zero);min-width:1.9em;flex-shrink:0;font-family:var(--font-num);font-size:var(--fs-xs);font-weight:700;color:var(--text-3);}
+.toc a.active::before{color:var(--blue-text);}
 .toc a{
-  display:flex;align-items:center;min-height:36px;padding:6px 10px;border-radius:var(--r-sm);
+  display:flex;align-items:baseline;gap:6px;min-height:36px;padding:6px 10px;border-radius:var(--r-sm);
   font-size:var(--fs-sm);line-height:1.4;font-weight:500;color:var(--text-2);
   transition:color var(--dur-2) var(--ease-out),background-color var(--dur-2) var(--ease-out),transform var(--dur-1) var(--ease-out);
 }
@@ -83,18 +110,46 @@
 .next-card p{font-size:var(--fs-sm);color:var(--text-2);line-height:1.6;flex:1 0 auto;}
 .next-card .tip-link{margin-top:var(--s-4);}
 
+/* phones and tablets: the contents list becomes a disclosure at the top of the article */
+.toc-mobile{display:none;}
 @media (max-width:1023.98px){
+  .toc-mobile{display:block;margin-bottom:var(--s-6);border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);}
+  .toc-mobile summary{
+    display:flex;align-items:center;justify-content:space-between;gap:var(--s-3);min-height:52px;padding:0 var(--s-4);
+    font-weight:600;cursor:pointer;list-style:none;border-radius:var(--r-lg);
+  }
+  .toc-mobile summary::-webkit-details-marker{display:none;}
+  .toc-mobile summary small{font-weight:500;color:var(--text-3);font-size:var(--fs-sm);margin-left:auto;}
+  .toc-mobile summary::after{content:'';width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform var(--dur-2) var(--ease-out);}
+  .toc-mobile[open] summary::after{transform:rotate(-135deg) translateY(-2px);}
+  .toc-mobile ul{padding:0 var(--s-2) var(--s-3);display:flex;flex-direction:column;counter-reset:toc;}
+  .toc-mobile li{counter-increment:toc;}
+  .toc-mobile a{display:flex;align-items:baseline;gap:6px;min-height:48px;padding:10px var(--s-3);border-radius:var(--r-sm);font-size:var(--fs-sm);color:var(--text-2);}
+  .toc-mobile a::before{content:counter(toc,decimal-leading-zero);min-width:1.9em;font-family:var(--font-num);font-size:var(--fs-xs);font-weight:700;color:var(--text-3);}
+  .toc-mobile a:active{background:var(--fill-press);}
   .art-layout{grid-template-columns:minmax(0,1fr);}
   .toc{display:none;}
   .next-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
 }
 @media (max-width:767.98px){
   .plan-grid,.next-grid{grid-template-columns:minmax(0,1fr);}
-  .gb{padding:var(--s-5) 20px;border-radius:var(--r-lg);}
-  .gb-ico{width:38px;height:38px;border-radius:11px;}
-  .gb-head{gap:var(--s-3);}
-  .gb-head h2{font-size:var(--fs-lg);}
+  .gb{padding:var(--s-6) 0;}
+  .gb#checklist{padding:var(--s-5) 20px;}
+  .gb-ico{width:36px;height:36px;border-radius:10px;}
+  .gb-head h2{font-size:var(--fs-xl);}
   .gb h3{font-size:var(--fs-md);}
-  .gb p,.gb p.lede{font-size:var(--fs-base);}
+  .gb p{font-size:var(--fs-base);}
+  .gb p.lede,.gb:not(:has(.gb-head)) p.lede{font-size:var(--fs-md);line-height:1.6;}
   .art-standfirst{font-size:var(--fs-md);}
+}
+
+/* reading progress: driven by scroll position, no script; hidden where unsupported */
+.read-progress{display:none;}
+@supports (animation-timeline:scroll()){
+  .read-progress{
+    display:block;position:fixed;z-index:1001;top:0;left:0;right:0;height:3px;
+    background:var(--blue);transform-origin:0 50%;transform:scaleX(0);
+    animation:read-grow linear both;animation-timeline:scroll(root);
+  }
+  @keyframes read-grow{to{transform:scaleX(1);}}
 }

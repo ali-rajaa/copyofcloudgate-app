@@ -81,6 +81,27 @@
     });
   });
 
+  /* ---------- Contents on phones and tablets ----------
+     The sidebar contents list is hidden below 1024px, so a copy of it opens
+     as a disclosure at the top of the article. Built from the same list, so
+     the two can never disagree. */
+  var tocList = doc.querySelector('.toc ul');
+  var artMain = doc.querySelector('.art-main');
+  if (tocList && artMain) {
+    var det = doc.createElement('details');
+    det.className = 'toc-mobile';
+    var sum = doc.createElement('summary');
+    sum.textContent = 'On this page';
+    var count = doc.createElement('small');
+    count.textContent = tocList.children.length + ' sections';
+    sum.appendChild(count);
+    det.appendChild(sum);
+    var list = tocList.cloneNode(true);
+    det.appendChild(list);
+    list.addEventListener('click', function (e) { if (e.target.closest('a')) det.open = false; });
+    artMain.insertBefore(det, artMain.firstChild);
+  }
+
   /* ---------- Section scrollspy (guide TOC, legal contents, hub nav) ---------- */
   doc.querySelectorAll('.toc, .legal-nav, .about-nav').forEach(function (box) {
     var links = box.querySelectorAll('a[href^="#"]');

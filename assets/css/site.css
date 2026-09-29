@@ -351,14 +351,6 @@ section{padding-block:var(--sec-pad);}
 .nav-links a:active{background:var(--fill-press);transform:scale(.97);}
 .nav-links a[aria-current]{color:var(--blue-text);background:var(--blue-pale);}
 .nav-end{display:flex;align-items:center;gap:var(--s-2);}
-/* returning customers: a quiet text link beside the one primary button */
-.nav-signin{
-  display:inline-flex;align-items:center;min-height:44px;padding:0 var(--s-3);border-radius:var(--r-pill);
-  font-size:var(--fs-sm);font-weight:600;color:var(--text-2);
-  transition:color var(--dur-2) var(--ease-out),background-color var(--dur-2) var(--ease-out);
-}
-.nav-signin:hover{color:var(--text);background:var(--fill-hover);}
-.nav-signin:active{background:var(--fill-press);}
 .menu-toggle{
   display:none;width:48px;height:48px;margin-right:-8px;border-radius:var(--r-md);
   align-items:center;justify-content:center;flex-direction:column;gap:5px;
@@ -378,7 +370,7 @@ section{padding-block:var(--sec-pad);}
   :root{--header-h:56px;--header-top:calc(8px + env(safe-area-inset-top,0px));}
   .site-header{width:calc(100% - 20px);border-radius:18px;}
   .site-header > .container{padding-inline:var(--s-4);}
-  .nav-links,.nav-signin{display:none;}
+  .nav-links{display:none;}
   /* phones keep one compact action in the bar; the store is chosen by site.js */
   .header-cta{--btn-h:40px;padding:0 14px;white-space:nowrap;}
   .header-cta .ico{display:none;}
@@ -413,7 +405,6 @@ section{padding-block:var(--sec-pad);}
   .mnav-ext{width:14px;height:14px;color:var(--text-3);}
   .mnav-foot{padding:var(--s-4) 0 var(--s-5);}
   .mnav-note{margin-top:10px;text-align:center;font-size:var(--fs-sm);color:var(--text-3);}
-  .mnav-note a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;font-weight:600;color:var(--blue-text);}
 }
 @media (max-width:1023.98px) and (pointer:coarse){ .header-cta{--btn-h:48px;} }
 

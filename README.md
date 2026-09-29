@@ -37,6 +37,18 @@ extra_css: "/assets/css/new-page.css"
 
 `extra_css` is optional. Leave it out if the page needs no extra styling.
 
+## Staging copy (this repository)
+
+This repository is a staging copy of the live site, served at
+`https://cloudgate.fixmypcperth.com` (set in the `CNAME` file). While
+`staging: true` in `_config.yml`, every page is marked noindex and
+`robots.txt` blocks crawlers, so it can't be indexed or compete with
+the live `cloudgate-app.com`. Canonical links still point at
+`cloudgate-app.com`.
+
+To make this the live site later: set `staging: false`, put
+`cloudgate-app.com` back in `CNAME`, and follow "Custom domain" below.
+
 ## Deploying
 
 1. Push to the `main` branch.

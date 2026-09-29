@@ -6,7 +6,7 @@
 <title>{{ page.title }}</title>
 <meta name="description" content="{{ page.description }}">
 {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% endif %}
-<meta name="robots" content="{% if page.robots %}{{ page.robots }}{% else %}index, follow{% endif %}">
+<meta name="robots" content="{% if site.staging %}noindex, nofollow{% elsif page.robots %}{{ page.robots }}{% else %}index, follow{% endif %}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">

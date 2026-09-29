@@ -1,0 +1,13 @@
+---
+layout: null
+---
+{%- if site.staging -%}
+# Staging copy of cloudgate-app.com -- not for indexing.
+User-agent: *
+Disallow: /
+{%- else -%}
+User-agent: *
+Allow: /
+
+Sitemap: https://cloudgate-app.com/sitemap.xml
+{%- endif %}

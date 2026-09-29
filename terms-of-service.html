@@ -3,6 +3,7 @@ layout: default
 title: "Terms of Service - Plans and Your Account | CloudGate"
 description: "The terms governing your use of CloudGate cloud storage, including accounts, storage plans, billing, acceptable use, liability and governing law."
 crumb: "Terms of Service"
+read_progress: true
 last_modified_at: 2026-08-30
 extra_css: "/assets/css/legal.css"
 ---
@@ -11,11 +12,11 @@ extra_css: "/assets/css/legal.css"
   <section class="legal-hero">
     <div class="container">
       {% include crumb.html %}
-      <span class="tip-cat">Legal</span>
+      <p class="kicker">Legal</p>
       <h1>Terms of Service</h1>
       <p class="stand">These terms set out the rules for using CloudGate, what you can expect from us, what we expect from you, and how responsibility is allocated between us. Please read them carefully.</p>
       <div class="legal-meta">
-        <span>Last updated: 30 August 2026</span><span class="dot"></span>
+        <span>Last updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span>
         <span>Applies to CloudGate on Android, iPhone and web</span>
       </div>
     </div>

@@ -134,13 +134,13 @@
      The sidebar contents list is hidden below 1024px, so a copy of it opens
      as a disclosure at the top of the article. Built from the same list, so
      the two can never disagree. */
-  var tocList = doc.querySelector('.toc ul');
-  var artMain = doc.querySelector('.art-main');
+  var tocList = doc.querySelector('.toc ul, .legal-nav ol');
+  var artMain = doc.querySelector('.art-main, .legal-body');
   if (tocList && artMain) {
     var det = doc.createElement('details');
     det.className = 'toc-mobile';
     var sum = doc.createElement('summary');
-    sum.textContent = 'On this page';
+    sum.textContent = tocList.tagName === 'OL' ? 'Contents' : 'On this page';
     var count = doc.createElement('small');
     count.textContent = tocList.children.length + ' sections';
     sum.appendChild(count);

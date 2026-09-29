@@ -101,21 +101,10 @@
 .next-card p{font-size:var(--fs-sm);color:var(--text-2);line-height:1.6;flex:1 0 auto;}
 .next-card .tip-link{margin-top:var(--s-4);}
 
-/* phones and tablets: the contents list becomes a disclosure at the top of the article */
-.toc-mobile{display:none;}
 @media (max-width:1023.98px){
-  .toc-mobile{display:block;margin-bottom:var(--s-6);border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);}
-  .toc-mobile summary{
     display:flex;align-items:center;justify-content:space-between;gap:var(--s-3);min-height:52px;padding:0 var(--s-4);
     font-weight:600;cursor:pointer;list-style:none;border-radius:var(--r-lg);
   }
-  .toc-mobile summary::-webkit-details-marker{display:none;}
-  .toc-mobile summary small{font-weight:500;color:var(--text-3);font-size:var(--fs-sm);margin-left:auto;}
-  .toc-mobile summary::after{content:'';width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform var(--dur-2) var(--ease-out);}
-  .toc-mobile[open] summary::after{transform:rotate(-135deg) translateY(-2px);}
-  .toc-mobile ul{padding:0 var(--s-2) var(--s-3);display:flex;flex-direction:column;}
-  .toc-mobile a{display:flex;align-items:baseline;gap:6px;min-height:48px;padding:10px var(--s-3);border-radius:var(--r-sm);font-size:var(--fs-sm);color:var(--text-2);}
-  .toc-mobile a:active{background:var(--fill-press);}
   .art-layout{grid-template-columns:minmax(0,1fr);}
   .toc{display:none;}
   .next-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
@@ -130,15 +119,4 @@
   .gb p{font-size:var(--fs-base);}
   .gb p.lede,.gb:not(:has(.gb-head)) p.lede{font-size:var(--fs-md);line-height:1.6;}
   .art-standfirst{font-size:var(--fs-md);}
-}
-
-/* reading progress: driven by scroll position, no script; hidden where unsupported */
-.read-progress{display:none;}
-@supports (animation-timeline:scroll()){
-  .read-progress{
-    display:block;position:fixed;z-index:1001;top:0;left:0;right:0;height:3px;
-    background:var(--blue);transform-origin:0 50%;transform:scaleX(0);
-    animation:read-grow linear both;animation-timeline:scroll(root);
-  }
-  @keyframes read-grow{to{transform:scaleX(1);}}
 }

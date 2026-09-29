@@ -676,6 +676,41 @@ ul.plain li svg{width:18px;height:18px;color:var(--blue-text);flex-shrink:0;marg
 .rail-btn:active{transform:scale(.92);}
 .rail-btn:disabled{opacity:.35;cursor:default;}
 
+/* ---------- Contents disclosure on phones and tablets (built by site.js) ----------
+   Guides and legal pages hide their sidebar contents below 1024px; this is
+   the same list as a disclosure at the top of the article. */
+.toc-mobile{display:none;}
+@media (max-width:1023.98px){
+  .toc-mobile{display:block;margin-bottom:var(--s-6);border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);}
+  .toc-mobile summary{
+    display:flex;align-items:center;gap:var(--s-3);min-height:52px;padding:0 var(--s-4);
+    font-weight:600;cursor:pointer;list-style:none;border-radius:var(--r-lg);-webkit-tap-highlight-color:transparent;
+  }
+  .toc-mobile summary::-webkit-details-marker{display:none;}
+  .toc-mobile summary:active{background:var(--fill-press);}
+  .toc-mobile summary small{font-weight:500;color:var(--text-3);font-size:var(--fs-sm);margin-left:auto;}
+  .toc-mobile summary::after{content:'';width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform var(--dur-2) var(--ease-out);}
+  .toc-mobile[open] summary::after{transform:rotate(-135deg) translateY(-2px);}
+  .toc-mobile ul,.toc-mobile ol{padding:0 var(--s-2) var(--s-3);display:flex;flex-direction:column;}
+  .toc-mobile a{display:flex;align-items:baseline;gap:8px;min-height:48px;padding:12px var(--s-3);border-radius:var(--r-sm);font-size:var(--fs-sm);color:var(--text-2);}
+  .toc-mobile a:active{background:var(--fill-press);}
+  /* legal clauses are numbered, so their contents keep matching numbers */
+  .toc-mobile ol{counter-reset:tm;}
+  .toc-mobile ol li{counter-increment:tm;}
+  .toc-mobile ol a::before{content:counter(tm) '.';min-width:1.6em;flex-shrink:0;font-family:var(--font-num);font-weight:700;font-size:var(--fs-xs);color:var(--text-3);}
+}
+
+/* reading progress: driven by scroll position, no script; hidden where unsupported */
+.read-progress{display:none;}
+@supports (animation-timeline:scroll()){
+  .read-progress{
+    display:block;position:fixed;z-index:1001;top:0;left:0;right:0;height:3px;
+    background:var(--blue);transform-origin:0 50%;transform:scaleX(0);
+    animation:read-grow linear both;animation-timeline:scroll(root);
+  }
+  @keyframes read-grow{to{transform:scaleX(1);}}
+}
+
 /* ---------- Preferences ---------- */
 @media (prefers-reduced-motion:reduce){
   /* A gentler equivalent, not a broken layout. Every transition and animation

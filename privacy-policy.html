@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Policy - How We Handle Your Data | CloudGate"
 description: "How CloudGate Technologies collects, uses, stores and protects your personal information and the files you back up to CloudGate cloud storage."
 crumb: "Privacy Policy"
+read_progress: true
 last_modified_at: 2026-09-28
 extra_css: "/assets/css/legal.css"
 ---
@@ -11,11 +12,11 @@ extra_css: "/assets/css/legal.css"
   <section class="legal-hero">
     <div class="container">
       {% include crumb.html %}
-      <span class="tip-cat">Legal</span>
+      <p class="kicker">Legal</p>
       <h1>Privacy Policy</h1>
       <p class="stand">This policy explains what information CloudGate collects, how we use and store it, who we share it with, and the rights you have over your personal information and the files you upload.</p>
       <div class="legal-meta">
-        <span>Last updated: 28 September 2026</span><span class="dot"></span>
+        <span>Last updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span>
         <span>Applies to CloudGate on Android, iPhone and web</span>
       </div>
     </div>

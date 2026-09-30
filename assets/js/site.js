@@ -99,12 +99,34 @@
       } catch (e) { /* storage blocked: the choice lasts for this page only */ }
       syncTheme();
     };
+    // the same critically damped spring as --spring in site.css
+    var SPRING = window.CSS && CSS.supports('transition-timing-function', 'linear(0, 1)')
+      ? 'linear(0, 0.0495, 0.1582, 0.2864, 0.4129, 0.5273, 0.6256, 0.7073, 0.7736, 0.8263, 0.8677, 0.8998, 0.9246, 0.9435, 0.9578, 0.9686, 0.9767, 0.9828, 0.9873, 0.9906, 0.9931, 0.995, 0.9963, 0.9973, 1)'
+      : 'cubic-bezier(.22,1,.36,1)';
+    var revealId = 0; // only the latest reveal clears the class
     themeBtns.forEach(function (b) {
       b.addEventListener('click', function () {
         var next = currentTheme() === 'dark' ? 'light' : 'dark';
-        // a brief cross-fade where supported, an instant swap otherwise
-        if (doc.startViewTransition && !reduceMotion.matches) doc.startViewTransition(function () { setTheme(next); });
-        else setTheme(next);
+        if (!doc.startViewTransition) { setTheme(next); return; }
+        // Reduced motion keeps the browser's default cross-fade: no travel,
+        // and no abrupt brightness jump either.
+        if (reduceMotion.matches) { doc.startViewTransition(function () { setTheme(next); }); return; }
+        // The new theme grows as a circle from the control that was pressed,
+        // so the change visibly comes from its source. A second tap mid-reveal
+        // finishes this one and starts again from the button: input is never blocked.
+        var r = (b.querySelector('.mnav-switch') || b).getBoundingClientRect();
+        var x = r.left + r.width / 2, y = r.top + r.height / 2;
+        var end = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+        var id = ++revealId;
+        root.classList.add('vt-reveal');
+        var t = doc.startViewTransition(function () { setTheme(next); });
+        t.ready.then(function () {
+          root.animate(
+            { clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + end + 'px at ' + x + 'px ' + y + 'px)'] },
+            { duration: 600, easing: SPRING, pseudoElement: '::view-transition-new(root)' }
+          );
+        }).catch(function () {});
+        t.finished.finally(function () { if (id === revealId) root.classList.remove('vt-reveal'); });
       });
     });
     darkMQ.addEventListener('change', function () {

@@ -112,6 +112,9 @@
   --ease-out:cubic-bezier(.22,1,.36,1);
   --ease-in-out:cubic-bezier(.65,0,.35,1);
   --dur-1:120ms; --dur-2:220ms; --dur-3:380ms; --dur-4:700ms;
+  /* A critically damped spring (damping 1.0, response 0.3s) sampled into
+     linear(); it settles in 405ms. Browsers without linear() get --ease-out. */
+  --spring:cubic-bezier(.22,1,.36,1); --dur-spring:405ms;
 
   --measure:44rem;
 }
@@ -187,6 +190,8 @@
 }
 :root[data-theme="light"]{color-scheme:light;}
 :root[data-theme="dark"]{color-scheme:dark;}
+
+@supports (transition-timing-function:linear(0, 1)){ :root{--spring:linear(0, 0.0495, 0.1582, 0.2864, 0.4129, 0.5273, 0.6256, 0.7073, 0.7736, 0.8263, 0.8677, 0.8998, 0.9246, 0.9435, 0.9578, 0.9686, 0.9767, 0.9828, 0.9873, 0.9906, 0.9931, 0.995, 0.9963, 0.9973, 1);} }
 
 /* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:border-box;}
@@ -401,15 +406,29 @@ section{padding-block:var(--sec-pad);}
 }
 @media (hover:hover){ .theme-btn:hover{color:var(--text);background:var(--fill-hover);} }
 .theme-btn:active{background:var(--fill-press);transform:scale(.94);}
-.theme-btn svg{width:18px;height:18px;stroke-width:1.8;}
 .theme-btn[hidden]{display:none;}
-.i-sun{display:none;}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) .theme-btn .i-moon{display:none;}
-  :root:not([data-theme="light"]) .theme-btn .i-sun{display:block;}
+/* Icon swap: both glyphs share one spot and travel one arc. The moon turns
+   away clockwise as the sun turns in, and switching back retraces the path.
+   Transitions retarget from the live value, so a quick second tap reverses
+   mid-turn instead of jumping. */
+.theme-btn{position:relative;--spin:90deg;--shrink:.4;--fade:var(--dur-2);}
+.theme-btn svg{
+  position:absolute;inset:0;margin:auto;width:18px;height:18px;stroke-width:1.8;
+  transition:transform var(--dur-spring) var(--spring),opacity var(--fade) var(--ease-out);
 }
-:root[data-theme="dark"] .theme-btn .i-moon{display:none;}
-:root[data-theme="dark"] .theme-btn .i-sun{display:block;}
+.theme-btn .i-sun{opacity:0;transform:rotate(calc(var(--spin) * -1)) scale(var(--shrink));}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .theme-btn .i-moon{opacity:0;transform:rotate(var(--spin)) scale(var(--shrink));}
+  :root:not([data-theme="light"]) .theme-btn .i-sun{opacity:1;transform:none;}
+}
+:root[data-theme="dark"] .theme-btn .i-moon{opacity:0;transform:rotate(var(--spin)) scale(var(--shrink));}
+:root[data-theme="dark"] .theme-btn .i-sun{opacity:1;transform:none;}
+
+/* Theme change: site.js grows the new theme as a circle from the control
+   that was pressed (View Transitions). Without the class the browser's
+   default cross-fade runs, which is what reduced motion gets. */
+html.vt-reveal::view-transition-old(root),
+html.vt-reveal::view-transition-new(root){animation:none;mix-blend-mode:normal;}
 .menu-toggle{
   display:none;width:48px;height:48px;margin-right:-8px;border-radius:var(--r-md);
   align-items:center;justify-content:center;flex-direction:column;gap:5px;
@@ -471,11 +490,15 @@ section{padding-block:var(--sec-pad);}
     transition:background-color var(--dur-2) var(--ease-out);
   }
   .mnav-switch::after{
-    content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;
-    box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform var(--dur-2) var(--ease-out);
+    content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:999px;background:#fff;
+    box-shadow:0 1px 3px rgba(0,0,0,.3);
+    transition:transform var(--dur-spring) var(--spring),width var(--dur-2) var(--ease-out);
   }
   .mnav-theme[aria-checked="true"] .mnav-switch{background:var(--blue);}
   .mnav-theme[aria-checked="true"] .mnav-switch::after{transform:translateX(18px);}
+  /* on press the thumb stretches toward where it is about to go */
+  .mnav-theme:active .mnav-switch::after{width:26px;}
+  .mnav-theme[aria-checked="true"]:active .mnav-switch::after{transform:translateX(12px);}
   .mnav-foot{padding:var(--s-4) 0 var(--s-5);}
   .mnav-foot .btn{--btn-h:48px;border-radius:var(--r-pill);}
   .mnav-note{margin-top:10px;text-align:center;font-size:var(--fs-sm);color:var(--text-3);}
@@ -807,7 +830,8 @@ ul.plain li svg{width:18px;height:18px;color:var(--blue-text);flex-shrink:0;marg
   /* A gentler equivalent, not a broken layout. Every transition and animation
      reads the duration tokens, so shortening the tokens covers the whole
      site without a blanket !important. Fades stay; travel goes. */
-  :root{--dur-1:1ms;--dur-2:1ms;--dur-3:1ms;--dur-4:160ms;}
+  :root{--dur-1:1ms;--dur-2:1ms;--dur-3:1ms;--dur-4:160ms;--dur-spring:1ms;}
+  .theme-btn{--spin:0deg;--shrink:1;--fade:160ms;}
   .js .reveal{transform:none;}
   .btn:hover svg:last-child,.badge:hover,.soc:hover,.brand:hover .brand-mark{transform:none;}
 }

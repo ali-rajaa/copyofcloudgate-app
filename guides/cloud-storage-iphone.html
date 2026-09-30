@@ -6,7 +6,7 @@ headline: "Free cloud storage for iPhone: photo backup that works"
 last_modified_at: 2026-08-30
 faq:
   - q: "Do I still need iCloud if I use this?"
-    a: "They do different jobs, so most people keep both. iCloud syncs your library across Apple devices. A separate cloud storage app gives you a second copy on an account that is not tied to your Apple ID, so a sync problem or an account issue does not affect it."
+    a: "They do different jobs, so keeping both makes sense. iCloud syncs your library across Apple devices. A separate cloud storage app gives you a second copy on an account that is not tied to your Apple ID, so a sync problem or an account issue does not affect it."
   - q: "Is 100GB free cloud storage for iPhone really free?"
     a: "Yes. 100GB is included with no card required and no trial that expires. Paid plans at 250GB, 500GB and 1TB exist for people who need more room, and nothing already backed up stops working if you stay on the free plan."
   - q: "Will backing up delete photos from my iPhone?"
@@ -46,7 +46,7 @@ faq:
 
         <div class="gb">
           <p class="lede">Most incomplete iPhone backups come down to a single tap made months earlier. iOS asks whether an app should see all your photos or only selected ones, people reasonably choose the cautious option, and the backup has been covering a handful of images ever since.</p>
-          <p>This guide covers cloud storage for iPhone from signup to a backup you can trust. It deals with the All Photos versus Selected Photos choice, background app refresh, Low Power Mode, how iCloud fits alongside a second copy, and how to free up iPhone storage afterwards without losing the originals.</p>
+          <p>This guide sets up cloud storage for iPhone, step by step, until the backup is one you can trust. It deals with the All Photos versus Selected Photos choice, background app refresh, Low Power Mode, how iCloud fits alongside a second copy, and how to free up iPhone storage afterwards without losing the originals.</p>
           <p>Setup is short. The part that matters is checking one permission properly rather than assuming it is right.</p>
           <div class="kv">
             <div class="kv-item"><div class="n">100GB</div><div class="l">Free cloud storage iPhone, no card required</div></div>
@@ -68,9 +68,9 @@ faq:
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 16.5C4.79 16.5 3 14.71 3 12.5C3 10.42 4.6 8.72 6.63 8.53C7.27 6.44 9.22 5 11.5 5C14.27 5 16.55 7.09 16.85 9.78C18.65 10.09 20 11.63 20 13.5C20 15.71 18.21 17.5 16 17.5H7Z"/><path d="M12 21v-6M9.5 18.5L12 21l2.5-2.5"/></svg></span><h2>How this fits alongside iCloud</h2></div>
           <p class="lede">This is the question everyone with an iPhone asks first, and the answer is that they do different things.</p>
           <p>iCloud Photos is a sync service. Its job is to make the same library appear on every Apple device you own. When it works, which is most of the time, it works well. The thing to understand is that sync propagates changes in both directions. Delete a photo on your iPhone and it disappears from iCloud and from your iPad too, because that is what syncing means. That is correct behaviour, and it is also why sync alone is not a backup. A mistake travels just as reliably as an intentional change.</p>
-          <p>The second issue is the free allowance. Apple gives every account 5GB, which is enough for settings and messages and not remotely enough for a photo library. Most people either pay for more or spend years dismissing a storage full notification.</p>
+          <p>The second issue is the free allowance. Apple gives every account 5GB, which is enough for settings and messages and not remotely enough for a photo library. The usual result is paying for more or dismissing a storage full notification for years.</p>
           <p>A separate cloud storage app sitting alongside iCloud gives you a second copy in a second place, on an account that is not tied to your Apple ID. If something goes wrong with the Apple account, or a sync deletes something it should not have, that copy is unaffected.</p>
-          <p>You do not have to choose. Leave iCloud doing what it is good at, and add a second copy for the material you would be upset to lose. Additional storage for iPhone from a second provider also means the 5GB question stops being urgent.</p>
+          <p>You do not have to choose. Leave iCloud doing what it is good at, and add a second copy for the material you would be upset to lose. Additional storage for iPhone from a second provider also means the 5GB limit is no longer urgent.</p>
         </div>
 
         <div class="gb" id="before">
@@ -92,18 +92,18 @@ faq:
 
         <div class="gb" id="step-2">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span><h2>Step 2: Choose All Photos, not Selected Photos</h2></div>
-          <p class="lede">This is the step that decides whether your iPhone photo backup is complete or nearly empty, and it is easy to get wrong.</p>
+          <p class="lede">This choice decides whether your iPhone photo backup is complete or nearly empty, and it is easy to get wrong.</p>
           <p>When an app first asks for your photos, iOS offers three options: Limited Access where you pick specific items, Full Access, and Deny. Limited Access is an excellent privacy feature and it is the wrong choice for a backup app. If you select it, the app can only ever see the photos you individually chose. Everything else is invisible to it, permanently, until you change the setting.</p>
           <p>What makes this so hard to spot is that nothing looks broken. There is no error. The backup runs, finishes quickly, and reports success. It has faithfully backed up the eleven photos it was allowed to see.</p>
           <p>Choose Full Access. If you have already tapped through and cannot remember what you picked, check it: Settings, then Privacy and Security, then Photos, find the app, and confirm it reads Full Access rather than Limited Access.</p>
-          <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p><strong>The tell:</strong> a backup that completes in under a minute and shows a file count nowhere near your library size. That is Limited Access, essentially every time.</p></div>
+          <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p><strong>Watch for a backup that finishes in under a minute</strong> with a file count nowhere near your library size. That almost always means Limited Access.</p></div>
         </div>
 
         <div class="gb" id="step-3">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 12a8 8 0 11-2.3-5.6"/><path d="M20 4v4h-4"/></svg></span><h2>Step 3: Allow Background App Refresh</h2></div>
           <p>iOS is strict about what apps may do when you are not looking at them, and for good reason. For a backup app it means uploads stop the moment you leave the app unless background activity is permitted.</p>
           <p>Open Settings, then General, then Background App Refresh, and make sure it is enabled both globally and for the app specifically. If the global switch is off, the per-app switch does nothing.</p>
-          <p>Without this the app can still upload, but only while it is open and on screen. People end up sitting and watching a progress bar, then concluding the app is slow. It is not slow, it is only allowed to run while you are watching.</p>
+          <p>Without this the app can still upload, but only while it is open and on screen. People end up sitting and watching a progress bar, then concluding the app is slow. The real cause is that iOS only lets it run while you are watching.</p>
         </div>
 
         <div class="gb" id="step-4">
@@ -155,7 +155,7 @@ faq:
 
         <div class="gb" id="free-up">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><h2>How to free up iPhone storage safely</h2></div>
-          <p class="lede">This is where photos get lost, and it is avoidable. Verify first, delete second, and never while a backup is still running.</p>
+          <p class="lede">Photos get lost at this step, and it is avoidable. Verify first, delete second, and never while a backup is still running.</p>
           <p>Once the backup is confirmed, the copies on the phone are duplicates. Removing them frees space without losing anything, because your account still has them. The danger is order of operations.</p>
           <ol class="steps-list">
             <li>Confirm the backup reads complete, not in progress</li>
@@ -202,13 +202,13 @@ faq:
 
         <div class="gb" id="files">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M14 3v5h5"/><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/></svg></span><h2>File storage app iPhone: what else belongs in there</h2></div>
-          <p class="lede">Most people set this up for photos and then never put anything else in it, which is a shame, because the awkward files are the ones worth protecting.</p>
+          <p class="lede">It is common to set this up for photos and never put anything else in it, which is a shame, because the awkward files are the ones worth protecting.</p>
           <p>Photos are emotionally valuable and, in fairness, they are usually duplicated somewhere. The documents that only exist in one place are the ones that cause real problems when a phone dies. A few worth adding deliberately:</p>
           <div class="xlist">
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Anything in the Files app that is stored locally.</strong> On My iPhone means exactly that. If it is not in iCloud Drive or another service, it exists once, on a device you can drop.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Screenshots you are keeping.</strong> Boarding passes, order confirmations, parking bay numbers, the photo of where you left the car. These are in your camera roll so they are already covered, but check rather than assume.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>PDFs and email attachments you saved.</strong> Tenancy agreements, warranties, medical letters, insurance documents. Individually small, collectively the things you will hunt for at the worst time.</p></div>
-            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Voice memos.</strong> Interviews, lecture recordings, song ideas. Almost nobody backs these up and they are irreplaceable.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Voice memos.</strong> Interviews, lecture recordings, song ideas. They are rarely backed up and they are irreplaceable.</p></div>
           </div>
           <p>Documents cost almost nothing against your allowance. A scanned page is a few hundred kilobytes and a long PDF two or three megabytes, so you could add every document on your phone and barely move the needle on 100GB. Photos and video are what fill an account. Paper is free by comparison.</p>
           <p>Using online storage for iPhone this way also makes the files reachable from a computer, which turns out to matter more often than the backup itself. Being able to open a document on a laptop without emailing it to yourself is a small thing you end up using weekly.</p>
@@ -222,10 +222,10 @@ faq:
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Originals or compressed copies?</strong> Compression is invisible on a phone screen and obvious the first time you print or crop. You cannot recover detail that was discarded at upload.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Does it work outside the Apple ecosystem?</strong> The value of a second copy comes partly from it not depending on the same account and the same company as the first one. An app that runs on Android and in a browser keeps its usefulness if you ever switch.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Is the free tier permanent or a trial?</strong> A generous allowance for thirty days is a paid product with a delay. Check which one you are getting before you upload a library into it.</p></div>
-            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Is there a real web app?</strong> This is what lets you verify a backup honestly, from a device that is not the phone, and what makes the files useful on a computer.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Is there a real web app?</strong> This is what lets you check a backup properly, from a device that is not the phone, and what makes the files useful on a computer.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>What happens at the limit?</strong> Uploads pausing is reasonable. Files being removed because you stopped paying is not.</p></div>
           </div>
-          <p>Treat vague descriptions of capacity with suspicion. Storage costs money to provide, so an allowance that avoids naming a number usually has one written somewhere less visible. Defined limits stated plainly are the honest version.</p>
+          <p>Treat vague descriptions of capacity with suspicion. Storage costs money to provide, so an allowance that avoids naming a number usually has one written somewhere less visible. Look for defined limits stated plainly.</p>
         </div>
 
         <div class="gb" id="devices">
@@ -279,7 +279,7 @@ faq:
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="8" width="7" height="12.5" rx="1.6"/><rect x="14.5" y="8" width="7" height="12.5" rx="1.6"/><path d="M7 4.5h10"/><path d="M14.5 2l2.5 2.5L14.5 7"/></svg></span><h2>Moving to a new iPhone, or from iPhone to Android</h2></div>
           <p>Install the app on the new device, sign in, and the files are there. The two phones never need to meet, and neither needs to be near the other.</p>
           <p>Before you hand the old one on, open it, confirm the backup is up to date, and let anything queued finish. The gap between your last upload and wiping the device is the only window where something can go missing.</p>
-          <p>Moving from iPhone to Android is the case where a platform-independent account earns its keep. Apple's own tools move you between Apple devices very well and are much less help going the other way. An account that opens on both is a sign-in on the new phone. The same is true in reverse and for anyone running an iPhone alongside an Android tablet or a Windows laptop.</p>
+          <p>Moving from iPhone to Android is where a platform-independent account helps most. Apple's own tools move you between Apple devices very well and are much less help going the other way. An account that opens on both is a sign-in on the new phone. The same is true in reverse and for anyone running an iPhone alongside an Android tablet or a Windows laptop.</p>
         </div>
 
         <div class="gb" id="faq">

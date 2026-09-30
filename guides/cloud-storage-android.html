@@ -46,7 +46,7 @@ faq:
 
         <div class="gb">
           <p class="lede">Android gives you more control over a backup than any other phone platform, and that is exactly why Android backups fail more often. There are more switches, and three of them are set against you by default.</p>
-          <p>This guide covers cloud storage for Android from an empty account to a backup you can rely on. It deals with the two settings that stop most Android cloud backup jobs, the folders a default backup never touches, what Samsung phones do differently, and how to free up storage on Android afterwards without losing anything you meant to keep.</p>
+          <p>This guide sets up cloud storage for Android, step by step, until the backup is one you can rely on. It deals with the two settings that stop most Android cloud backup jobs, the folders a default backup never touches, what Samsung phones do differently, and how to free up storage on Android afterwards without losing anything you meant to keep.</p>
           <p>Setup takes a few minutes. Everything after that runs on its own, provided you get the permissions right the first time.</p>
           <div class="kv">
             <div class="kv-item"><div class="n">100GB</div><div class="l">Free cloud storage Android, no card required</div></div>
@@ -58,8 +58,8 @@ faq:
         <div class="gb" id="what">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 16.5C4.79 16.5 3 14.71 3 12.5C3 10.42 4.6 8.72 6.63 8.53C7.27 6.44 9.22 5 11.5 5C14.27 5 16.55 7.09 16.85 9.78C18.65 10.09 20 11.63 20 13.5C20 15.71 18.21 17.5 16 17.5H7Z"/></svg></span><h2>What cloud storage on Android does</h2></div>
           <p class="lede">A cloud storage app for Android keeps a second copy of your files on a server, separate from the phone. The original stays exactly where it is.</p>
-          <p>This is worth stating plainly because it is the single most common misunderstanding, and it stops a lot of people from setting up Android cloud backup at all. When a photo is backed up, it does not leave your gallery. Nothing is moved, nothing is hidden, nothing is deleted. Your phone looks identical the moment after the upload finishes. What has changed is that a copy now exists somewhere your phone cannot take down with it.</p>
-          <p>That distinction matters more than it sounds. If your phone is stolen on a Friday night, the photos are not gone, they are in your account. If the screen stops responding, or the phone goes in a river, or an update bricks it, the same holds. A dead handset becomes an expensive inconvenience rather than the loss of six years of photographs.</p>
+          <p>It is a common misunderstanding, and it stops people from setting up Android cloud backup at all. When a photo is backed up, it does not leave your gallery. Nothing is moved, nothing is hidden, nothing is deleted. Your phone looks identical the moment after the upload finishes. What has changed is that a copy now exists somewhere your phone cannot take down with it.</p>
+          <p>The distinction has real consequences. If your phone is stolen on a Friday night, the photos are still in your account. If the screen stops responding, or the phone goes in a river, or an update bricks it, the same holds. A dead handset becomes an expensive inconvenience rather than the loss of six years of photographs.</p>
           <p>It is also worth separating this from what Android already does. Android has a system backup that covers app data, call history, device settings and your wallpaper. It is useful and it is not a photo backup. Plenty of people discover the difference only after wiping a phone, restoring it, and finding the camera roll empty. If you want photo backup Android needs a cloud storage app pointed at your media folders, which is what this guide sets up.</p>
           <p>The same account works from a browser and from a tablet, so online storage for Android phones is not a phone-only thing. You upload from the handset and open the files on a laptop that has never been connected to it.</p>
           <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><p><strong>Android system backup is not a photo backup.</strong> It restores settings and app data. Your camera roll needs a cloud backup app pointed at it separately.</p></div>
@@ -90,15 +90,15 @@ faq:
           <p>Modern Android offers a choice when an app asks for photos. You can allow access to everything, or you can allow access to selected items. Selected items is a good privacy feature and it is the wrong answer here. If you pick it, the app can only ever see the handful of photos you tapped, so the backup completes in seconds, reports success, and covers almost nothing.</p>
           <p>Choose the option that grants access to all photos and videos. If you want the app to cover documents and downloads as well, it will also need broader file access, which Android presents separately.</p>
           <p>If you have already tapped through the prompts and are not sure what you chose, check it directly. Open Settings, then Apps, find the app, then Permissions. Anything showing as limited or selected access needs changing before the rest of this guide is worth doing.</p>
-          <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p><strong>The symptom to watch for:</strong> a backup that finishes suspiciously fast and reports a file count far below what is in your gallery. That is limited photo access almost every time.</p></div>
+          <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p><strong>Watch for a backup that finishes suspiciously fast</strong> with a file count far below what is in your gallery. That almost always means limited photo access.</p></div>
         </div>
 
         <div class="gb" id="step-3">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span><h2>Step 3: Choose which folders get backed up</h2></div>
-          <p>Android scatters your media across more folders than most people realise. A default backup usually picks up the camera folder and stops there, which is fine until you look for something that was never in it.</p>
+          <p>Android scatters your media across more folders than you might expect. A default backup usually picks up the camera folder and stops there, which is fine until you look for something that was never in it.</p>
           <p>The folders that catch people out, roughly in order of how often they are missed:</p>
           <div class="xlist">
-            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Messaging media.</strong> Photos and videos people send you live in the messaging app's own folder, not in the camera folder. For a lot of people this is where the irreplaceable things are, and it is the single most commonly missed folder on Android.</p></div>
+            <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Messaging media.</strong> Photos and videos people send you live in the messaging app's own folder, not in the camera folder. This is often where the irreplaceable things are, and default backups often miss it.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Screenshots.</strong> Their own folder. Worth including if you screenshot tickets, confirmations or anything you expect to look up again.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Downloads.</strong> Documents, PDFs and the odd photo saved from a browser. Rarely included by default.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Edited copies.</strong> Some gallery apps save edits into a separate folder rather than overwriting the original. If your edits matter, check where they land.</p></div>
@@ -118,7 +118,7 @@ faq:
 
         <div class="gb" id="step-5">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12.5a10 10 0 0114 0M8.5 16a5.5 5.5 0 017 0M12 19.5h.01"/></svg></span><h2>Step 5: Wi-Fi only, or mobile data too</h2></div>
-          <p>Wi-Fi only is the right default for almost everyone, and it is usually already set. It means uploads wait until you are on a known network, which keeps a large video backup Android job from eating a month of data in an afternoon.</p>
+          <p>Wi-Fi only is the right default, and it is usually already set. It means uploads wait until you are on a known network, which keeps a large video backup Android job from eating a month of data in an afternoon.</p>
           <p>The tradeoff is timing. If you are away for a fortnight and never join a Wi-Fi network, nothing uploads until you get home. For a holiday, which is exactly when people take photos they would hate to lose, that is a real gap.</p>
           <p>Two sensible approaches. Either leave it on Wi-Fi only and connect to hotel or cafe Wi-Fi occasionally to let the queue drain, or allow mobile data for photos while keeping video on Wi-Fi only if the app separates them. Photos are small enough that a few hundred of them will not trouble most plans. Video is where the data goes.</p>
         </div>
@@ -149,7 +149,7 @@ faq:
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.4"/><path d="M8 6l1.5-2h5L16 6"/></svg></span><h2>Photo backup Android: where photos live</h2></div>
           <p>Once the setup above is done, photo backup Android handles itself. New shots join the upload queue as you take them and go up next time the conditions you set are met. What happens underneath is still useful to understand, because it explains most of the questions people have afterwards.</p>
           <p>A photo storage app Android users can rely on uploads the original file rather than a resized version. That matters if you ever want to print, crop heavily, or move the library somewhere else later. A compressed copy looks fine on a phone screen and falls apart the moment you enlarge it.</p>
-          <p>On how to store photos in cloud on Android, the honest answer is that the storing is the easy part. The part that goes wrong is coverage: whether every folder that holds photos is included, and whether the app is allowed to run. Both are settled by the steps above.</p>
+          <p>On how to store photos in cloud on Android, the storing is the easy part. The part that goes wrong is coverage: whether every folder that holds photos is included, and whether the app is allowed to run. Both are settled by the steps above.</p>
           <p>If you are wondering where to store photos from Android phone libraries that have grown past what the handset can hold, the answer is the same account, and then removing the local copies once you have confirmed the uploads. That order matters and it is covered below.</p>
           <p>How to save phone photos online without any of this being a project: set it up once, verify it once, then leave it. Backups rarely fail with an error. They fail because nobody checks.</p>
         </div>
@@ -169,7 +169,7 @@ faq:
 
         <div class="gb" id="free-up">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><h2>How to free up storage on Android safely</h2></div>
-          <p class="lede">This is the step where people lose photos, and it is avoidable. The rule is simple: verify first, delete second, never the other way around.</p>
+          <p class="lede">People lose photos at this step, and it is avoidable. Verify first, delete second, never the other way around.</p>
           <p>Once your backup is confirmed, the local copies on the phone are duplicates. Removing them frees space without losing anything, because the copy in your account remains. The danger is doing it in the wrong order, or doing it while the backup is still catching up.</p>
           <p>A safe sequence:</p>
           <ol class="steps-list">
@@ -193,10 +193,10 @@ faq:
         <div class="gb" id="where">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-4.6-7-10a7 7 0 1114 0c0 5.4-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg></span><h2>Where to store photos from an Android phone</h2></div>
           <p class="lede">There are three realistic answers, and they fail in different ways. Choose knowing how each one fails.</p>
-          <p><strong>An SD card</strong> is cheap and it is right there in the phone. It is also the option most likely to lose your photos. Cards fail without warning, and because the card lives in the same phone as the original, a stolen or drowned handset takes both copies at once. A card is extra room, not a backup. Treat it as storage, not safety.</p>
+          <p><strong>An SD card</strong> is cheap and it is right there in the phone. It is also the option most likely to lose your photos. Cards fail without warning, and because the card lives in the same phone as the original, a stolen or drowned handset takes both copies at once. A card adds room but protects nothing.</p>
           <p><strong>A computer</strong> works, and for a long time it was the standard answer. The problem is that it depends on you. Someone has to remember to plug the phone in, and in practice that happens for a few months and then stops. It also puts everything on one hard drive in one house, which is a single point of failure if that drive dies or the house is burgled.</p>
           <p><strong>Online cloud storage</strong> removes the remembering. Once it is set up, new photos go up without anyone deciding to do it, and the copy is somewhere physically separate from the phone. That is what makes it a backup rather than a second pile of files.</p>
-          <p>The strongest arrangement is not one of the three, it is two of them. Cloud for the automatic everyday copy, plus an occasional export to a computer or drive for anything irreplaceable. That gives you one copy that never needs your attention and one copy that does not depend on any account at all.</p>
+          <p>The strongest arrangement combines two of the three. Cloud for the automatic everyday copy, plus an occasional export to a computer or drive for anything irreplaceable. That gives you one copy that never needs your attention and one copy that does not depend on any account at all.</p>
           <p>If you only do one, make it the automatic one. How to save phone photos online with no ongoing effort beats a perfect manual system nobody keeps up.</p>
         </div>
 
@@ -229,7 +229,7 @@ faq:
 
         <div class="gb" id="newphone">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="8" width="7" height="12.5" rx="1.6"/><rect x="14.5" y="8" width="7" height="12.5" rx="1.6"/><path d="M7 4.5h10"/><path d="M14.5 2l2.5 2.5L14.5 7"/></svg></span><h2>Moving to a new Android phone</h2></div>
-          <p>This is where a backup earns its keep. Install the app on the new handset, sign in, and your files are there. Nothing needs to travel between the two phones and neither needs to be near the other.</p>
+          <p>This is the day a backup is for. Install the app on the new handset, sign in, and your files are there. Nothing needs to travel between the two phones and neither needs to be near the other.</p>
           <p>The one thing worth doing before you hand the old phone on: open it, confirm the backup status is up to date, and let any queued items finish. The gap between your last backup and the moment you wipe the device is the only window where something can be lost.</p>
           <p>Then set the new phone up the same way this guide describes. Full photo access, folder selection, unrestricted battery, and on a Samsung, Device Care. A new phone means new defaults, and the defaults are the same ones that caused problems on the old one.</p>
         </div>
@@ -253,7 +253,7 @@ faq:
           <p>One account covers everything you sign into. An Android tablet, an old handset you kept as a camera, a work phone and a laptop browser all see the same files, and each device can back up its own folders into the same 100GB.</p>
           <p>That is worth thinking about before you set the second device up. Two phones backing up into one account share the allowance rather than each getting their own, so a household with several heavy camera users is the case where a larger plan starts to make sense.</p>
           <p>The tablet setup is identical to the phone setup, including the permission and battery steps, because Android tablets run the same restrictions. The web app needs no setup at all beyond signing in.</p>
-          <p>For anything that spans platforms, an Android phone and an iPhone in the same household for instance, cross platform cloud storage works the same way. The account is the thing, not the hardware.</p>
+          <p>For anything that spans platforms, an Android phone and an iPhone in the same household for instance, cross platform cloud storage works the same way. What matters is the account, whatever the hardware.</p>
         </div>
 
         <div class="gb" id="keep">

@@ -23,8 +23,9 @@
 }
 /* the opening block has no heading: it is the article's introduction */
 div.gb{padding-top:0;border-top:0;}
-.gb > .faq-list,.gb > .kv,.gb > .plan-grid{max-width:none;}
-.gb .faq-list{margin-top:var(--s-4);}
+.gb > .kv,.gb > .plan-grid{max-width:none;}
+/* the FAQ keeps the reading column's measure and left edge */
+.gb > .faq-list{margin-inline:0;}
 .gb p a svg{display:inline;width:15px;height:15px;vertical-align:-2px;}
 
 /* the checklist is the takeaway: a tinted card rather than another section */

@@ -633,26 +633,29 @@ table.compare tr:last-child td{border-bottom:none;}
 .faq-list{max-width:48rem;margin:0 auto;border-top:1px solid var(--line);}
 .faq-item{border-bottom:1px solid var(--line);}
 .faq-h{font-size:inherit;margin:0;letter-spacing:normal;line-height:inherit;}
+/* The row is flush with the hairlines: no highlight box, so nothing overhangs
+   the rules and the question text lines up with its answer. Focus uses the
+   site-wide ring like every other control. */
 .faq-q{
-  display:flex;align-items:center;justify-content:space-between;gap:var(--s-4);
-  /* the row highlight extends past the text column; the text itself stays aligned with the rules */
-  width:calc(100% + 2 * var(--s-3));margin-inline:calc(-1 * var(--s-3));
-  min-height:60px;padding:14px var(--s-3);text-align:left;
-  font-size:var(--fs-md);font-weight:600;letter-spacing:-.008em;line-height:1.45;color:var(--text);
-  border-radius:var(--r-md);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--s-5);
+  width:100%;min-height:60px;padding:var(--s-4) 0;text-align:left;
+  font-size:var(--fs-md);font-weight:600;letter-spacing:var(--tr-head);line-height:var(--lh-snug);color:var(--text);
   -webkit-tap-highlight-color:transparent;
-  transition:color var(--dur-2) var(--ease-out),background-color var(--dur-2) var(--ease-out);
 }
-@media (hover:hover){ .faq-q:hover{background:var(--fill-hover);} }
+.faq-text{transition:color var(--dur-2) var(--ease-out),opacity var(--dur-2) var(--ease-out);}
+@media (hover:hover){ .faq-q:hover .faq-text{color:var(--blue-text);} }
 /* response on press, not on release */
-.faq-q:active{background:var(--fill-press);transition-duration:0s;}
-.faq-q:focus-visible{box-shadow:inset 0 0 0 2px var(--blue);}
-.faq-ico{position:relative;width:28px;height:28px;flex-shrink:0;border-radius:50%;background:var(--surface-2);color:var(--text);transition:background-color var(--dur-2) var(--ease-out),color var(--dur-2) var(--ease-out);}
-.faq-ico::before,.faq-ico::after{content:'';position:absolute;left:50%;top:50%;width:12px;height:2px;margin:-1px 0 0 -6px;border-radius:2px;background:currentColor;}
-.faq-ico::after{transform:rotate(90deg);}
-.faq-ico{transition:background-color var(--dur-2) var(--ease-out),color var(--dur-2) var(--ease-out),transform var(--dur-3) var(--ease-out);}
-/* plus turns into a close mark, as on Apple's own FAQs */
-.faq-q[aria-expanded="true"] .faq-ico{background:var(--blue);color:var(--on-blue);transform:rotate(135deg);}
+.faq-q:active .faq-text{opacity:.55;transition-duration:0s;}
+/* A thin plus with no badge. Opening turns the upright bar flat on the
+   spring, so plus becomes minus along one continuous path; transitions
+   retarget from the live value, so a second tap reverses mid-turn. */
+.faq-ico{position:relative;flex-shrink:0;width:20px;height:20px;color:var(--text-2);transition:color var(--dur-2) var(--ease-out);}
+.faq-ico::before,.faq-ico::after{
+  content:'';position:absolute;left:1px;right:1px;top:50%;height:1.75px;margin-top:-.875px;border-radius:2px;background:currentColor;
+}
+.faq-ico::after{transform:rotate(90deg);transition:transform var(--dur-spring) var(--spring);}
+.faq-q[aria-expanded="true"] .faq-ico{color:var(--blue-text);}
+.faq-q[aria-expanded="true"] .faq-ico::after{transform:rotate(180deg);}
 .faq-a-inner{padding:0 0 var(--s-5);}
 .faq-a p{font-size:var(--fs-base);color:var(--text-2);line-height:var(--lh-body);max-width:var(--measure);}
 /* collapsed only when JavaScript is there to open it again */

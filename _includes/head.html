@@ -16,7 +16,12 @@
 {%- unless page.robots contains 'noindex' %}
 <link rel="canonical" href="{{ cg_canonical }}">
 {%- endunless %}
-<script>document.documentElement.classList.add('js')</script>
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F5F7FE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0D14" media="(prefers-color-scheme: dark)">
+{%- comment -%} Runs before the stylesheet paints: a saved light/dark choice
+applies on the first frame, so the page never flashes the other theme. {%- endcomment %}
+<script>(function(d){d.classList.add('js');try{var t=localStorage.getItem('cg-theme');if(t==='light'||t==='dark'){d.setAttribute('data-theme',t);document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content=t==='dark'?'#0B0D14':'#F5F7FE'})}}catch(e){}})(document.documentElement)</script>
 <link rel="preload" href="/assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.css?v={{ cg_v }}">
 {%- if page.extra_css %}
@@ -29,9 +34,6 @@
 
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#F5F7FE" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0B0D14" media="(prefers-color-scheme: dark)">
 
 <meta property="og:type" content="{% if page.type == 'article' %}article{% else %}website{% endif %}">
 <meta property="og:site_name" content="{{ site.title }}">

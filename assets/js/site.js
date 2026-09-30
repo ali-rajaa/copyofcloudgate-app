@@ -67,6 +67,53 @@
     });
   }
 
+  /* ---------- Theme: follows the device, with a one-tap override ----------
+     head.html applies a saved choice before first paint. A choice is only
+     stored while it differs from the device setting, so picking the device's
+     own mode goes back to following it: two states, no separate "Auto". */
+  var darkMQ = window.matchMedia('(prefers-color-scheme: dark)');
+  var themeBtns = doc.querySelectorAll('[data-theme-toggle]');
+  var themeMetas = doc.querySelectorAll('meta[name="theme-color"]');
+  if (themeBtns.length) {
+    var systemTheme = function () { return darkMQ.matches ? 'dark' : 'light'; };
+    var currentTheme = function () { return root.getAttribute('data-theme') || systemTheme(); };
+    var syncTheme = function () {
+      var dark = currentTheme() === 'dark';
+      var chosen = root.hasAttribute('data-theme');
+      themeBtns.forEach(function (b) {
+        b.hidden = false;
+        if (b.getAttribute('role') === 'switch') b.setAttribute('aria-checked', dark ? 'true' : 'false');
+        else b.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      });
+      // the browser bar: both tags carry the chosen colour, or their own defaults
+      themeMetas.forEach(function (m) {
+        var own = /dark/.test(m.getAttribute('media')) ? '#0B0D14' : '#F5F7FE';
+        m.setAttribute('content', chosen ? (dark ? '#0B0D14' : '#F5F7FE') : own);
+      });
+    };
+    var setTheme = function (next) {
+      var follow = next === systemTheme();
+      if (follow) root.removeAttribute('data-theme'); else root.setAttribute('data-theme', next);
+      try {
+        if (follow) localStorage.removeItem('cg-theme'); else localStorage.setItem('cg-theme', next);
+      } catch (e) { /* storage blocked: the choice lasts for this page only */ }
+      syncTheme();
+    };
+    themeBtns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var next = currentTheme() === 'dark' ? 'light' : 'dark';
+        // a brief cross-fade where supported, an instant swap otherwise
+        if (doc.startViewTransition && !reduceMotion.matches) doc.startViewTransition(function () { setTheme(next); });
+        else setTheme(next);
+      });
+    });
+    darkMQ.addEventListener('change', function () {
+      if (root.getAttribute('data-theme') === systemTheme()) setTheme(systemTheme());
+      else syncTheme();
+    });
+    syncTheme();
+  }
+
   /* ---------- Scroll reveal ---------- */
   var reveals = doc.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window) || reduceMotion.matches) {

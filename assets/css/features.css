@@ -168,8 +168,9 @@
 .panel.green .wm{fill:#0E9F6E;}
 .panel.violet .wm{fill:#5433D6;}
 @media (prefers-color-scheme:dark){
-  .panel:not(.dark){filter:brightness(.92);border-color:transparent;}
+  :root:not([data-theme="light"]) .panel:not(.dark){filter:brightness(.92);border-color:transparent;}
 }
+:root[data-theme="dark"] .panel:not(.dark){filter:brightness(.92);border-color:transparent;}
 
 /* ---------- Plans ---------- */
 .plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;}

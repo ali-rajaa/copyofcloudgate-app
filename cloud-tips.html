@@ -59,7 +59,7 @@ faq:
         <div class="card-fan">
         <div class="fan-card fc-back">
           <div class="fan-head">
-            <span class="fan-tile t-ink"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10.5 5.5h3"/></svg></span>
+            <span class="fan-tile cover-iphone"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10.5 5.5h3"/></svg></span>
             <span class="fan-tag">iPhone</span>
           </div>
           <div class="fan-title"><i></i><i class="w60"></i></div>
@@ -68,7 +68,7 @@ faq:
         </div>
         <div class="fan-card fc-mid">
           <div class="fan-head">
-            <span class="fan-tile t-green"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 10h12v8a2 2 0 01-2 2H8a2 2 0 01-2-2z"/><path d="M6 10a6 6 0 0112 0M9 6L7.5 3.5M15 6l1.5-2.5"/></svg></span>
+            <span class="fan-tile cover-android"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 10h12v8a2 2 0 01-2 2H8a2 2 0 01-2-2z"/><path d="M6 10a6 6 0 0112 0M9 6L7.5 3.5M15 6l1.5-2.5"/></svg></span>
             <span class="fan-tag">Android</span>
           </div>
           <div class="fan-title"><i></i><i class="w60"></i></div>
@@ -77,7 +77,7 @@ faq:
         </div>
         <div class="fan-card fc-front">
           <div class="fan-head">
-            <span class="fan-tile t-blue"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.3.3.5.7.5 1.1h6c0-.4.2-.8.5-1.1A6 6 0 0012 3z"/></svg></span>
+            <span class="fan-tile cover-start"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.3.3.5.7.5 1.1h6c0-.4.2-.8.5-1.1A6 6 0 0012 3z"/></svg></span>
             <span class="fan-tag">Start here</span>
           </div>
           <div class="fan-title"><i></i><i class="w60"></i></div>
@@ -265,7 +265,7 @@ faq:
       </div>
       <div class="about-layout">
         <div class="about-prose">
-        <div class="ab" id="hub-start">
+        <section class="ab" id="hub-start">
           <div class="ab-head"><span class="ab-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg></span><h2>New to cloud storage? Start here</h2></div>
           <p class="lede">If you have never used a cloud storage app before, the useful thing to understand first is what backing up does, because almost every problem people hit comes from misunderstanding this one point.</p>
           <p>Backing up keeps a second copy of your files somewhere other than your phone. The original stays exactly where it is. Your gallery looks identical afterwards, nothing is moved and nothing is hidden. That copy means your photos are no longer tied to one piece of hardware that can be lost, stolen or dropped.</p>
@@ -276,43 +276,43 @@ faq:
             <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Learn how to backup photos so nothing is missed</span></li>
           </ul>
           <p><a href="/guides/backup-setup">Read the full backup setup guide</a> if you want the whole process, or pick a specific topic below.</p>
-        </div>
-        <div class="ab" id="hub-android">
+        </section>
+        <section class="ab" id="hub-android">
           <div class="ab-head"><span class="ab-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 10h12v8a2 2 0 01-2 2H8a2 2 0 01-2-2z"/><path d="M6 10a6 6 0 0112 0M9 6L7.5 3.5M15 6l1.5-2.5"/></svg></span><h2>Cloud storage for Android</h2></div>
           <p>Android gives apps more freedom than iOS, which is useful and also the reason Android cloud backup fails in more interesting ways. Three things decide whether it works: file permissions, battery restrictions and folder coverage.</p>
           <p>Full file access matters because anything less leaves screenshots, downloads and messaging media invisible to your backup. Battery optimisation matters because a restricted app cannot upload while the screen is off, which is exactly when you want it working. Cloud storage for Samsung phone owners has an extra layer on top, since Samsung adds its own power management that can put apps to sleep independently.</p>
           <p>Folder coverage is the one people discover too late. Photo backup Android setups default to the camera folder, and photos friends sent you through messaging apps live somewhere else.</p>
           <p><a href="/guides/cloud-storage-android">Read the Android guide</a> for the full walkthrough, including how to free up storage on Android once your backup is confirmed.</p>
-        </div>
-        <div class="ab" id="hub-iphone">
+        </section>
+        <section class="ab" id="hub-iphone">
           <div class="ab-head"><span class="ab-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10.5 5.5h3"/></svg></span><h2>Cloud storage for iPhone</h2></div>
           <p>Free cloud storage iPhone setups have a different weak point. When an app asks for photo access, iOS offers a limited option where you hand over a specific set of images. It sounds cautious and it breaks automatic backup, because anything you photograph afterwards is not included.</p>
           <p>Background app refresh is the second one. Without it, uploads only progress while the app is open on screen, which turns automatic iPhone photo backup into a manual chore without telling you. Low Power Mode suspends background uploads too, so a phone left in that state for a week is a phone that has not backed up for a week.</p>
           <p>Get those right and you can store iPhone photos online, then free up iPhone storage by clearing local copies once the upload is verified.</p>
           <p><a href="/guides/cloud-storage-iphone">Read the iPhone guide</a> for the permissions walkthrough and how to move photos from iPhone to cloud storage.</p>
-        </div>
-        <div class="ab" id="hub-web">
+        </section>
+        <section class="ab" id="hub-web">
           <div class="ab-head"><span class="ab-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18 14 14 0 010-18z"/></svg></span><h2>Web and multi device access</h2></div>
           <p>Not everyone wants to install an app immediately, and you do not have to. A cloud storage web app runs in a browser, which means you can upload files online, store files online and access files online from any machine without installing anything at all.</p>
           <p>Browser cloud storage covers the situations a phone app cannot: pulling a document onto a work computer, downloading a batch of photos to a desktop for editing, or reaching your account from a borrowed laptop the day your phone goes missing. That last one is the main reason to have web access.</p>
           <p>Cross platform cloud storage is the other half. One account across Android, iOS and web means you access files anywhere without duplicating anything, and switching phone platforms becomes a sign-in rather than a data migration.</p>
           <p>Read the <a href="/guides/web-cloud-storage">web storage guide</a> or the <a href="/guides/cross-platform-cloud-storage">cross platform guide</a>.</p>
-        </div>
-        <div class="ab" id="hub-storage">
+        </section>
+        <section class="ab" id="hub-storage">
           <div class="ab-head"><span class="ab-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><h2>Freeing up space on a full phone</h2></div>
           <p>A full phone is often the reason to start looking at cloud storage. Once a backup exists, reclaiming space is quick and safe. The order is what matters.</p>
           <p>Back up everything first and wait for it to finish. Confirm the files are in your account by opening a few of them there. Only then delete the local copies. Doing it in any other order is how people lose things permanently.</p>
           <p>When you do start clearing, sort by file size rather than working through your gallery chronologically. It is almost always long videos at the top. Archiving five or six of them usually frees more space than deleting several hundred photos, and you lose nothing either way because the originals stay in your account.</p>
           <div class="rule"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><p>Photos taking too much storage is the usual complaint. Videos taking too much phone storage is usually the actual cause.</p></div>
           <p>Read <a href="/guides/phone-storage-full">how to free up phone storage</a> or the guide to <a href="/guides/cloud-storage-for-videos">cloud storage for videos</a>.</p>
-        </div>
-        <div class="ab" id="hub-plans">
+        </section>
+        <section class="ab" id="hub-plans">
           <div class="ab-head"><span class="ab-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 12V5a2 2 0 012-2h7l9 9-9 9z"/><circle cx="8" cy="8" r="1.4"/></svg></span><h2>How much storage do you need</h2></div>
           <p>Storage figures mean nothing until you translate them into things you recognise. A single phone photo is roughly 2MB to 5MB, so 1GB holds about 250 to 400 photos and 100GB lands somewhere between 25,000 and 40,000 images.</p>
           <p>Video changes the maths. A minute of 1080p uses around 60MB to 100MB, while a minute of 4K can reach 350MB or more. Ten minutes of 4K therefore costs about as much room as a thousand photographs, which is why a library that looks small can fill an account quickly.</p>
           <p>At a typical photo rate, 100GB free cloud storage holds years of material. If you record long 4K clips regularly, expect it to move faster, and 250GB, 500GB or 1TB plans are there when you need the headroom.</p>
           <p>See the <a href="/features#plans">full plan comparison</a> on the features page.</p>
-        </div>
+        </section>
         </div>
         <aside class="about-nav">
           <h3>In this section</h3>

@@ -29,7 +29,7 @@
 .legal-nav a.active{color:var(--blue-text);background:var(--blue-pale);font-weight:600;}
 
 .legal-body{min-width:0;counter-reset:sec;max-width:48rem;}
-.lsec{padding:var(--s-6) 0;border-top:1px solid var(--line);scroll-margin-top:calc(var(--header-h) + var(--header-top) + 16px);}
+.lsec{padding:var(--s-6) 0;border-top:1px solid var(--line);}
 .lsec:first-child,.toc-mobile + .lsec{padding-top:0;border-top:0;}
 .lsec h2{counter-increment:sec;display:flex;gap:var(--s-3);align-items:baseline;font-size:var(--fs-2xl);line-height:1.2;margin-bottom:var(--s-4);}
 .lsec h2::before{content:counter(sec) '.';flex-shrink:0;font-family:var(--font-num);font-size:.7em;color:var(--blue-text);}

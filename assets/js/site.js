@@ -81,7 +81,6 @@
       var dark = currentTheme() === 'dark';
       var chosen = root.hasAttribute('data-theme');
       themeBtns.forEach(function (b) {
-        b.hidden = false;
         if (b.getAttribute('role') === 'switch') b.setAttribute('aria-checked', dark ? 'true' : 'false');
         else b.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
       });

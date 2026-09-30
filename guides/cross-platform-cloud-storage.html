@@ -24,7 +24,8 @@ faq:
 ---
 <main id="main">
 
-  <section class="art-hero">
+  <article class="guide">
+  <header class="art-hero">
     {% include hero-clouds.html %}
     <div class="container">
       <div class="art-head reveal">
@@ -33,16 +34,16 @@ faq:
         <h1>Cross platform cloud storage across Android, iOS and web</h1>
         <p class="art-standfirst">One account, every device. How multi device cloud storage removes the emailing files to yourself habit, and why it makes switching phone platforms a sign-in rather than a migration.</p>
         <div class="art-meta">
-          <span>12 min read</span><span class="dot"></span>
-          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span><span class="dot"></span>
-          <span>Android, iPhone and web</span><span class="dot"></span>
+          <span>12 min read</span>
+          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span>
+          <span>Android, iPhone and web</span>
           <span>Beginner friendly</span>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="sec-body">
+  <div class="sec-body">
     <div class="container">
       <div class="art-layout">
         <div class="art-main">
@@ -53,7 +54,7 @@ faq:
           <p>This guide covers what changes when you stop organising files by device, how to access files across devices in practice, what happens when you switch between Android and iPhone, and the household case for sharing one allowance rather than several.</p>
         </div>
 
-        <div class="gb" id="idea">
+        <section class="gb" id="idea">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="5" width="14" height="10" rx="2"/><rect x="16" y="9" width="6" height="10" rx="1.6"/></svg></span><h2>One account, seen from different screens</h2></div>
           <p class="lede">This is the whole idea. The change in how you think about files matters more than any setting.</p>
           <p>Your files stop belonging to a device. They belong to an account, and the device is just how you happen to be looking at them today. Sign in on an Android phone, an iPhone and a laptop browser at the same time and all three show the same library.</p>
@@ -67,9 +68,9 @@ faq:
           </ul>
           <p>Cloud storage for Android iOS and web from a single account is what multi device cloud storage should mean in practice, rather than three separate free accounts you have to remember the boundaries of.</p>
           <p>Mobile and web cloud storage running from the same place is what makes this work. Cloud storage across devices is not three services kept in step with each other, it is one library that several devices happen to be looking at.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="email">
+        <section class="gb" id="email">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 7.5l9 6 9-6"/></svg></span><h2>The habit this replaces</h2></div>
           <p>Emailing a file to yourself is a familiar habit. It is the universal workaround for moving something between two devices, and it half works, which is why it survives.</p>
           <p>What it costs:</p>
@@ -81,9 +82,9 @@ faq:
           </ul>
           <p>Once a shared account exists, this is no longer necessary. Access files anywhere becomes the default rather than something you arrange in advance, and the inbox goes back to being for messages.</p>
           <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p>A useful test of whether this is set up properly: the next time you want a file on another device, notice whether you reach for email. If you do, something is not signed in where it should be.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="practice">
+        <section class="gb" id="practice">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 12a8 8 0 0113.6-5.7L20 8M20 12a8 8 0 01-13.6 5.7L4 16"/><path d="M20 4v4h-4M4 20v-4h4"/></svg></span><h2>How to access files across devices in practice</h2></div>
           <p>The setup is short. Most of it is signing in.</p>
           <ul class="steps-list">
@@ -99,9 +100,9 @@ faq:
           <p><strong>The browser</strong> is better for anything in bulk: uploading a folder from a computer, downloading a batch of photos for editing, or hunting through a large library on a big screen.</p>
           <p><strong>A second phone or tablet</strong> mostly reads rather than writes. Worth signing in anyway, since it costs nothing and means the files are there when that is the device in your hand.</p>
           <p>The <a href="/guides/web-cloud-storage">web cloud storage guide</a> covers the browser side in more detail, including what it cannot do.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="switching">
+        <section class="gb" id="switching">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span><h2>Switching between Android and iPhone</h2></div>
           <p class="lede">This is where cloud storage Android and iPhone side by side lets you change your mind about phones without losing files.</p>
           <p>Manufacturer device backups are tied to their platform. An Android backup expects to restore onto Android, and an iPhone backup onto an iPhone. That is fine until you want to move the other way, at which point people discover their entire photo library is locked inside a backup that only speaks one language.</p>
@@ -115,9 +116,9 @@ faq:
           <p>That is the migration. Your library is available immediately rather than needing to be transferred, because it was never on the old handset alone.</p>
           <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg><p>Cloud storage covers your files. Contacts, messages and app data move separately through each platform's own tools, so check those before wiping anything. The <a href="/guides/switch-to-new-phone">new phone guide</a> covers the full order of operations.</p></div>
           <p>The wider point is that share storage between devices in this sense removes a constraint from buying decisions. If you have ever kept a phone partly because changing platforms sounded like a data problem, that is the constraint going away.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="photos">
+        <section class="gb" id="photos">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="10" r="2"/><path d="M3 17l5-4 4 3 3-2 6 5"/></svg></span><h2>Access photos across devices without duplicating them</h2></div>
           <p>A common worry is that signing in everywhere will create copies of everything on every device, filling them all up. It does not work that way.</p>
           <p>The files live in your account. A device shows you what is there and downloads individual items when you open them. Browsing your library on a tablet does not pull twenty thousand photos onto the tablet.</p>
@@ -129,9 +130,9 @@ faq:
           </ul>
           <p>If two phones both take photos, back up from both. The account handles them arriving from different places without any special configuration.</p>
           <p>This is also what makes it possible to access files from phone and computer simultaneously rather than switching between them. Both are looking at the same library at the same time, and neither is holding the only copy.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="family">
+        <section class="gb" id="family">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5M16 14c2.8 0 5 1.5 5 4.2"/></svg></span><h2>Households and shared allowances</h2></div>
           <p>Multi device cloud storage extends fairly naturally to multiple people, which is usually better value than everyone maintaining separate accounts that each fill up at a different time.</p>
           <p>Cloud storage phone and computer access across a household means one allowance covers several phones rather than four people each managing their own free tier and each hitting a ceiling separately.</p>
@@ -143,9 +144,9 @@ faq:
           </div>
           <p>Monthly and yearly billing are both available, with details on the <a href="/features#plans">features page</a>. Comparing per person rather than by headline price is usually the fairer way to judge it.</p>
           <p>Worth thinking about before consolidating: shared storage is not the same as shared visibility, and different people have different expectations about that. Agree how it is organised before everyone starts uploading rather than afterwards.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="problems">
+        <section class="gb" id="problems">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h2>Common problems and how to fix them</h2></div>
           <div class="xlist">
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>My files show on one device but not another.</strong> Almost always two different accounts rather than a sync failure. Check the email address signed in on each, since people often create a second account without noticing.</p></div>
@@ -155,15 +156,15 @@ faq:
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>I switched platforms and my messages did not come across.</strong> Cloud storage covers files, not messages or contacts. Those move through each platform's own transfer tools and need handling separately.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>My tablet is downloading everything and filling up.</strong> Check whether backup was switched on there by accident. A secondary device should generally read rather than upload.</p></div>
           </div>
-        </div>
+        </section>
 
-        <div class="gb" id="faq">
+        <section class="gb" id="faq">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 115 .8c0 1.6-2.5 2-2.5 3.4M12 17h.01"/></svg></span><h2>Frequently asked questions</h2></div>
           <p>The questions that come up most often about using one account across several devices.</p>
           {% include faq.html %}
-        </div>
+        </section>
 
-        <div class="gb" id="checklist">
+        <section class="gb" id="checklist">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>The whole thing as a checklist</h2></div>
           <ul class="steps-list">
             <li>Use one account rather than several free ones on different devices</li>
@@ -175,10 +176,10 @@ faq:
             <li>For a household, compare a shared plan per person against separate accounts</li>
           </ul>
           <p>The check that matters is the fourth one. Two devices showing the same file is proof the account is shared, and it is the assumption everything else here rests on.</p>
-        </div>
+        </section>
 
         </div>
-        <aside class="toc" aria-labelledby="toc-title">
+        <nav class="toc" aria-labelledby="toc-title">
           <h2 class="toc-title" id="toc-title">On this page</h2>
           <ul>
             <li><a href="#idea">One account, many screens</a></li>
@@ -191,10 +192,11 @@ faq:
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#checklist">Checklist</a></li>
           </ul>
-        </aside>
+        </nav>
       </div>
     </div>
-  </section>
+  </div>
+  </article>
 
   <section class="sec-tint sec-related">
     <div class="container">
@@ -204,19 +206,16 @@ faq:
       </div>
       <div class="next-grid">
         <a href="/guides/switch-to-new-phone" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>Move everything to a new phone in one sitting</h3>
           <p>The order of operations that stops new phone day turning into a data loss story.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/web-cloud-storage" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>Web cloud storage: using your files without installing anything</h3>
           <p>What a browser does well, and the one thing it cannot do.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/backup-setup" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>How to back up your phone to free cloud storage</h3>
           <p>Step-by-step setup for Android, iPhone and the web.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>

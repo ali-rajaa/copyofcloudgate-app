@@ -75,7 +75,7 @@
 .feat-icon.teal{background:var(--green-pale);}
 .feat-icon.teal svg{color:var(--green-text);}
 .feat-card h3{font-size:var(--fs-md);font-weight:650;margin-bottom:var(--s-2);}
-.feat-card p{font-size:var(--fs-sm);color:var(--text-2);line-height:1.6;}
+.feat-card p{font-size:var(--fs-sm);color:var(--text-2);line-height:var(--lh-body);}
 .feat-card.featured{background:linear-gradient(135deg,var(--blue),var(--blue-hover) 130%);border-color:transparent;box-shadow:var(--sh-blue);}
 .feat-card.featured .feat-icon{background:rgba(255,255,255,.18);}
 .feat-card.featured .feat-icon svg{color:#FFFFFF;}
@@ -108,7 +108,7 @@
 .why-icon.c2{background:linear-gradient(145deg,#3A4470,#141628);box-shadow:0 8px 18px -4px rgba(20,22,43,.4);}
 .why-icon.c3{background:linear-gradient(145deg,#18C48C,#0A8C61);box-shadow:0 8px 18px -4px rgba(14,159,110,.4);}
 .why-card h3{font-size:var(--fs-lg);font-weight:650;margin-bottom:var(--s-2);}
-.why-card p{font-size:var(--fs-sm);color:var(--text-2);line-height:1.62;}
+.why-card p{font-size:var(--fs-sm);color:var(--text-2);line-height:var(--lh-body);}
 
 /* phones: card rows become swipe rails with snap points, never auto-scrolling */
 .drag-hint{display:none;align-items:center;gap:var(--s-2);font-size:var(--fs-sm);font-weight:600;color:var(--text-3);margin:0 0 var(--s-3) 2px;}

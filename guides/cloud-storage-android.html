@@ -22,7 +22,8 @@ faq:
 ---
 <main id="main">
 
-  <section class="art-hero">
+  <article class="guide">
+  <header class="art-hero">
     {% include hero-clouds.html %}
     <div class="container">
       <div class="art-head reveal">
@@ -31,18 +32,18 @@ faq:
         <h1>Cloud storage for Android: the complete setup guide</h1>
         <p class="art-standfirst">Everything Android owners need for a cloud backup app that captures everything. Covers full file access, battery optimisation, Samsung device care settings, and which folders a default backup leaves out.</p>
         <div class="art-meta">
-          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span><span class="dot"></span>
-          <span>Android and Samsung</span><span class="dot"></span>
+          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span>
+          <span>Android and Samsung</span>
           <span>Beginner friendly</span>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="sec-body">
+  <div class="sec-body">
     <div class="container">
       <div class="art-layout">
-        <article class="art-main">
+        <div class="art-main">
 
         <div class="gb">
           <p class="lede">Android gives you more control over a backup than any other phone platform, and that is exactly why Android backups fail more often. There are more switches, and three of them are set against you by default.</p>
@@ -55,7 +56,7 @@ faq:
           </div>
         </div>
 
-        <div class="gb" id="what">
+        <section class="gb" id="what">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 16.5C4.79 16.5 3 14.71 3 12.5C3 10.42 4.6 8.72 6.63 8.53C7.27 6.44 9.22 5 11.5 5C14.27 5 16.55 7.09 16.85 9.78C18.65 10.09 20 11.63 20 13.5C20 15.71 18.21 17.5 16 17.5H7Z"/></svg></span><h2>What cloud storage on Android does</h2></div>
           <p class="lede">A cloud storage app for Android keeps a second copy of your files on a server, separate from the phone. The original stays exactly where it is.</p>
           <p>It is a common misunderstanding, and it stops people from setting up Android cloud backup at all. When a photo is backed up, it does not leave your gallery. Nothing is moved, nothing is hidden, nothing is deleted. Your phone looks identical the moment after the upload finishes. What has changed is that a copy now exists somewhere your phone cannot take down with it.</p>
@@ -63,9 +64,9 @@ faq:
           <p>It is also worth separating this from what Android already does. Android has a system backup that covers app data, call history, device settings and your wallpaper. It is useful and it is not a photo backup. Plenty of people discover the difference only after wiping a phone, restoring it, and finding the camera roll empty. If you want photo backup Android needs a cloud storage app pointed at your media folders, which is what this guide sets up.</p>
           <p>The same account works from a browser and from a tablet, so online storage for Android phones is not a phone-only thing. You upload from the handset and open the files on a laptop that has never been connected to it.</p>
           <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><p><strong>Android system backup is not a photo backup.</strong> It restores settings and app data. Your camera roll needs a cloud backup app pointed at it separately.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="before">
+        <section class="gb" id="before">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg></span><h2>Before you start</h2></div>
           <p>Four things, none of them complicated. Getting them in place first is the difference between a five minute setup and an evening of troubleshooting.</p>
           <ol class="steps-list">
@@ -75,25 +76,25 @@ faq:
             <li><strong>A rough idea of how much you are backing up.</strong> Settings, then Storage, will tell you what photos and videos are using. That number decides whether 100GB free cloud storage is comfortable or tight.</li>
           </ol>
           <p>If that last figure comes back well over 100GB, do not let it stop you. Back up in order of what matters, camera roll first, and deal with the rest later. A partial backup that exists beats a complete one you never started.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="step-1">
+        <section class="gb" id="step-1">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 5v14M5 12h14"/></svg></span><h2>Step 1: Create your free account</h2></div>
           <p>Install the app from Google Play and sign up. The full 100GB free cloud storage Android allowance is available straight away. There is no trial window that expires and no card required at signup.</p>
           <p>Use an email you can get into from another device. If you ever need to recover the account from a phone you no longer have, an address tied only to that phone is not much use.</p>
           <p>If you would rather look at the web app first, you can sign up in a browser at <a href="https://my.cloudgate-app.com" target="_blank" rel="noopener">my.cloudgate-app.com</a> and install the Android app afterwards. Same account either way.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="step-2">
+        <section class="gb" id="step-2">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span><h2>Step 2: Grant full file access</h2></div>
           <p class="lede">This is the first of the three settings that break Android backups, and it is the one that causes the most confusion, because everything looks like it is working.</p>
           <p>Modern Android offers a choice when an app asks for photos. You can allow access to everything, or you can allow access to selected items. Selected items is a good privacy feature and it is the wrong answer here. If you pick it, the app can only ever see the handful of photos you tapped, so the backup completes in seconds, reports success, and covers almost nothing.</p>
           <p>Choose the option that grants access to all photos and videos. If you want the app to cover documents and downloads as well, it will also need broader file access, which Android presents separately.</p>
           <p>If you have already tapped through the prompts and are not sure what you chose, check it directly. Open Settings, then Apps, find the app, then Permissions. Anything showing as limited or selected access needs changing before the rest of this guide is worth doing.</p>
           <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p><strong>Watch for a backup that finishes suspiciously fast</strong> with a file count far below what is in your gallery. That almost always means limited photo access.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="step-3">
+        <section class="gb" id="step-3">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span><h2>Step 3: Choose which folders get backed up</h2></div>
           <p>Android scatters your media across more folders than you might expect. A default backup usually picks up the camera folder and stops there, which is fine until you look for something that was never in it.</p>
           <p>The folders that catch people out, roughly in order of how often they are missed:</p>
@@ -105,25 +106,25 @@ faq:
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Social and camera app folders.</strong> Some apps write to their own directory rather than the shared camera folder.</p></div>
           </div>
           <p>Go through the folder list once, deliberately, rather than accepting the defaults. It takes a minute and it is the difference between a backup that covers your phone and one that covers part of it.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="step-4">
+        <section class="gb" id="step-4">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="8" width="17" height="9" rx="2"/><path d="M22 11v3"/></svg></span><h2>Step 4: Turn off battery optimisation for the app</h2></div>
           <p class="lede">This is the second setting that stops Android backups, and unlike the permissions one, it usually breaks things weeks later rather than immediately.</p>
           <p>Android aggressively restricts what apps can do in the background in order to protect battery life. In most situations that is a good thing. For a backup app it means the upload gets suspended the moment you lock the screen, resumed briefly, suspended again, and eventually the system decides the app is not important and stops waking it at all.</p>
           <p>The pattern people describe is always the same. Backup worked fine for a fortnight, then stopped, with no error and no notification. Nothing broke. Android stopped letting it run.</p>
           <p>Open Settings, then Apps, find the app, then Battery, and set it to unrestricted. The naming varies between Android versions and manufacturers, so you may see it described as unrestricted, no restrictions, or allow background activity. They all mean the same thing.</p>
           <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><p><strong>Battery use:</strong> a backup app set to unrestricted uses battery only while it is uploading. Once the queue is clear it sits idle like anything else.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="step-5">
+        <section class="gb" id="step-5">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12.5a10 10 0 0114 0M8.5 16a5.5 5.5 0 017 0M12 19.5h.01"/></svg></span><h2>Step 5: Wi-Fi only, or mobile data too</h2></div>
           <p>Wi-Fi only is the right default, and it is usually already set. It means uploads wait until you are on a known network, which keeps a large video backup Android job from eating a month of data in an afternoon.</p>
           <p>The tradeoff is timing. If you are away for a fortnight and never join a Wi-Fi network, nothing uploads until you get home. For a holiday, which is exactly when people take photos they would hate to lose, that is a real gap.</p>
           <p>Two sensible approaches. Either leave it on Wi-Fi only and connect to hotel or cafe Wi-Fi occasionally to let the queue drain, or allow mobile data for photos while keeping video on Wi-Fi only if the app separates them. Photos are small enough that a few hundred of them will not trouble most plans. Video is where the data goes.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="step-6">
+        <section class="gb" id="step-6">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>Step 6: Confirm the first backup actually finished</h2></div>
           <p class="lede">Do not skip this. An unverified backup is a guess, and people generally discover the guess was wrong at the exact moment they need the files.</p>
           <p>The first run takes as long as it takes. A large library on a decent connection can run overnight. Leave the phone plugged in, on Wi-Fi, and let it get on with it. You do not need to sit and watch.</p>
@@ -134,27 +135,27 @@ faq:
             <li>You can open a recent photo from inside your account, ideally in a browser on another device, rather than from the phone gallery</li>
           </ol>
           <p>That third check is the one that counts. Opening the photo from your phone proves nothing, because the phone has its own copy either way. Opening it in a browser proves the copy in your account is real and readable.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="samsung">
+        <section class="gb" id="samsung">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10.5 18.5h3"/></svg></span><h2>Cloud storage for Samsung phone owners</h2></div>
           <p class="lede">Samsung phones need one extra step, and it is the third of the three settings that break Android backups.</p>
           <p>Samsung runs its own power management layer called Device Care, sometimes appearing as Battery and device care depending on your One UI version. It sits on top of standard Android battery optimisation and it will put apps to sleep independently of the setting you changed in Step 4. Changing one and not the other is why so many Samsung owners find their backup has stopped without warning.</p>
           <p>Open Settings, then Battery and device care, then Battery, then Background usage limits. You will find lists named sleeping apps and deep sleeping apps. Make sure your cloud storage app is in neither. While you are there, turn off the option that automatically puts unused apps to sleep, or add the app to the list that is never put to sleep.</p>
           <p>The rest of the setup on a Samsung is identical to any other Android handset. Full photo access, folder selection, unrestricted battery, and the media folder that Samsung Messages uses if you send photos through it.</p>
           <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p><strong>Both switches, not one.</strong> Standard Android battery optimisation and Samsung Device Care are separate systems. An app can be unrestricted in one and asleep in the other.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="photos">
+        <section class="gb" id="photos">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.4"/><path d="M8 6l1.5-2h5L16 6"/></svg></span><h2>Photo backup Android: where photos live</h2></div>
           <p>Once the setup above is done, photo backup Android handles itself. New shots join the upload queue as you take them and go up next time the conditions you set are met. What happens underneath is still useful to understand, because it explains most of the questions people have afterwards.</p>
           <p>A photo storage app Android users can rely on uploads the original file rather than a resized version. That matters if you ever want to print, crop heavily, or move the library somewhere else later. A compressed copy looks fine on a phone screen and falls apart the moment you enlarge it.</p>
           <p>On how to store photos in cloud on Android, the storing is the easy part. The part that goes wrong is coverage: whether every folder that holds photos is included, and whether the app is allowed to run. Both are settled by the steps above.</p>
           <p>If you are wondering where to store photos from Android phone libraries that have grown past what the handset can hold, the answer is the same account, and then removing the local copies once you have confirmed the uploads. That order matters and it is covered below.</p>
           <p>How to save phone photos online without any of this being a project: set it up once, verify it once, then leave it. Backups rarely fail with an error. They fail because nobody checks.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="videos">
+        <section class="gb" id="videos">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 11l6-3v8l-6-3z"/></svg></span><h2>Video backup Android and large Android files</h2></div>
           <p class="lede">Video is what turns a comfortable storage situation into a full one, and it does it faster than almost anyone expects.</p>
           <p>A minute of 1080p footage from a phone costs roughly 60MB to 100MB. The same minute in 4K can reach 350MB or more. Ten minutes of 4K therefore uses about as much room as a thousand photographs. If your gallery looks modest but your storage keeps disappearing, video is the reason, essentially always.</p>
@@ -165,9 +166,9 @@ faq:
             <li><strong>Archive finished footage rather than keeping it live.</strong> Clips you have already edited or shared do not need to sit on the phone.</li>
           </ol>
           <p>Cloud storage for large Android files behaves the same way as anything else, it takes longer and uses more of your allowance. There is no separate mechanism for big files. A single long 4K recording is just a lot of megabytes moving in one direction.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="free-up">
+        <section class="gb" id="free-up">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><h2>How to free up storage on Android safely</h2></div>
           <p class="lede">People lose photos at this step, and it is avoidable. Verify first, delete second, never the other way around.</p>
           <p>Once your backup is confirmed, the local copies on the phone are duplicates. Removing them frees space without losing anything, because the copy in your account remains. The danger is doing it in the wrong order, or doing it while the backup is still catching up.</p>
@@ -181,16 +182,16 @@ faq:
           </ol>
           <p>Start with video. Removing ten large clips frees more room than removing a thousand photos, and you will notice the difference immediately.</p>
           <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p><strong>Never delete while a backup is still running.</strong> If a file has not finished uploading and you remove the original, there is nothing left to upload.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="move">
+        <section class="gb" id="move">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 16V4M8 8l4-4 4 4"/><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg></span><h2>How to move files from phone to cloud manually</h2></div>
           <p>Automatic backup covers your media folders. Sometimes you want something specific moved right now, or something that lives outside those folders.</p>
           <p>Any file manager on Android can share a file into the app, and the app has its own upload control for picking files directly. Both work for documents, downloads, archives, or anything you have saved from a browser.</p>
           <p>This is also how you handle files from a computer. Open the web app in a browser, drag the files in, and they appear on the phone. Online storage for Android phones is not a one-way street, and the account is the same one whichever device you reach it from.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="where">
+        <section class="gb" id="where">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-4.6-7-10a7 7 0 1114 0c0 5.4-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg></span><h2>Where to store photos from an Android phone</h2></div>
           <p class="lede">There are three realistic answers, and they fail in different ways. Choose knowing how each one fails.</p>
           <p><strong>An SD card</strong> is cheap and it is right there in the phone. It is also the option most likely to lose your photos. Cards fail without warning, and because the card lives in the same phone as the original, a stolen or drowned handset takes both copies at once. A card adds room but protects nothing.</p>
@@ -198,9 +199,9 @@ faq:
           <p><strong>Online cloud storage</strong> removes the remembering. Once it is set up, new photos go up without anyone deciding to do it, and the copy is somewhere physically separate from the phone. That is what makes it a backup rather than a second pile of files.</p>
           <p>The strongest arrangement combines two of the three. Cloud for the automatic everyday copy, plus an occasional export to a computer or drive for anything irreplaceable. That gives you one copy that never needs your attention and one copy that does not depend on any account at all.</p>
           <p>If you only do one, make it the automatic one. How to save phone photos online with no ongoing effort beats a perfect manual system nobody keeps up.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="plans">
+        <section class="gb" id="plans">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span><h2>How much storage you need</h2></div>
           <p>Translate the numbers into things you keep and they become much easier to judge. A phone photo usually lands between 2MB and 5MB, which puts a gigabyte at roughly 250 to 400 photos, and 100GB somewhere between 25,000 and 40,000 images.</p>
           <p>Documents barely register. A scanned receipt is a few hundred kilobytes, a long PDF perhaps two or three megabytes. Video is the variable, for the reasons above.</p>
@@ -212,9 +213,9 @@ faq:
             <div class="plan"><div class="nm">Family</div><div class="sz">1TB</div><div class="ds">1TB family cloud storage for a household backing up several phones.</div></div>
           </div>
           <p>Monthly and yearly billing are both available. Nothing you have already backed up stops working if you stay on the free plan.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="problems">
+        <section class="gb" id="problems">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 015 .9c0 1.7-2.5 2.2-2.5 3.6M12 17h.01"/></svg></span><h2>Common Android problems and how to fix them</h2></div>
           <div class="xlist">
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Backup finished in seconds and covered almost nothing.</strong> Limited photo access. Settings, Apps, the app, Permissions, and change it to allow all photos and videos.</p></div>
@@ -225,16 +226,16 @@ faq:
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Deleted a lot of photos and the phone still says storage is full.</strong> The gallery's recently deleted folder. It holds files for up to 30 days. Empty it.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Uploads are very slow.</strong> Usually the connection rather than the app. Most home connections upload far more slowly than they download, and a first backup of a full library is a lot of data. Leave it overnight before assuming something is wrong.</p></div>
           </div>
-        </div>
+        </section>
 
-        <div class="gb" id="newphone">
+        <section class="gb" id="newphone">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="8" width="7" height="12.5" rx="1.6"/><rect x="14.5" y="8" width="7" height="12.5" rx="1.6"/><path d="M7 4.5h10"/><path d="M14.5 2l2.5 2.5L14.5 7"/></svg></span><h2>Moving to a new Android phone</h2></div>
           <p>This is the day a backup is for. Install the app on the new handset, sign in, and your files are there. Nothing needs to travel between the two phones and neither needs to be near the other.</p>
           <p>The one thing worth doing before you hand the old phone on: open it, confirm the backup status is up to date, and let any queued items finish. The gap between your last backup and the moment you wipe the device is the only window where something can be lost.</p>
           <p>Then set the new phone up the same way this guide describes. Full photo access, folder selection, unrestricted battery, and on a Samsung, Device Care. A new phone means new defaults, and the defaults are the same ones that caused problems on the old one.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="best">
+        <section class="gb" id="best">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3l2.6 5.6 6.1.8-4.4 4.2 1.1 6L12 16.8 6.6 19.6l1.1-6L3.3 9.4l6.1-.8z"/></svg></span><h2>What makes the best cloud storage app for Android</h2></div>
           <p class="lede">Every cloud storage app Android users can install will move a file from a phone to a server. The differences that matter are in what happens around that.</p>
           <p>If you are comparing options, these are the things worth checking, in rough order of how much they will affect you day to day.</p>
@@ -246,17 +247,17 @@ faq:
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>What happens when you hit the limit?</strong> The reasonable behaviour is that uploads pause and existing files stay put. Anything that deletes your files because you stopped paying is worth avoiding.</p></div>
           </div>
           <p>Be wary of any file storage app Android listing that promises storage without defined limits. Storage costs money to provide, and an allowance described in vague terms usually has a limit written somewhere less prominent.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="devices">
+        <section class="gb" id="devices">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="4" width="13" height="10" rx="2"/><rect x="15" y="9" width="7" height="11" rx="2"/></svg></span><h2>Android tablets, second phones and the web</h2></div>
           <p>One account covers everything you sign into. An Android tablet, an old handset you kept as a camera, a work phone and a laptop browser all see the same files, and each device can back up its own folders into the same 100GB.</p>
           <p>That is worth thinking about before you set the second device up. Two phones backing up into one account share the allowance rather than each getting their own, so a household with several heavy camera users is the case where a larger plan starts to make sense.</p>
           <p>The tablet setup is identical to the phone setup, including the permission and battery steps, because Android tablets run the same restrictions. The web app needs no setup at all beyond signing in.</p>
           <p>For anything that spans platforms, an Android phone and an iPhone in the same household for instance, cross platform cloud storage works the same way. What matters is the account, whatever the hardware.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="keep">
+        <section class="gb" id="keep">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 12a8 8 0 11-2.3-5.6"/><path d="M20 4v4h-4"/></svg></span><h2>Keeping it running month after month</h2></div>
           <p class="lede">The most common failure is not a broken backup. It is a backup that stopped six weeks ago and nobody noticed.</p>
           <p>Android major version updates reset some background permissions, and manufacturer software updates can re-enable power saving on apps you had excluded. Neither generates a warning. The backup stops and the app keeps sitting on your home screen looking normal.</p>
@@ -267,14 +268,14 @@ faq:
           </ol>
           <p>Also worth doing after any new phone setup, any factory reset, and any time you change your Google account on the device. Those are the three moments when Android resets defaults back to the restrictive settings this guide turned off.</p>
           <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><p><strong>A backup you check occasionally is worth far more than a backup you assume is fine.</strong> One monthly glance in a browser is the whole maintenance requirement.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="faq">
+        <section class="gb" id="faq">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 015 .9c0 1.7-2.5 2.2-2.5 3.6M12 17h.01"/></svg></span><h2>Frequently asked questions</h2></div>
           {% include faq.html %}
-        </div>
+        </section>
 
-        <div class="gb" id="checklist">
+        <section class="gb" id="checklist">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 11l2 2 4-4"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg></span><h2>The Android checklist</h2></div>
           <p>If you do nothing else on this page, do these six things in this order.</p>
           <ol class="steps-list">
@@ -286,10 +287,10 @@ faq:
             <li>Open a photo from your account in a browser before you delete anything locally</li>
           </ol>
           <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><p><strong>That is the whole job.</strong> Steps two and four are the ones that break Android backups. Get those right and the rest looks after itself.</p></div>
-        </div>
+        </section>
 
-        </article>
-        <aside class="toc" aria-labelledby="toc-title">
+        </div>
+        <nav class="toc" aria-labelledby="toc-title">
           <h2 class="toc-title" id="toc-title">On this page</h2>
           <ul>
               <li><a href="#what">What it does</a></li>
@@ -315,10 +316,11 @@ faq:
               <li><a href="#faq">FAQ</a></li>
               <li><a href="#checklist">Checklist</a></li>
           </ul>
-        </aside>
+        </nav>
       </div>
     </div>
-  </section>
+  </div>
+  </article>
 
   <section class="sec-related">
     <div class="container">
@@ -327,19 +329,16 @@ faq:
       </div>
       <div class="next-grid">
         <a href="/guides/cloud-storage-iphone" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>Free cloud storage for iPhone: photo backup that works</h3>
           <p>The iOS side of the same job, including the photo permission that limits most iPhone backups.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/free-cloud-storage-100gb" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>What 100GB free cloud storage gets you</h3>
           <p>How many photos and videos 100GB holds, and how fast 4K eats into it.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/backup-setup" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>How to back up your phone to free cloud storage</h3>
           <p>Step-by-step setup for Android, iPhone and the web.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>

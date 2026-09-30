@@ -24,7 +24,8 @@ faq:
 ---
 <main id="main">
 
-  <section class="art-hero">
+  <article class="guide">
+  <header class="art-hero">
     {% include hero-clouds.html %}
     <div class="container">
       <div class="art-head reveal">
@@ -33,16 +34,16 @@ faq:
         <h1>How to backup photos: where to store them and why</h1>
         <p class="art-standfirst">The best way to store photos online, why originals matter more than compressed copies, and how to make sure photos other people sent you are covered too. A practical look at where to backup photos so they survive a lost phone.</p>
         <div class="art-meta">
-          <span>13 min read</span><span class="dot"></span>
-          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span><span class="dot"></span>
-          <span>Android, iPhone and web</span><span class="dot"></span>
+          <span>13 min read</span>
+          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span>
+          <span>Android, iPhone and web</span>
           <span>Beginner friendly</span>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="sec-body">
+  <div class="sec-body">
     <div class="container">
       <div class="art-layout">
         <div class="art-main">
@@ -53,16 +54,16 @@ faq:
           <p>This guide covers where to backup photos and why the choice matters, the difference between a backup and a sync, why originals beat compressed copies, and how to cover the pictures other people sent you, which is the category people tend to discover too late.</p>
         </div>
 
-        <div class="gb" id="why">
+        <section class="gb" id="why">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg></span><h2>Why one copy is not a backup</h2></div>
           <p class="lede">A phone is a single point of failure. Everything that lives only on it shares the phone's fate, and phones have a great many ways of coming to an end.</p>
           <p>They get stolen from cafe tables. They go into washing machines, toilets and the sea. Screens stop responding. Batteries swell. An update occasionally bricks a handset outright, and repair shops cannot pull files off a device that will not power on.</p>
           <p>None of that is dramatic or unlikely. It is the ordinary lifecycle of a device you carry everywhere and use several hundred times a day. Phones fail eventually. What matters is whether anything irreplaceable disappears when one does.</p>
           <p>The rule people in data recovery repeat is that a file exists only if it exists in two places. One copy is a file you currently have. Two copies, in two different places, is a file you can rely on having tomorrow.</p>
           <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p>No service, app or repair shop can recover a photo that was never copied anywhere. Nothing fixes that after the fact, so when you back up matters more than how.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="backup-vs-sync">
+        <section class="gb" id="backup-vs-sync">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 12a8 8 0 0113.6-5.7L20 8M20 12a8 8 0 01-13.6 5.7L4 16"/><path d="M20 4v4h-4M4 20v-4h4"/></svg></span><h2>Backup and sync are not the same thing</h2></div>
           <p>This distinction is worth more than any other single thing on this page, because it is common to want a backup and be given a sync instead.</p>
           <p><strong>Sync</strong> keeps the same set of files on several devices. Change something in one place and the change appears everywhere. That is the point of it, and it is useful. It also means a deletion travels just as faithfully as an edit. Delete a folder on your laptop and a well behaved sync service removes it from your phone too, because that is exactly what you appeared to ask for.</p>
@@ -70,9 +71,9 @@ faq:
           <p>The failure story is always the same. Someone tidied up their phone, or a family member did, and the pictures vanished from every device at once. Nothing malfunctioned. Sync did precisely what sync does.</p>
           <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg><p>The practical test: if deleting a photo on your phone makes it disappear on your other devices, that service is syncing rather than backing up. That is fine, as long as you know which one you have.</p></div>
           <p>Having both is usually best. Leave sync doing what it is good at, and keep a separate copy for the material you would be upset to lose.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="where">
+        <section class="gb" id="where">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><h2>Where to backup photos: the realistic options</h2></div>
           <p class="lede">There are four places people put photos. Each fails differently, and knowing which failure you are accepting is the whole decision.</p>
           <h3>An SD card or the phone itself</h3>
@@ -87,9 +88,9 @@ faq:
           <p>That separation is what makes it a backup rather than a second pile of files in the same room. Cloud storage for photos also means the copy is reachable from a browser on any machine, which matters enormously on the day the phone is missing and you want to know what survived.</p>
           <p>Online photo storage is not one kind of product. Some services are built around sharing and social features, some around editing, and some around keeping a faithful copy. For a backup the last of those is what you want, so judge any photo cloud storage option on whether it returns your files unchanged rather than on the length of its feature list.</p>
           <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p>The strongest setup is two of these rather than the perfect one: online photo backup running automatically, plus an occasional export to a drive for anything irreplaceable. One copy that needs no attention, one that depends on no account at all.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="originals">
+        <section class="gb" id="originals">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="10" r="2"/><path d="M3 17l5-4 4 3 3-2 6 5"/></svg></span><h2>Originals versus compressed copies</h2></div>
           <p class="lede">Some services offer a larger free allowance by storing a resized version of every image rather than the file you took. This is the decision people regret years later, and it cannot be undone.</p>
           <p>On a phone screen you will never see the difference. A compressed copy looks perfectly good at the size you usually view it. The difference shows up in exactly three situations, and they are the situations that matter.</p>
@@ -101,9 +102,9 @@ faq:
           <p>The decision is made once, silently, at the moment of upload. There is no later step where the original quality returns, because the data was thrown away to save room on someone else's servers.</p>
           <p>So when judging the best way to store photos, capacity is the second question. The first is whether what you get back is what you put in. An allowance that sounds smaller but keeps originals is usually worth more than a larger one holding reduced copies of the same library.</p>
           <p>The related question worth asking is whether you can get everything out again in bulk, in the original format. Being able to download your own library is what stops storage becoming somewhere photos go and do not come back from.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="coverage">
+        <section class="gb" id="coverage">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span><h2>The photos your backup is probably missing</h2></div>
           <p class="lede">Most backup tools default to the camera folder. That covers what you photographed yourself and misses a surprising share of everything else, which people discover months later while hunting for something specific.</p>
           <p>The folders worth checking deliberately, roughly in order of how often they are missed:</p>
@@ -116,9 +117,9 @@ faq:
           </ul>
           <p>Messaging media is the one that causes real distress. It is often where the pictures of family gatherings live, taken on somebody else's phone and sent to you, existing nowhere else in your possession. If you have ever lost a phone and later realised the group photos everyone sent are gone, this is why.</p>
           <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p>Go through the folder list once, deliberately, rather than accepting the defaults. It takes a minute and it is the difference between a backup that covers your photos and one that covers the ones you took yourself.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="how">
+        <section class="gb" id="how">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>How to store photos online, step by step</h2></div>
           <p>The mechanics are short. Most of the effort is in the first upload, which you do not have to be present for.</p>
           <ul class="steps-list">
@@ -132,9 +133,9 @@ faq:
           <p>That last step is the easiest to skip and the one that decides whether the previous five did anything. Opening a photo on the phone proves nothing, because the phone has its own copy either way. Opening it on a laptop proves the copy in your account exists and is readable.</p>
           <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p>A backup you have never opened from somewhere other than the phone is an assumption rather than a safety net. One check turns it into a fact.</p></div>
           <p>Platform specifics differ enough to matter. The <a href="/guides/cloud-storage-android">Android guide</a> covers permissions, folder coverage and the battery settings that stop uploads, and the <a href="/guides/cloud-storage-iphone">iPhone guide</a> covers the photo access choice and background refresh. The <a href="/guides/backup-setup">full setup walkthrough</a> covers every platform.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="space">
+        <section class="gb" id="space">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 18V9M10 18V5M16 18v-6M22 18H2"/></svg></span><h2>How to save photos without using phone storage</h2></div>
           <p>Once a backup is confirmed, the copies on the phone are duplicates. That is what makes it possible to store photos outside phone storage without losing anything, and it is why the order of operations matters so much.</p>
           <p>Back up, verify by opening files from your account, then remove local copies. Never the other way round, and never while an upload is still in progress, because a file that has not finished uploading has nothing left behind it if you delete the original.</p>
@@ -147,17 +148,17 @@ faq:
             <div class="plan"><div class="nm">Family</div><div class="sz">1TB</div><div class="ds">1TB family cloud storage for a household backing up several phones.</div></div>
           </div>
           <p>Monthly and yearly billing are both available. Full details sit on the <a href="/features#plans">features page</a>, and the <a href="/guides/free-cloud-storage-100gb">guide to what 100GB holds</a> translates the numbers further. If your phone is already full, the <a href="/guides/phone-storage-full">guide to freeing up space</a> covers the safe order for clearing it.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="organise">
+        <section class="gb" id="organise">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span><h2>Do not organise before you back up</h2></div>
           <p class="lede">The instinct is to sort through everything first, delete the duplicates, tidy the albums, and then upload a clean library. This instinct delays backups by months and occasionally forever.</p>
           <p>Curating forty thousand photos is tedious, so it gets started on a quiet Sunday, abandoned about six hundred images in, and never resumed. Meanwhile nothing is backed up, because the tidying was positioned as a prerequisite.</p>
           <p>Upload everything first, including the blurry ones and the fifteen near identical frames of the same moment. Storage is cheap and your time is not. You can curate later from a position of safety, or never, which costs very little.</p>
           <p>If your library is bigger than your allowance, upload in order of importance rather than waiting until you can do all of it at once. Camera roll first, then messaging media, then the rest. A partial backup that exists beats a complete one you never started.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="keep">
+        <section class="gb" id="keep">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h2>Keeping it working after the first upload</h2></div>
           <p>The usual failure is not a backup that breaks loudly. It is one that stopped seven weeks ago while the app carried on looking normal on your home screen.</p>
           <p>Major system updates occasionally reset app permissions, battery restrictions drift back on for apps you have not opened recently, and a reset photo permission stops a backup instantly with no notification of any kind.</p>
@@ -167,9 +168,9 @@ faq:
             <li><strong>Once a month, open your account in a browser</strong> and look for something recent. From a computer, not the phone. This is the only check that proves the copy is real.</li>
           </ul>
           <p>That monthly glance is the entire maintenance requirement, and it is what separates a backup you can rely on from one you merely have.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="problems">
+        <section class="gb" id="problems">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h2>Common problems and how to fix them</h2></div>
           <div class="xlist">
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>It says complete but most of my pictures are missing.</strong> Almost always limited photo access rather than a failure. The app can only see the images you individually selected, so it backed up those and reported success.</p></div>
@@ -179,15 +180,15 @@ faq:
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>The first upload has been running for hours.</strong> Normal. Home connections upload far more slowly than they download, and the first run is your whole library. Leave it overnight on power before assuming a fault.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Nothing has uploaded since I went away.</strong> Wi-Fi only is set and you have not joined a network. Connect to Wi-Fi or allow mobile data for photos temporarily.</p></div>
           </div>
-        </div>
+        </section>
 
-        <div class="gb" id="faq">
+        <section class="gb" id="faq">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 115 .8c0 1.6-2.5 2-2.5 3.4M12 17h.01"/></svg></span><h2>Frequently asked questions</h2></div>
           <p>The questions that come up most often about backing up photos and choosing somewhere to keep them.</p>
           {% include faq.html %}
-        </div>
+        </section>
 
-        <div class="gb" id="checklist">
+        <section class="gb" id="checklist">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>The whole thing as a checklist</h2></div>
           <ul class="steps-list">
             <li>Pick somewhere separate from the phone, not a card inside it</li>
@@ -201,10 +202,10 @@ faq:
             <li>Glance at it once a month, and after every system update</li>
           </ul>
           <p>The coverage check matters most. An incomplete backup is usually working but pointed at one folder out of five, and the pictures that matter most are frequently in the folders nobody selected.</p>
-        </div>
+        </section>
 
         </div>
-        <aside class="toc" aria-labelledby="toc-title">
+        <nav class="toc" aria-labelledby="toc-title">
           <h2 class="toc-title" id="toc-title">On this page</h2>
           <ul>
             <li><a href="#why">Why one copy fails</a></li>
@@ -220,10 +221,11 @@ faq:
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#checklist">Checklist</a></li>
           </ul>
-        </aside>
+        </nav>
       </div>
     </div>
-  </section>
+  </div>
+  </article>
 
   <section class="sec-tint sec-related">
     <div class="container">
@@ -233,19 +235,16 @@ faq:
       </div>
       <div class="next-grid">
         <a href="/guides/phone-storage-full" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>Phone storage full? How to free up space safely</h3>
           <p>Back up, verify, then delete. The safe order for reclaiming space without losing anything.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/cloud-storage-for-videos" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>Cloud storage for videos and large video files</h3>
           <p>Why video fills an account so much faster, and how to back it up without burning your data.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/why-backups-skip-files" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>Why your backup may be quietly skipping files</h3>
           <p>Four reasons a backup reports success while covering a fraction of your library.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>

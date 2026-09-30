@@ -22,7 +22,8 @@ faq:
 ---
 <main id="main">
 
-  <section class="art-hero">
+  <article class="guide">
+  <header class="art-hero">
     {% include hero-clouds.html %}
     <div class="container">
       <div class="art-head reveal">
@@ -31,18 +32,18 @@ faq:
         <h1>What 100GB free cloud storage gets you</h1>
         <p class="art-standfirst">A plain look at what 100GB holds in photos, videos and documents, how quickly 4K video eats into it, and how to tell whether a free plan will last you years or months.</p>
         <div class="art-meta">
-          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span><span class="dot"></span>
-          <span>Android, iPhone and web</span><span class="dot"></span>
+          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span>
+          <span>Android, iPhone and web</span>
           <span>Beginner friendly</span>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="sec-body">
+  <div class="sec-body">
     <div class="container">
       <div class="art-layout">
-        <article class="art-main">
+        <div class="art-main">
 
         <div class="gb">
           <p class="lede">100GB is a number that means nothing until you translate it into things you keep. Roughly, it is somewhere between 25,000 and 40,000 photographs, or about five hours of 4K video. Those two figures being so far apart is the whole story of how storage gets used.</p>
@@ -54,7 +55,7 @@ faq:
           </div>
         </div>
 
-        <div class="gb" id="photos">
+        <section class="gb" id="photos">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.4"/><path d="M8 6l1.5-2h5L16 6"/></svg></span><h2>How many photos fit in 100GB</h2></div>
           <p class="lede">A photo from a current phone camera usually lands between 2MB and 5MB, depending on detail and lighting.</p>
           <p>That puts one gigabyte at roughly 250 to 400 photos, and 100GB somewhere between 25,000 and 40,000 images. To make that concrete: if you take twenty photos a day, every day, you would need somewhere between three and five years to fill it with photographs alone.</p>
@@ -62,9 +63,9 @@ faq:
           <p>A few things push the number down. Portrait mode shots store additional depth data. RAW files, if your phone supports them and you have turned them on, are several times the size of a normal photo. Burst sequences produce a lot of frames very quickly. None of these change the order of magnitude, they just move you toward the lower end of the range.</p>
           <p>Things that push it up: HEIC on iPhone and comparable formats on Android produce smaller files at similar quality, so a modern library is often more efficient than an older one at the same resolution.</p>
           <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><p>A gigabyte holds roughly 300 phone photos. Multiply by whatever allowance you are looking at and you have a usable figure.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="videos">
+        <section class="gb" id="videos">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 11l6-3v8l-6-3z"/></svg></span><h2>How much video fits, and why it changes everything</h2></div>
           <p class="lede">Video is the item that rewrites the maths, and by a large factor.</p>
           <p>A minute of 1080p footage costs around 60MB to 100MB. The same minute recorded in 4K can reach 350MB or more. Ten minutes of 4K therefore uses about as much room as a thousand photographs.</p>
@@ -77,26 +78,26 @@ faq:
           <p>Nobody is at either extreme, but the gap explains almost every case of an account filling faster than expected. If your library looks modest and your storage keeps disappearing, video is the reason, essentially always.</p>
           <p>Frame rate matters as much as resolution. 4K at 60 frames per second is roughly double the size of 4K at 30, for footage that looks near identical on a phone. A lot of phones ship with the higher setting on by default, so you may be recording at twice the file size without having chosen to.</p>
           <p>If you record video regularly and want cloud storage for large files to stretch further, the single highest-value change is dropping everyday clips to 1080p and reserving 4K for things you intend to keep and edit. That alone can quadruple how long an allowance lasts.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="documents">
+        <section class="gb" id="documents">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M14 3v5h5"/><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/></svg></span><h2>Documents are effectively free</h2></div>
           <p>A scanned receipt is a few hundred kilobytes. A long PDF is perhaps two or three megabytes. A spreadsheet or a text document is smaller still.</p>
           <p>You could put every piece of paper in your house into free file storage online and barely register it against 100GB. A thousand scanned documents at 500KB each comes to half a gigabyte, which is one half of one percent of your allowance.</p>
           <p>People often hesitate over adding documents to save space, while a single afternoon of 4K video uses fifty times as much. The instinct is backwards. Add the documents. They are the files that exist in only one place, and they cost nothing.</p>
           <p>Music and audio sit in between. A compressed track is three to eight megabytes, so a substantial music library runs to a few gigabytes. Voice memos and recorded interviews are smaller than people expect, usually around a megabyte per minute.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="for-photos">
+        <section class="gb" id="for-photos">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.4"/><path d="M8 6l1.5-2h5L16 6"/></svg></span><h2>Free cloud storage for photos: what to watch for</h2></div>
           <p class="lede">Photos are usually the reason to go looking for storage, and there are two decisions that matter more than the size of the allowance.</p>
           <p>The first is whether originals are kept. Some services offer a larger free tier by storing a resized version of every image. On a phone screen you will never notice. You notice the first time you print something, or crop into a photo to get the detail you remember being there, and find it has been thrown away. That decision is made once, at upload, and cannot be undone later. An allowance that sounds smaller but keeps originals is usually the better deal.</p>
           <p>The second is coverage. A photo backup that only watches your camera folder will miss a surprising amount: pictures people sent you in messaging apps, screenshots you meant to keep, images saved from a browser, and on Android, edits that some gallery apps write to a separate folder. People discover this months later while looking for something specific, which is the worst possible moment.</p>
           <p>Free photo cloud storage is worth judging on those two things before capacity. 100GB of full-quality photos with every folder covered is worth more than a larger allowance holding compressed copies of your camera roll only.</p>
           <p>One more consideration if you are moving a library from somewhere else. Check that you can get files out as easily as you put them in. Being able to download your own photos in bulk, in their original format, is what stops storage from becoming a place your files go and do not come back from.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="for-videos">
+        <section class="gb" id="for-videos">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 11l6-3v8l-6-3z"/></svg></span><h2>Free cloud storage for videos and large files</h2></div>
           <p class="lede">Video is where an allowance is won or lost, so it is worth understanding what drives file size before assuming you need a bigger plan.</p>
           <p>Three settings control almost all of it, and most phones ship with at least one of them turned up higher than the owner would choose.</p>
@@ -108,9 +109,9 @@ faq:
           <p>Combined, dropping from 4K at 60fps to 1080p at 30fps reduces a file to something like an eighth of its original size. That turns five hours of headroom into forty, without buying anything.</p>
           <p>For large individual files, an hour-long recording or a big archive, cloud storage for large files works exactly like anything else. There is no separate mechanism. It takes longer to move and uses more of your allowance while it sits there. Run those uploads on Wi-Fi and on power, and be patient with the first one, because most home connections upload at a small fraction of their download speed.</p>
           <p>The habit that makes free video cloud storage workable long term is archiving rather than accumulating. Footage you have already edited, shared or watched once does not need to stay live alongside this month's material. Deciding that periodically is less painful than being forced into it when an account fills.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="backup-vs-sync">
+        <section class="gb" id="backup-vs-sync">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 12a8 8 0 11-2.3-5.6"/><path d="M20 4v4h-4"/></svg></span><h2>Free online file backup is not the same as sync</h2></div>
           <p class="lede">These get used interchangeably and they behave very differently at the moment you need them, which is a bad time to discover the distinction.</p>
           <p>Sync keeps the same set of files on several devices. Change something in one place and the change appears everywhere. That is the point, and it is useful. It also means a deletion propagates just as faithfully as an edit. Delete a folder on your laptop and a well-behaved sync service will dutifully remove it from your phone as well, because that is what you appeared to ask for.</p>
@@ -118,9 +119,9 @@ faq:
           <p>It is common to want backup and be sold sync. The symptom is the story that comes up constantly: someone tidied up their phone, or a family member did, and the photos vanished from every device at once. Nothing malfunctioned. Sync did exactly what sync does.</p>
           <p>Free online file backup is worth having alongside whatever sync you already use, rather than instead of it. They solve different problems and neither is a substitute for the other.</p>
           <p>The practical test: if deleting a file on your phone makes it disappear everywhere, that service is syncing, not backing up. That is fine, as long as you know which one you have.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="stretch">
+        <section class="gb" id="stretch">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/></svg></span><h2>Making 100GB last as long as possible</h2></div>
           <p>None of these require paying for anything, and together they can easily double or triple how long an allowance lasts.</p>
           <ol class="steps-list">
@@ -133,9 +134,9 @@ faq:
           </ol>
           <p>What not to do: do not turn off backup for folders you care about in order to save room. Running out of space is an inconvenience. Discovering a folder was excluded for two years is not.</p>
           <p>Equally, do not spend hours curating before you have backed anything up. Get everything protected first, then optimise. A complete backup you tidy later beats a perfectly organised one you never finished.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="who">
+        <section class="gb" id="who">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 19a6.5 6.5 0 0113 0"/><path d="M16 5.2a3.4 3.4 0 010 5.6M18.5 19a6.4 6.4 0 00-3-5.4"/></svg></span><h2>Who 100GB is enough for</h2></div>
           <p class="lede">Rather than generalise, here are the situations where a free plan is comfortably sufficient and the ones where it is not.</p>
           <p><strong>Comfortably enough:</strong> someone with a phone or two who mostly photographs family, holidays and daily life, records short clips occasionally, and keeps documents and receipts. This describes the majority of phone owners and 100GB will run for years with room left over.</p>
@@ -143,9 +144,9 @@ faq:
           <p><strong>Not enough for long:</strong> anyone recording long 4K video routinely, anyone working with camera files alongside phone photos, and households running several heavy camera users through one account. In these cases 100GB is a good place to start and a larger plan is likely within a year.</p>
           <p>The reason this is worth thinking about at the beginning rather than at the limit is that a backup which stops working because an account is full is not much of a backup. Knowing roughly which category you fall into means you can plan for it rather than being interrupted by it.</p>
           <p>And if you are not sure, start on the free plan and look at the number after a couple of months. Your own usage figure answers the question better than any estimate on a web page.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="lasts">
+        <section class="gb" id="lasts">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><h2>Will 100GB last you years or months?</h2></div>
           <p class="lede">You can answer this in about a minute with a number your phone already knows.</p>
           <p>On iPhone, Settings, then General, then iPhone Storage. On Android, Settings, then Storage. Both will tell you what photos and videos are currently using.</p>
@@ -157,9 +158,9 @@ faq:
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p><strong>Heavy 4K video, long recordings.</strong> 100GB or more a year. You will fill it within a year, and you will need a larger plan or a deliberate archiving habit.</p></div>
           </div>
           <p>Households are the other variable. Several phones backing into one account share the allowance rather than each getting their own, so a family of four is a different calculation from one person.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="free">
+        <section class="gb" id="free">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0l-7-7A2 2 0 013 12.2V5a2 2 0 012-2h7.2c.5 0 1 .2 1.4.6l7 7a2 2 0 010 2.8z"/><path d="M7.5 7.5h.01"/></svg></span><h2>What free means here</h2></div>
           <p class="lede">There are several different things the word free can mean in this market, and they are worth telling apart before you upload a library into any of them.</p>
           <p>The free 100GB cloud storage on this free cloud storage app is included with every account. No card at signup, and no trial window that expires and takes your allowance with it. If you never pay anything, you keep 100GB.</p>
@@ -172,18 +173,18 @@ faq:
             <li><strong>Is the limit stated plainly?</strong> Storage costs money to provide. An allowance described in vague terms rather than a number usually has a limit written somewhere less prominent.</li>
           </ol>
           <p>Cloud storage without paying is a reasonable thing to want and a reasonable thing to get. Find out which version of free you have been offered.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="platforms">
+        <section class="gb" id="platforms">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="4" width="13" height="10" rx="2"/><rect x="15" y="9" width="7" height="11" rx="2"/></svg></span><h2>Getting the 100GB on Android, iPhone or the web</h2></div>
           <p>The allowance belongs to the account, not to a device. Sign in anywhere and it is the same 100GB.</p>
           <p>For free cloud storage for Android, install from Google Play and sign up. The two things that catch Android users out are photo permissions, where you need access to all photos rather than selected ones, and battery optimisation, which will otherwise stop background uploads after a few weeks. The <a href="/guides/cloud-storage-android">Android setup guide</a> covers both in detail, along with Samsung Device Care.</p>
           <p>For free cloud storage for iPhone, install from the App Store and sign up. The equivalent trap on iOS is Limited Access rather than Full Access when the photo permission prompt appears, plus Background App Refresh and Low Power Mode. The <a href="/guides/cloud-storage-iphone">iPhone setup guide</a> walks through those.</p>
           <p>In a browser there is nothing to install. Open the web app, sign in, and upload by dragging files in. This is usually the easiest route for anything currently sitting on a computer, and it is how you should verify a phone backup, since checking from the phone itself proves nothing.</p>
           <p>How to get 100GB cloud storage across all three at once is one account signed into each. A free storage app Android users install and an iPhone in the same household reach the same files.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="start">
+        <section class="gb" id="start">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 5v14M5 12h14"/></svg></span><h2>Putting the first 100GB to use</h2></div>
           <p class="lede">An allowance sitting empty protects nothing. The gap between signing up and having a backup you can rely on is where setups tend to stall.</p>
           <p>The first upload is the only demanding part. A phone holding several years of photos is tens of gigabytes moving over a connection that was designed to download rather than upload, so it takes hours and sometimes runs overnight. That is normal and it is not a sign anything is wrong.</p>
@@ -195,9 +196,9 @@ faq:
           </ol>
           <p>After the first run, everything else is incremental. New photos join a queue and go up in the background, and daily volumes are small enough that you stop noticing it happens.</p>
           <p>If your library is larger than 100GB to begin with, upload in order of importance rather than waiting until you can do all of it. Camera roll first, then documents, then the rest. A partial backup that exists is worth far more than a complete one you never started.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="mistakes">
+        <section class="gb" id="mistakes">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h2>Five mistakes that waste an allowance</h2></div>
           <div class="xlist">
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Backing up app caches and downloads.</strong> Some setups will happily upload cached images, downloaded media and temporary files. None of it is worth keeping and collectively it can be gigabytes. Check what folders are included rather than accepting everything.</p></div>
@@ -207,9 +208,9 @@ faq:
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Running several phones through one account without planning for it.</strong> The devices share one allowance. Two heavy camera users in a household will reach the limit roughly twice as fast as one.</p></div>
           </div>
           <p>None of these are catastrophic and all of them are easy to correct once you know they are happening. The common thread is that they are defaults rather than choices, which is exactly why they go unnoticed.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="fill">
+        <section class="gb" id="fill">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><h2>What happens when you fill it</h2></div>
           <p class="lede">Uploads pause. Nothing already backed up is deleted for reaching the limit.</p>
           <p>Some services behave differently. Here, your files stay where they are. New uploads wait until there is room.</p>
@@ -224,9 +225,9 @@ faq:
             <div class="plan"><div class="nm">Family</div><div class="sz">1TB</div><div class="ds">1TB family cloud storage for a household backing up several phones.</div></div>
           </div>
           <p>Monthly and yearly billing are both available. Yearly generally works out better value once you know you will keep using it, and monthly suits anyone still deciding.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="units">
+        <section class="gb" id="units">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span><h2>Gigabytes, terabytes and why the numbers never quite match</h2></div>
           <p class="lede">A quick detour that saves confusion later, because the figure your phone reports and the figure on a storage plan are measured slightly differently.</p>
           <p>A terabyte is a thousand gigabytes, so the 1TB plan is ten times the free 100GB, and 250GB and 500GB sit at two and a half and five times it respectively. That much is straightforward.</p>
@@ -234,23 +235,23 @@ faq:
           <p>The practical effect is that you should not expect the number on your phone's storage screen to match a plan size exactly, and a shortfall of a few percent is normal rather than a sign something is wrong.</p>
           <p>For estimating purposes none of this matters much. The rule of thumb of roughly 300 photos per gigabyte already carries more uncertainty than the counting convention does, because the size of a photo varies far more than a few percent depending on what is in it. A picture of a blank wall compresses to almost nothing. A detailed landscape at the same resolution can be several times larger.</p>
           <p>That variability is worth remembering whenever you see a precise-sounding claim about how many photos an allowance holds. An accurate figure is always a range.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="compare">
+        <section class="gb" id="compare">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span><h2>How 100GB compares to what you already have</h2></div>
           <p>You probably already have some free online storage attached to an account they did not choose deliberately, and it helps to know where 100GB sits against it.</p>
           <p>Apple gives every iCloud account 5GB. That is enough for device settings and messages and nowhere near enough for a photo library, which is why the storage full notification is such a familiar part of owning an iPhone. 100GB is twenty times that.</p>
           <p>Typical free tiers elsewhere run from a couple of gigabytes to around fifteen, often shared across mail, documents and photos at the same time, so the effective figure for photos alone is lower than the headline.</p>
           <p>The practical difference is what a tier lets you do. Anything under about 20GB means making decisions about what to keep, which in practice means people stop using it. 100GB is enough to back up a whole phone without curating first, and that is the threshold where a backup becomes something you set up once instead of something you manage.</p>
           <p>It is also worth separating storage from sync. Services that keep the same library on several devices are doing something different from keeping a second copy safe. A deletion that syncs everywhere is correct sync behaviour and useless as a backup.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="faq">
+        <section class="gb" id="faq">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 015 .9c0 1.7-2.5 2.2-2.5 3.6M12 17h.01"/></svg></span><h2>Frequently asked questions</h2></div>
           {% include faq.html %}
-        </div>
+        </section>
 
-        <div class="gb" id="summary">
+        <section class="gb" id="summary">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 11l2 2 4-4"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg></span><h2>The short version</h2></div>
           <ol class="steps-list">
             <li>100GB is roughly 25,000 to 40,000 phone photos, or about five hours of 4K video</li>
@@ -261,10 +262,10 @@ faq:
             <li>When it fills, uploads pause and nothing already stored is deleted</li>
           </ol>
           <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><p>Check your own storage figure before deciding whether an allowance is enough. It takes a minute and it describes your library, where the estimates above describe an average one.</p></div>
-        </div>
+        </section>
 
-        </article>
-        <aside class="toc" aria-labelledby="toc-title">
+        </div>
+        <nav class="toc" aria-labelledby="toc-title">
           <h2 class="toc-title" id="toc-title">On this page</h2>
           <ul>
               <li><a href="#photos">How many photos</a></li>
@@ -286,10 +287,11 @@ faq:
               <li><a href="#faq">FAQ</a></li>
               <li><a href="#summary">The short version</a></li>
           </ul>
-        </aside>
+        </nav>
       </div>
     </div>
-  </section>
+  </div>
+  </article>
 
   <section class="sec-related">
     <div class="container">
@@ -298,19 +300,16 @@ faq:
       </div>
       <div class="next-grid">
         <a href="/guides/cloud-storage-android" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>Cloud storage for Android: the complete setup guide</h3>
           <p>Claim the 100GB on Android, including the permission and battery settings that stop most backups.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/cloud-storage-iphone" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>Free cloud storage for iPhone: photo backup that works</h3>
           <p>The iOS setup, including the photo permission that limits most iPhone backups.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/backup-setup" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>How to back up your phone to free cloud storage</h3>
           <p>Step-by-step setup for Android, iPhone and the web.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>

@@ -24,7 +24,8 @@ faq:
 ---
 <main id="main">
 
-  <section class="art-hero">
+  <article class="guide">
+  <header class="art-hero">
     {% include hero-clouds.html %}
     <div class="container">
       <div class="art-head reveal">
@@ -33,16 +34,16 @@ faq:
         <h1>Web cloud storage: using your files without installing anything</h1>
         <p class="art-standfirst">Browser cloud storage covers what a phone app cannot. Upload files online from a computer, reach your library from a borrowed machine, and get to your account the day your phone goes missing.</p>
         <div class="art-meta">
-          <span>11 min read</span><span class="dot"></span>
-          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span><span class="dot"></span>
-          <span>Any browser</span><span class="dot"></span>
+          <span>11 min read</span>
+          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span>
+          <span>Any browser</span>
           <span>Beginner friendly</span>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="sec-body">
+  <div class="sec-body">
     <div class="container">
       <div class="art-layout">
         <div class="art-main">
@@ -53,7 +54,7 @@ faq:
           <p>This guide covers what a cloud storage web app does well, the one thing it cannot do, how to upload files online from a computer, and why browser access matters most on the day your phone disappears.</p>
         </div>
 
-        <div class="gb" id="what">
+        <section class="gb" id="what">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><h2>What browser cloud storage does</h2></div>
           <p class="lede">Your account is the same account whichever way you reach it. The browser shows the same files as the app.</p>
           <p>Sign in at your provider's web address and you get your whole library. Everything the phone uploaded is there, in full, and anything you add from the browser appears on the phone shortly afterwards.</p>
@@ -67,18 +68,18 @@ faq:
           </ul>
           <p>If you want to store files online without committing to an installed app, the browser is a complete answer for all of the above. You can upload files online, access files online and download them again without anything ever being installed.</p>
           <p>Reaching cloud storage from browser sessions is often the fastest route to a document, and it means online file storage is available on any machine with a connection rather than only the devices you have set up.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="cannot">
+        <section class="gb" id="cannot">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg></span><h2>The one thing a browser cannot do</h2></div>
           <p>Automatic phone backup needs the app. That is the one real limitation of the browser.</p>
           <p>A browser cannot watch your camera folder in the background. It has no way to notice that you took a photo an hour ago and upload it. Web access is for reaching, uploading and managing files deliberately, not for capturing them automatically.</p>
           <p>So the practical division is straightforward. If you want your phone photos protected without thinking about it, install the app on the phone. If you want to reach or add files from a computer, use the browser. Using both is normal, because they solve different problems.</p>
           <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg><p>Using the web app only is a reasonable choice if you are mainly storing documents from a computer. It is not sufficient if the goal is protecting phone photos, because nothing will happen unless you upload manually every time.</p></div>
           <p>For the automatic side, the <a href="/guides/backup-setup">setup guide</a> covers getting it running on either platform.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="upload">
+        <section class="gb" id="upload">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg></span><h2>How to upload files online from a computer</h2></div>
           <p>The mechanics are short enough to cover in one pass.</p>
           <ul class="steps-list">
@@ -89,9 +90,9 @@ faq:
           </ul>
           <p>Whole folders can usually be dragged in one go, which is the fastest way to move an archive from a computer. Large files work the same way as small ones, they take longer, and online storage for large files is often more comfortable from a computer than a phone because you can leave it running on a wired connection.</p>
           <p>Two things to know. Uploads run while the tab is open, so if you are moving something large, leave the window alone rather than closing it as soon as progress starts. And on a metered connection, remember the browser has no Wi-Fi-only setting to protect you the way the phone app does.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="borrowed">
+        <section class="gb" id="borrowed">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><h2>Using a borrowed or work computer safely</h2></div>
           <p class="lede">This is where browser access is most useful, and where a little care helps.</p>
           <p>Accessing files from a machine that is not yours is the situation the web app exists for. A few sensible habits:</p>
@@ -104,9 +105,9 @@ faq:
           </ul>
           <p>On a work computer, be aware that IT may have visibility over what passes through the machine. So think about which files you pull down on a work laptop.</p>
           <p>Whatever account protection your provider offers is worth switching on before you find yourself signing in somewhere unfamiliar. It matters more on borrowed machines than anywhere else.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="lost">
+        <section class="gb" id="lost">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span><h2>The day your phone goes missing</h2></div>
           <p>This is the main reason to have web access.</p>
           <p>When a phone is lost or stolen, the app on it is unreachable. If the only way into your files were that app, you would have no way of knowing what survived. A browser on any other device is how you find out, and how you start getting things back.</p>
@@ -118,18 +119,18 @@ faq:
           </ul>
           <p>None of that depends on the old handset in any way, because the files were never solely on it. That is the difference between a lost phone being a disaster and being an expensive inconvenience.</p>
           <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p>Worth doing once, now: sign into your account in a browser on a computer and check something recent is there. It takes a minute and confirms the route works before you need it under pressure.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="devices">
+        <section class="gb" id="devices">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="5" width="14" height="10" rx="2"/><rect x="16" y="9" width="6" height="10" rx="1.6"/></svg></span><h2>Phone and computer, one account</h2></div>
           <p>Personal online storage becomes considerably more useful once both the phone and the computer are pointed at the same account, because it removes a familiar workaround.</p>
           <p>That workaround is emailing files to yourself. It half works, and it brings attachment size limits, an inbox slowly turning into a filing cabinet, and genuine uncertainty about which version was the latest one.</p>
           <p>With one account reachable from both, a file added on the phone is available on the computer moments later, and a document uploaded from a desktop is on the phone before you have stood up. Access files from phone and computer without deciding in advance which device will need them.</p>
           <p>It also means the browser is a reasonable everyday tool rather than an emergency one. Photographing a document on a phone and then working with it on a desktop is a normal thing to want, and it stops requiring any transfer step at all.</p>
           <p>The <a href="/guides/cross-platform-cloud-storage">guide to using files across devices</a> goes further into working between Android, iPhone and the web.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="plans">
+        <section class="gb" id="plans">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 18V9M10 18V5M16 18v-6M22 18H2"/></svg></span><h2>How much online storage you need</h2></div>
           <p>Web access does not change what an allowance holds, but people using a browser are often storing different material: documents, scans and camera files rather than a phone camera roll.</p>
           <p>Documents are effectively free in storage terms, a few hundred kilobytes each. Photos run 2MB to 5MB. Video is the only thing that seriously consumes an allowance, at 60MB to 100MB per minute of 1080p and 350MB or more for 4K.</p>
@@ -140,9 +141,9 @@ faq:
             <div class="plan"><div class="nm">Family</div><div class="sz">1TB</div><div class="ds">1TB family cloud storage for a household sharing one account.</div></div>
           </div>
           <p>Monthly and yearly billing are both available, with details on the <a href="/features#plans">features page</a>. If you store documents and photos rather than hours of footage, the free tier is the one they stay on.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="problems">
+        <section class="gb" id="problems">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h2>Common problems and how to fix them</h2></div>
           <div class="xlist">
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>My phone photos are not showing in the browser.</strong> They have not uploaded yet rather than failed to appear. Check the app on the phone reports a completed backup, then refresh the page.</p></div>
@@ -152,15 +153,15 @@ faq:
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>A large file is uploading very slowly.</strong> Home and office connections upload far more slowly than they download. A multi-gigabyte file taking a long time is normal rather than broken.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>I am still signed in on a computer I no longer use.</strong> Sign out from that machine if you can reach it, and change your password if you cannot.</p></div>
           </div>
-        </div>
+        </section>
 
-        <div class="gb" id="faq">
+        <section class="gb" id="faq">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 115 .8c0 1.6-2.5 2-2.5 3.4M12 17h.01"/></svg></span><h2>Frequently asked questions</h2></div>
           <p>The questions that come up most often about using cloud storage from a browser.</p>
           {% include faq.html %}
-        </div>
+        </section>
 
-        <div class="gb" id="checklist">
+        <section class="gb" id="checklist">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>The whole thing as a checklist</h2></div>
           <ul class="steps-list">
             <li>Sign into your account in a browser once, before you need it</li>
@@ -172,10 +173,10 @@ faq:
             <li>Clear anything you downloaded from a computer that is not yours</li>
           </ul>
           <p>The check worth doing today is the second one. Knowing the browser route works, and that your files are reachable without your phone, is why you set it up.</p>
-        </div>
+        </section>
 
         </div>
-        <aside class="toc" aria-labelledby="toc-title">
+        <nav class="toc" aria-labelledby="toc-title">
           <h2 class="toc-title" id="toc-title">On this page</h2>
           <ul>
             <li><a href="#what">What it does</a></li>
@@ -189,10 +190,11 @@ faq:
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#checklist">Checklist</a></li>
           </ul>
-        </aside>
+        </nav>
       </div>
     </div>
-  </section>
+  </div>
+  </article>
 
   <section class="sec-tint sec-related">
     <div class="container">
@@ -202,19 +204,16 @@ faq:
       </div>
       <div class="next-grid">
         <a href="/guides/backup-setup" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>How to back up your phone to free cloud storage</h3>
           <p>The automatic side, which the browser cannot do, on Android and iPhone.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/cross-platform-cloud-storage" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>Using your files across Android, iPhone and web</h3>
           <p>One account on every device, and what that removes from your daily routine.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/how-to-backup-photos" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>How to backup photos: where to store them and why</h3>
           <p>Originals versus compressed copies, and the folders most backups miss.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>

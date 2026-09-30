@@ -24,7 +24,8 @@ faq:
 ---
 <main id="main">
 
-  <section class="art-hero">
+  <article class="guide">
+  <header class="art-hero">
     {% include hero-clouds.html %}
     <div class="container">
       <div class="art-head reveal">
@@ -33,16 +34,16 @@ faq:
         <h1>Phone storage full? How to free up space safely</h1>
         <p class="art-standfirst">The order matters more than the technique. Back up, verify, then delete. This guide covers what to do when phone storage is full, how to find the files taking the room, and how to move photos off phone storage without losing anything you meant to keep.</p>
         <div class="art-meta">
-          <span>14 min read</span><span class="dot"></span>
-          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span><span class="dot"></span>
-          <span>Android and iPhone</span><span class="dot"></span>
+          <span>14 min read</span>
+          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span>
+          <span>Android and iPhone</span>
           <span>Beginner friendly</span>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="sec-body">
+  <div class="sec-body">
     <div class="container">
       <div class="art-layout">
         <div class="art-main">
@@ -53,7 +54,7 @@ faq:
           <p>This guide covers how to free up phone storage on both Android and iPhone, how to work out what is using the space, why video is nearly always the answer even when it does not feel like it, and where to store phone photos so the problem does not return in six weeks.</p>
         </div>
 
-        <div class="gb" id="first">
+        <section class="gb" id="first">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg></span><h2>Do this before you delete anything</h2></div>
           <p class="lede">If you read one section, make it this one. Everything else on this page is detail, and this is the part that decides whether you free up space or lose files.</p>
           <p>When your phone says storage is full, the photos and videos on it exist in exactly one place. Deleting them is permanent. There is no service, app or repair shop that can retrieve a photo that was never copied anywhere else, and the recently deleted folder only buys you 30 days.</p>
@@ -66,9 +67,9 @@ faq:
           </ul>
           <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p>Never delete local files while a backup is still running. If a file has not finished uploading and you remove the original, there is nothing left for the upload to finish, and the file is gone from both places.</p></div>
           <p>If you do not have a backup yet, set one up before clearing anything. It takes a few minutes and it turns this from a risky cleanup into a routine one. The <a href="/guides/backup-setup">full backup setup guide</a> walks through it on any platform.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="whats-full">
+        <section class="gb" id="whats-full">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 16.5C4.79 16.5 3 14.71 3 12.5C3 10.42 4.6 8.72 6.63 8.53C7.27 6.44 9.22 5 11.5 5C14.27 5 16.55 7.09 16.85 9.78C18.65 10.09 20 11.63 20 13.5C20 15.71 18.21 17.5 16 17.5H7Z"/></svg></span><h2>First, work out which storage is full</h2></div>
           <p>This trips up a surprising number of people, and it leads to buying more of the wrong thing.</p>
           <p><strong>Device storage</strong> is the physical space inside the phone. This is what stops you taking photos, installing apps or recording video. It is the one this guide is mostly about.</p>
@@ -80,9 +81,9 @@ faq:
             <li><strong>Android:</strong> Settings, then Storage. Some manufacturers put it under Device care or Battery and device care.</li>
           </ul>
           <p>Both give you a breakdown sorted by what is using the most, which is where the next section starts.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="culprit">
+        <section class="gb" id="culprit">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span><h2>Find what is taking the space, biggest first</h2></div>
           <p class="lede">Sort by file size rather than working through your gallery chronologically. This single change is the difference between ten minutes of work and an entire evening of it.</p>
           <p>The storage breakdown on both platforms will almost always show Photos at or near the top. Within Photos, the split between stills and video is where the real story is, and it is rarely what people expect.</p>
@@ -103,9 +104,9 @@ faq:
             <li><strong>Old app installers and files.</strong> On Android, the Downloads folder collects things indefinitely and nothing ever clears it for you.</li>
             <li><strong>The recently deleted folder.</strong> Covered below, because it deserves its own explanation.</li>
           </ul>
-        </div>
+        </section>
 
-        <div class="gb" id="safe-delete">
+        <section class="gb" id="safe-delete">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>How to free up phone storage without losing anything</h2></div>
           <p>Once your backup is confirmed, the copies on the phone are duplicates. Removing them frees space and costs you nothing, because the copy in your account remains exactly where it is. Verifying takes the care. Deleting is the easy part.</p>
           <p>A safe sequence, in order:</p>
@@ -121,9 +122,9 @@ faq:
           <p>Both platforms keep deleted photos in a holding folder for up to 30 days so you can undo a mistake. It is a good feature, and it means a deletion does not free any room until that folder is emptied.</p>
           <p>People delete several hundred photos, watch the storage figure refuse to move, conclude something is broken, and delete more. On iPhone this is Recently Deleted inside the Photos app. On Android it is usually Bin or Trash in your gallery app, and Google Photos keeps its own separate one.</p>
           <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg><p>Empty the recently deleted folder last, after you have confirmed everything else is fine. Until you do, those files are still recoverable, which is a useful safety net while you are partway through a cleanup.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="android">
+        <section class="gb" id="android">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 9h14v9a2 2 0 01-2 2H7a2 2 0 01-2-2V9zM8 9V6a4 4 0 018 0v3"/></svg></span><h2>How to free up storage on Android</h2></div>
           <p>Android gives you more direct access to the file system than iOS, which makes cleanup easier once you know where to look.</p>
           <p>Settings, then Storage, gives you a breakdown by category. Tapping into Photos and videos or Media lets you sort by size, which is where you should start. Most Android gallery apps also have a sort option that is set to date by default and worth switching to size for this job.</p>
@@ -135,9 +136,9 @@ faq:
           </ul>
           <p>If you are on a Samsung, Device care includes a storage cleanup tool that identifies duplicates and large files for you. It is reasonable at finding candidates, but it should not be the thing deciding what gets deleted. Confirm your backup first regardless of what any cleanup tool suggests.</p>
           <p>For the full Android setup, including the permission and battery settings that stop backups running in the first place, the <a href="/guides/cloud-storage-android">Android cloud storage guide</a> covers it properly.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="iphone">
+        <section class="gb" id="iphone">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span><h2>How to free up iPhone storage</h2></div>
           <p>Settings, then General, then iPhone Storage gives you a list sorted largest first, along with a set of recommendations at the top. Those recommendations are worth reading and worth being slightly careful with.</p>
           <p>The useful ones are straightforward: reviewing large attachments in Messages, and offloading apps you have not opened in a year, which removes the app but keeps its data so reinstalling puts everything back.</p>
@@ -148,9 +149,9 @@ faq:
           </ul>
           <p>The second point catches people out. iCloud Photos is a sync service rather than a backup. It keeps the same library on all your Apple devices, faithfully including the deletions. If your only copy is an iCloud copy, a cleanup on the phone is a cleanup everywhere.</p>
           <p>The <a href="/guides/cloud-storage-iphone">iPhone cloud storage guide</a> covers the permission settings that determine whether your backup is complete before you rely on it for this.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="videos">
+        <section class="gb" id="videos">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></span><h2>How to store large videos so they stop filling the phone</h2></div>
           <p class="lede">Video is what fills a phone, and it does it faster than almost anyone expects. Understanding the numbers is what stops the problem returning.</p>
           <p>A minute of 1080p costs roughly 60MB to 100MB. A minute of 4K can reach 350MB or more. Frame rate matters as much as resolution: 4K at 60 frames per second is roughly double the size of 4K at 30, for footage that looks near identical on a phone screen.</p>
@@ -162,9 +163,9 @@ faq:
           <p>Dropping everyday clips to 1080p and reserving 4K for footage you intend to keep or edit reduces video file sizes to roughly a quarter. That alone can multiply how long your phone lasts between cleanups.</p>
           <p>For the clips you already have, cloud storage for large files works the same as anything else. Upload them, confirm they arrived, then remove the local copies. There is no separate mechanism for big files, they take longer to move.</p>
           <p>The <a href="/guides/cloud-storage-for-videos">guide to cloud storage for videos</a> goes into file sizes, archiving habits and backing up footage without burning a data allowance.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="where">
+        <section class="gb" id="where">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><h2>Where to store phone photos so this does not happen again</h2></div>
           <p>Clearing space is a one off. Not needing to clear it again is the actual goal, and that depends on where the photos go instead.</p>
           <p>There are three realistic options and they fail in different ways, so choose with that in mind.</p>
@@ -177,9 +178,9 @@ faq:
           <p>The strongest arrangement combines two of the three. Cloud for the automatic everyday copy, plus an occasional export to a drive for anything irreplaceable. One copy that needs no attention, one that does not depend on any account at all.</p>
           <p>How to get more phone storage without buying a new handset comes down to this: stop treating the phone as the place your photos live. It is the device you capture them on. Once a cloud backup app is handling the copy, saving phone storage each month becomes routine.</p>
           <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p>If you only do one, make it the automatic one. A system that runs without you beats a perfect manual routine that nobody keeps up.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="howmuch">
+        <section class="gb" id="howmuch">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 18V9M10 18V5M16 18v-6M22 18H2"/></svg></span><h2>How much storage do you need</h2></div>
           <p>Storage figures are meaningless until you translate them into things you recognise. A gigabyte holds roughly 250 to 400 phone photos, which puts 100GB somewhere between 25,000 and 40,000 images.</p>
           <p>You can work out your own rate in about a minute. Look at what Photos is using in your storage settings and divide by how old the phone is. A two year old phone with 40GB of photos is generating roughly 20GB a year, which means 100GB represents about five years of headroom from a standing start.</p>
@@ -191,9 +192,9 @@ faq:
             <div class="plan"><div class="nm">Family</div><div class="sz">1TB</div><div class="ds">1TB family cloud storage for a household backing up several phones.</div></div>
           </div>
           <p>Monthly and yearly billing are both available. Full details are on the <a href="/features#plans">features page</a>, and the <a href="/guides/free-cloud-storage-100gb">guide to what 100GB holds</a> translates the numbers further.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="problems">
+        <section class="gb" id="problems">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h2>Common problems and how to fix them</h2></div>
           <div class="xlist">
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>I deleted hundreds of photos and nothing changed.</strong> The recently deleted folder is holding them for 30 days. Empty it and the space returns immediately.</p></div>
@@ -203,15 +204,15 @@ faq:
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>My uploads have paused and my phone is still full.</strong> Two different storages. Your account is full rather than the device, so clearing the phone will not resume uploads. Free space in the account or move to a larger plan.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>The phone is too full to even install a backup app.</strong> Clear an app cache or delete a couple of long videos you have already shared elsewhere. That buys enough room to install, back up properly, then clear the rest safely.</p></div>
           </div>
-        </div>
+        </section>
 
-        <div class="gb" id="faq">
+        <section class="gb" id="faq">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 115 .8c0 1.6-2.5 2-2.5 3.4M12 17h.01"/></svg></span><h2>Frequently asked questions</h2></div>
           <p>The questions that come up most often about a full phone, freeing up space and where photos should go instead.</p>
           {% include faq.html %}
-        </div>
+        </section>
 
-        <div class="gb" id="checklist">
+        <section class="gb" id="checklist">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>The whole thing as a checklist</h2></div>
           <p>Everything above, in the order you should do it.</p>
           <ul class="steps-list">
@@ -226,10 +227,10 @@ faq:
             <li>Drop your recording resolution so the problem takes years to return rather than weeks</li>
           </ul>
           <p>The verification step is the one worth protecting. A backup you have never opened from somewhere other than the phone is an assumption rather than a safety net, and a cleanup is exactly the moment that distinction becomes expensive.</p>
-        </div>
+        </section>
 
         </div>
-        <aside class="toc" aria-labelledby="toc-title">
+        <nav class="toc" aria-labelledby="toc-title">
           <h2 class="toc-title" id="toc-title">On this page</h2>
           <ul>
             <li><a href="#first">Before you delete</a></li>
@@ -245,10 +246,11 @@ faq:
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#checklist">Checklist</a></li>
           </ul>
-        </aside>
+        </nav>
       </div>
     </div>
-  </section>
+  </div>
+  </article>
 
   <section class="sec-tint sec-related">
     <div class="container">
@@ -258,19 +260,16 @@ faq:
       </div>
       <div class="next-grid">
         <a href="/guides/cloud-storage-for-videos" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>Cloud storage for videos and large video files</h3>
           <p>Real file sizes, where to store large videos, and how to back them up without burning a data allowance.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/how-to-backup-photos" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>How to backup photos: where to store them and why</h3>
           <p>Why originals matter more than compressed copies, and how to cover photos other people sent you.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/backup-setup" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>How to back up your phone to free cloud storage</h3>
           <p>Step-by-step setup for Android, iPhone and the web.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>

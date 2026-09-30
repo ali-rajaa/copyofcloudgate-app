@@ -146,7 +146,7 @@
 .figure{display:flex;flex-direction:column;gap:6px;padding:var(--s-5) 20px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);}
 .figure .n{font-family:var(--font-num);font-size:clamp(1.5rem,2.4vw,2rem);font-weight:700;letter-spacing:-.03em;line-height:1.05;color:var(--blue-text);}
 .figure .l{font-size:var(--fs-sm);line-height:1.4;color:var(--text-2);}
-.fb-copy p{font-size:var(--fs-md);line-height:1.72;color:var(--text-2);margin-bottom:var(--s-4);max-width:var(--measure);}
+.fb-copy p{font-size:var(--fs-md);line-height:var(--lh-prose);color:var(--text-2);margin-bottom:var(--s-4);max-width:var(--measure);}
 .fb-copy strong{color:var(--text);font-weight:600;}
 .fb-list{display:flex;flex-direction:column;gap:var(--s-3);margin-top:var(--s-5);}
 .fb-list li{display:flex;gap:var(--s-3);align-items:flex-start;font-size:var(--fs-base);line-height:1.6;color:var(--text-2);}
@@ -189,7 +189,7 @@
 .plan-card .tier{font-size:var(--fs-xs);font-weight:700;letter-spacing:var(--tr-caps);text-transform:uppercase;color:var(--text-3);}
 .plan-card .amt{font-family:var(--font-num);font-size:2.125rem;font-weight:700;letter-spacing:-.025em;color:var(--text);line-height:1.05;margin:var(--s-2) 0 var(--s-1);}
 .plan-card .sub{font-size:var(--fs-sm);color:var(--text-3);font-weight:500;}
-.plan-card p{font-size:var(--fs-sm);line-height:1.6;color:var(--text-2);margin-top:14px;flex:1;}
+.plan-card p{font-size:var(--fs-sm);line-height:var(--lh-body);color:var(--text-2);margin-top:14px;flex:1;}
 .plan-card.best .tier{color:#FFFFFF;}
 .plan-card.best .amt{color:#FFFFFF;}
 .plan-card.best .sub{color:#FFFFFF;}

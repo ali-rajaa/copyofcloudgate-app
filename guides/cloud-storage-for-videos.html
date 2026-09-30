@@ -24,7 +24,8 @@ faq:
 ---
 <main id="main">
 
-  <section class="art-hero">
+  <article class="guide">
+  <header class="art-hero">
     {% include hero-clouds.html %}
     <div class="container">
       <div class="art-head reveal">
@@ -33,16 +34,16 @@ faq:
         <h1>Cloud storage for videos and large video files</h1>
         <p class="art-standfirst">Video uses far more storage than most expect. Real file sizes for 1080p and 4K, where to store large videos, and how to back them up without burning a data allowance.</p>
         <div class="art-meta">
-          <span>12 min read</span><span class="dot"></span>
-          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span><span class="dot"></span>
-          <span>Android, iPhone and web</span><span class="dot"></span>
+          <span>12 min read</span>
+          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span>
+          <span>Android, iPhone and web</span>
           <span>Beginner friendly</span>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="sec-body">
+  <div class="sec-body">
     <div class="container">
       <div class="art-layout">
         <div class="art-main">
@@ -53,7 +54,7 @@ faq:
           <p>This guide covers what video files weigh, where to store large videos so they stop crowding everything else, how to back up videos online without destroying a data allowance, and the one camera setting that halves your file sizes with no visible difference on a phone screen.</p>
         </div>
 
-        <div class="gb" id="sizes">
+        <section class="gb" id="sizes">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 18V9M10 18V5M16 18v-6M22 18H2"/></svg></span><h2>What video files weigh</h2></div>
           <p class="lede">These numbers are the whole guide. Everything else follows from them.</p>
           <div class="kv">
@@ -71,9 +72,9 @@ faq:
             <li><strong>1TB</strong> is family territory, several people filming into one account.</li>
           </ul>
           <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg><p>If your library looks small but your storage keeps disappearing, sort by file size rather than by date. The answer is almost always sitting in the top ten results, and it is almost always video.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="where">
+        <section class="gb" id="where">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><h2>Where to store large videos</h2></div>
           <p>Long recordings do not belong on a phone. They are the files most likely to fill it, least likely to be rewatched, and most painful to lose, which is an awkward combination.</p>
           <p>The realistic options, and how each one fails:</p>
@@ -86,9 +87,9 @@ faq:
           <p>There is nothing special about big files here, despite how it feels. Cloud storage for large video files works exactly like anything else, it takes longer to move. The only real difference is that you want the first upload running on Wi-Fi with the phone on power.</p>
           <p>Video cloud storage is not a separate product either. The same account that holds your photos will store videos in cloud form alongside them, and free cloud storage for videos is your ordinary allowance being used by larger files. When people ask how to backup videos online, the answer is the same process as anything else, run with a bit more patience.</p>
           <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p>A practical arrangement: everything goes to cloud storage automatically, and anything irreplaceable gets an extra copy on a drive once a year. One copy that needs no effort, one that depends on no account.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="data">
+        <section class="gb" id="data">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12.5a7 7 0 0114 0"/><path d="M8.5 16a3.5 3.5 0 017 0"/><circle cx="12" cy="19" r="1.2"/></svg></span><h2>Backing up videos without burning your data</h2></div>
           <p class="lede">This single setting prevents the large majority of unexpected mobile data bills, and it takes about fifteen seconds to check.</p>
           <p>Keep video uploads restricted to Wi-Fi, even if you allow photos over mobile data. Photos are small enough that a day of them barely registers against a typical allowance. Video is the item worth holding back, because a few minutes of 4K can consume as much data as several hundred photographs.</p>
@@ -96,9 +97,9 @@ faq:
           <p>The trade-off is worth understanding. Video sitting in a queue waiting for Wi-Fi is not backed up yet. If you are travelling for three weeks without a network, that footage exists in exactly one place for three weeks. For an ordinary trip that is a reasonable risk. For footage you could never film again, connect to something and let it upload.</p>
           <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p>Never delete a local video while its upload is still queued or in progress. A file that has not finished transferring has nothing behind it, so removing the original loses it from both places at once.</p></div>
           <p>Large uploads also need the phone to stay awake and connected. Plug it in, leave it on Wi-Fi, and let the screen go off rather than sitting and watching it. On Android, allowing background activity for the app matters more for video than for anything else, because the transfers take longer.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="record">
+        <section class="gb" id="record">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></span><h2>The recording setting that halves your file sizes</h2></div>
           <p>Before solving where to put the files, reduce how large they are in the first place. This is the highest value thing on this page for anyone whose storage keeps refilling.</p>
           <ul class="steps-list">
@@ -108,9 +109,9 @@ faq:
           <p>Dropping everyday recording to 1080p at 30 frames per second cuts file sizes to roughly a quarter of 4K at 60. On a phone screen, and on most televisions at normal viewing distance, the difference is difficult to see. Reserve 4K for footage you intend to edit, project or keep permanently.</p>
           <p>Two situations justify the larger setting. Filming something you will crop or stabilise later benefits from the extra resolution, and footage of a one-off event you will still be watching in twenty years is worth the room. Everyday clips of the dog are not.</p>
           <p>Changing this does nothing to video you have already recorded. Those files stay the size they are, which is what the rest of this guide is about.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="archive">
+        <section class="gb" id="archive">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span><h2>How to save videos without phone storage filling again</h2></div>
           <p>Once a video is uploaded and confirmed, the copy on the phone is a duplicate. Removing it costs nothing and frees a meaningful amount of room in a single action, which is far less tedious than picking through photos.</p>
           <p>The safe order, which matters more with video than with anything else because the files are so large:</p>
@@ -123,9 +124,9 @@ faq:
           <p>Playing from a thumbnail proves nothing, because thumbnails generate from partial files. Watching a few seconds from the middle confirms the whole transfer completed. With a 4GB file that distinction matters, since a truncated upload can look complete in a list view.</p>
           <p>A habit worth building: archive finished footage rather than keeping everything live. Events, holidays and projects that are done can live only in your account. Only recent material needs to be on the phone, and a phone treated as a camera rather than an archive stops filling up.</p>
           <p>If your device is already out of room, the <a href="/guides/phone-storage-full">guide to freeing up space</a> covers the safe order for clearing it.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="plans">
+        <section class="gb" id="plans">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16v13H4zM4 7l2-3h12l2 3"/></svg></span><h2>How much storage video needs</h2></div>
           <p>Video is the one input that makes an allowance run out, so size your plan against how much you film rather than how many photos you have.</p>
           <p>A quick estimate: check what video is using in your phone's storage settings, divide by how long you have had the phone, and you have your annual rate. Someone at 40GB of video after two years is generating around 20GB a year. Someone who films 4K events regularly can pass that in a month.</p>
@@ -137,9 +138,9 @@ faq:
           </div>
           <p>Monthly and yearly billing are both available, with full details on the <a href="/features#plans">features page</a>. The <a href="/guides/free-cloud-storage-100gb">guide to what 100GB holds</a> breaks the numbers down further.</p>
           <p>If you record a lot of 4K, expect a free plan to fill faster than it would for someone shooting mainly photos. That is what 4K costs.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="problems">
+        <section class="gb" id="problems">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h2>Common problems and how to fix them</h2></div>
           <div class="xlist">
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>My photos backed up but my videos did not.</strong> Wi-Fi only is applied to video while photos are allowed on mobile data. The clips are queued rather than failed, and will move once you join a network.</p></div>
@@ -149,15 +150,15 @@ faq:
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Videos people sent me are not backed up.</strong> Those sit in messaging app folders rather than your camera folder. Add messaging media to your folder selection.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>I used a month of mobile data in a day.</strong> Video uploading over mobile data. Restrict video to Wi-Fi and leave photos on either, which suits most setups.</p></div>
           </div>
-        </div>
+        </section>
 
-        <div class="gb" id="faq">
+        <section class="gb" id="faq">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 115 .8c0 1.6-2.5 2-2.5 3.4M12 17h.01"/></svg></span><h2>Frequently asked questions</h2></div>
           <p>The questions that come up most often about storing and backing up video.</p>
           {% include faq.html %}
-        </div>
+        </section>
 
-        <div class="gb" id="checklist">
+        <section class="gb" id="checklist">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>The whole thing as a checklist</h2></div>
           <ul class="steps-list">
             <li>Check your recording resolution and drop everyday clips to 1080p</li>
@@ -170,10 +171,10 @@ faq:
             <li>Archive finished footage rather than keeping everything on the phone</li>
           </ul>
           <p>The resolution setting and the Wi-Fi setting between them solve most video storage problems before they start. Everything else on this page is cleanup for footage you already have.</p>
-        </div>
+        </section>
 
         </div>
-        <aside class="toc" aria-labelledby="toc-title">
+        <nav class="toc" aria-labelledby="toc-title">
           <h2 class="toc-title" id="toc-title">On this page</h2>
           <ul>
             <li><a href="#sizes">What video weighs</a></li>
@@ -186,10 +187,11 @@ faq:
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#checklist">Checklist</a></li>
           </ul>
-        </aside>
+        </nav>
       </div>
     </div>
-  </section>
+  </div>
+  </article>
 
   <section class="sec-tint sec-related">
     <div class="container">
@@ -199,19 +201,16 @@ faq:
       </div>
       <div class="next-grid">
         <a href="/guides/phone-storage-full" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>Phone storage full? How to free up space safely</h3>
           <p>Back up, verify, then delete. The safe order for reclaiming space without losing anything.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/how-to-backup-photos" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>How to backup photos: where to store them and why</h3>
           <p>Originals versus compressed copies, and the folders most backups miss.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/free-cloud-storage-100gb" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>What 100GB free cloud storage gets you</h3>
           <p>How many photos and videos 100GB holds, and how fast 4K eats into it.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>

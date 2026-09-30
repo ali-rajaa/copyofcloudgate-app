@@ -24,7 +24,8 @@ faq:
 ---
 <main id="main">
 
-  <section class="art-hero">
+  <article class="guide">
+  <header class="art-hero">
     {% include hero-clouds.html %}
     <div class="container">
       <div class="art-head reveal">
@@ -33,16 +34,16 @@ faq:
         <h1>Move everything to a new phone in one sitting</h1>
         <p class="art-standfirst">New phone day is when backups earn their keep and when most files get lost. The exact order of operations, plus what to check before you factory reset anything.</p>
         <div class="art-meta">
-          <span>12 min read</span><span class="dot"></span>
-          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span><span class="dot"></span>
-          <span>Android and iPhone</span><span class="dot"></span>
+          <span>12 min read</span>
+          <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span>
+          <span>Android and iPhone</span>
           <span>Beginner friendly</span>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="sec-body">
+  <div class="sec-body">
     <div class="container">
       <div class="art-layout">
         <div class="art-main">
@@ -53,16 +54,16 @@ faq:
           <p>The fix is an order of operations rather than any particular tool. This guide covers how to move files from phone to cloud before you start, what to verify on the new device, the things cloud storage does not cover, and why the reset is always the last step rather than the second to last.</p>
         </div>
 
-        <div class="gb" id="rule">
+        <section class="gb" id="rule">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg></span><h2>The one rule: reset last, always</h2></div>
           <p class="lede">Everything else on this page is detail. This is the part that determines whether anything gets lost.</p>
           <p>Once a factory reset completes, the data is gone, and a repair shop cannot bring it back. The device is returned to the state it left the factory in, and no service can undo it.</p>
           <p>So the old phone stays intact and untouched until the new one is fully set up and verified. Looking set up is not enough: open files on it and confirm they are there.</p>
           <p>There is rarely any reason to rush. A trade-in window is usually a fortnight, not an afternoon, and keeping a wiped-but-unsent phone in a drawer for a week costs nothing.</p>
           <div class="note warn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p>If a shop offers to wipe the old phone for you while you wait, decline until you have checked the new one yourself. Their definition of transferred and yours are not necessarily the same.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="before">
+        <section class="gb" id="before">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg></span><h2>Before you touch the new phone</h2></div>
           <p>Do this on the old device while it is still working normally. It is the part people skip because the new phone is sitting there in its box.</p>
           <ul class="steps-list">
@@ -74,9 +75,9 @@ faq:
           <p>That third step is the one that matters. A status label saying complete is a claim by the app. Watching a photo load in a browser on a different machine is evidence. On a day when you are about to erase the original, evidence is worth the extra minute.</p>
           <p>If the backup has not run in a while, this is the moment to let it finish properly. Plug the phone in, put it on Wi-Fi, and leave it alone until it is done, even if that means the new phone waits until tomorrow.</p>
           <p>The <a href="/guides/backup-setup">setup guide</a> covers getting a backup running properly if the old phone never had one.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="notcovered">
+        <section class="gb" id="notcovered">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h2>What cloud storage does not cover</h2></div>
           <p class="lede">This is the gap that catches people. Files are handled. Several other things are not, and they need their own plan.</p>
           <p>Cloud storage holds your photos, videos and documents. It does not hold:</p>
@@ -89,9 +90,9 @@ faq:
           </ul>
           <p>Two-factor authenticator apps deserve particular attention, because they are the one item that can lock you out of everything else. Many do not transfer automatically, and wiping a phone with an authenticator on it can mean losing access to accounts that now require a code you cannot generate. Move it deliberately, using whatever export or transfer feature it offers, before the old phone is wiped.</p>
           <div class="note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg><p>Write a short list of what lives on the old phone that is not a file. Five minutes with a notepad now is considerably cheaper than rebuilding account access afterwards.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="setup">
+        <section class="gb" id="setup">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span><h2>Setting up the new phone</h2></div>
           <p>With the old phone backed up and verified, the new one is mostly signing in and waiting.</p>
           <ul class="steps-list">
@@ -104,9 +105,9 @@ faq:
           <p>The first point is where a surprising number of problems start. Setup flows often present a sign-up screen rather than a sign-in one, and it is easy to create a second empty account without noticing. If your new phone shows no files, check the email address before assuming anything went wrong.</p>
           <p>The permission step matters as much on a new phone as it did on the old one. A fresh install asks again, and choosing limited access produces a backup that reports success while covering almost nothing.</p>
           <p>Platform specifics are covered in the <a href="/guides/cloud-storage-android">Android guide</a> and the <a href="/guides/cloud-storage-iphone">iPhone guide</a>, including the battery and background settings that pause uploads.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="platforms">
+        <section class="gb" id="platforms">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 12a8 8 0 0113.6-5.7L20 8M20 12a8 8 0 01-13.6 5.7L4 16"/><path d="M20 4v4h-4M4 20v-4h4"/></svg></span><h2>Changing platforms, Android to iPhone or back</h2></div>
           <p>Moving between platforms is where manufacturer device backups stop helping. An Android backup expects to restore onto Android, and an iPhone backup onto an iPhone.</p>
           <p>Files kept in a cross platform account sidestep that, because they are in an account rather than a device backup. Sign in on the new phone, whatever it runs, and the library is there.</p>
@@ -118,9 +119,9 @@ faq:
             <li><strong>Subscriptions billed through the old store</strong> need cancelling and re-subscribing.</li>
           </ul>
           <p>None of those are file problems, which is the point. Once your photos and documents are in an account that both platforms can reach, the remaining work is administrative rather than risky. The <a href="/guides/cross-platform-cloud-storage">cross platform guide</a> covers running one account across devices in more detail.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="verify">
+        <section class="gb" id="verify">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>Verify before you wipe anything</h2></div>
           <p class="lede">This is the checkpoint between a successful switch and a slow-motion loss. Spend ten minutes here.</p>
           <p>On the new phone, with the old one still intact, confirm:</p>
@@ -136,9 +137,9 @@ faq:
           <p>Checking the oldest material rather than the newest is deliberate. Recent files are the most likely to have transferred and the least likely to reveal a gap. Problems live at the far end of the library, in the years nobody scrolls back to.</p>
           <p>Use the new phone as your only phone for a few days before wiping the old one. Real use surfaces things a checklist will not, usually in the form of an app asking for something you did not know was only on the old device.</p>
           <div class="note good"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><p>A week of overlap costs nothing and catches nearly everything. If the old phone is going for trade-in, the window is almost always long enough.</p></div>
-        </div>
+        </section>
 
-        <div class="gb" id="wipe">
+        <section class="gb" id="wipe">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg></span><h2>Wiping the old phone properly</h2></div>
           <p>Only once the new phone has been in real use and everything checks out.</p>
           <ul class="steps-list">
@@ -149,9 +150,9 @@ faq:
           </ul>
           <p>The memory card is the one people forget. It is physically separate from the phone's storage, a reset does not touch it, and it frequently holds photos and documents. Take it out even if you think it is empty.</p>
           <p>Signing out first also matters. A phone still tied to an account can be locked to it, which turns a trade-in into a support call.</p>
-        </div>
+        </section>
 
-        <div class="gb" id="problems">
+        <section class="gb" id="problems">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h2>Common problems and how to fix them</h2></div>
           <div class="xlist">
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>My new phone shows none of my photos.</strong> Usually a second account created during setup. Check the email address signed in and compare it with the old phone before assuming anything is lost.</p></div>
@@ -161,15 +162,15 @@ faq:
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>I am locked out of an account after switching.</strong> The authenticator was on the old phone. Use whatever account recovery the service offers, and move authenticators deliberately next time.</p></div>
             <div class="xrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>The new phone is not backing up.</strong> A fresh install asks for permissions again. Check you granted full photo access rather than limited, and that the folder selection is not back to camera only.</p></div>
           </div>
-        </div>
+        </section>
 
-        <div class="gb" id="faq">
+        <section class="gb" id="faq">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 115 .8c0 1.6-2.5 2-2.5 3.4M12 17h.01"/></svg></span><h2>Frequently asked questions</h2></div>
           <p>The questions that come up most often about moving to a new phone.</p>
           {% include faq.html %}
-        </div>
+        </section>
 
-        <div class="gb" id="checklist">
+        <section class="gb" id="checklist">
           <div class="gb-head"><span class="gb-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 6L9 17l-5-5"/></svg></span><h2>The whole thing as a checklist</h2></div>
           <ul class="steps-list">
             <li>Run a final backup on the old phone and wait for complete</li>
@@ -184,10 +185,10 @@ faq:
             <li>Only then factory reset the old phone</li>
           </ul>
           <p>Nine of those ten steps are reversible. The tenth is not, which is the entire reason for the order.</p>
-        </div>
+        </section>
 
         </div>
-        <aside class="toc" aria-labelledby="toc-title">
+        <nav class="toc" aria-labelledby="toc-title">
           <h2 class="toc-title" id="toc-title">On this page</h2>
           <ul>
             <li><a href="#rule">Reset last, always</a></li>
@@ -201,10 +202,11 @@ faq:
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#checklist">Checklist</a></li>
           </ul>
-        </aside>
+        </nav>
       </div>
     </div>
-  </section>
+  </div>
+  </article>
 
   <section class="sec-tint sec-related">
     <div class="container">
@@ -214,19 +216,16 @@ faq:
       </div>
       <div class="next-grid">
         <a href="/guides/backup-setup" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>How to back up your phone to free cloud storage</h3>
           <p>Step-by-step setup for Android, iPhone and the web.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/cross-platform-cloud-storage" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>Cross platform cloud storage across Android, iOS and web</h3>
           <p>One account on every device, so switching platforms keeps your files.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a href="/guides/how-to-backup-photos" class="next-card">
-          <span class="tip-cat">Next up</span>
           <h3>How to backup photos: where to store them and why</h3>
           <p>The folders most backups miss, and why originals matter.</p>
           <span class="tip-link">Read the guide<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
